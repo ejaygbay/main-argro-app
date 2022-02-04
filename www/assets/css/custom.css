@@ -1,5 +1,9 @@
 /* general styles */
 
+* {
+    box-sizing: border-box;
+}
+
 #food-menu,
 #order-details,
 #menu-selection-next-btn {

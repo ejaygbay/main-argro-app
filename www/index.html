@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AgroTrader</title>
+    <!-- plugins:css -->
+    <link rel="stylesheet" href="../assets/vendors/mdi/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="../assets/vendors/css/vendor.bundle.base.css">
+    <!-- endinject -->
+    <!-- Plugin css for this page -->
+    <link rel="stylesheet" href="../assets/vendors/flag-icon-css/css/flag-icon.min.css">
+    <link rel="stylesheet" href="../assets/vendors/jvectormap/jquery-jvectormap.css">
+    <!-- End plugin css for this page -->
+    <!-- Layout styles -->
+    <link rel="stylesheet" href="../assets/css/demo/style.css">
+    <!-- End layout styles -->
+    <link rel="shortcut icon" href="../assets/images/favicon.png" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
+
+    <!-- <link rel="stylesheet" href="https://cdn.datatables.net/1.11.0/css/jquery.dataTables.min.css"> -->
+
+    <!-- My custom css -->
+    <!-- <link rel="stylesheet" href="../assets/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="../assets/css/mdb.min.css">
+    <link rel="stylesheet" href="../assets/css/custom.css">
+</head>
+
+<body>
+
+    <style>
+
+        .center {
+            
+            margin-left: 50px;
+       
+         
+          }
+          .MenuLogoCenter{
+            margin-left: 30px;  
+          }
+          .IConcenter{
+            margin-left: 15px;  
+          }
+    </style>
+    
+    <script src="../assets/js/preloader.js"></script>
+    <div class="body-wrapper">
+        <!-- partial:partials/_sidebar.html -->
+        <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
+            <div class="mdc-drawer__header">
+                <a href="index.html" class="brand-logo">
+                    <img src="../assets/images/realLogo.png" class="MenuLogoCenter" height="50px" alt="logo">
+				</a> 
+               <!-- <h3 style="margin-top: 30px; color: whitesmoke; text-transform: uppercase; font-size: 20px;">Diana Restaurant</h3>-->
+            </div>
+            <div class="mdc-drawer__content" style="margin-top: 30px;">
+                <div class="user-info" style="display: grid; grid-template-columns: 30% 70%;">
+                    <img src="../assets/images/faces/face3.jpg" height="50px" alt="logo" style="border-radius: 50px;">
+                    <div>
+                        <p class="name">Johnson Davis</p>
+                        <p class="number">+231777-777-777</p>
+                    </div>
+                </div>
+                <div class="mdc-list-group">
+                    <nav class="mdc-list mdc-drawer-menu">
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="index.html">
+                                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">home</i> Order Status
+                            </a>
+                        </div>
+                        <div class="mdc-list-item mdc-drawer-item">
+                            <a class="mdc-drawer-link" href="#">
+                                <i class="material-icons mdc-list-item__start-detail mdc-drawer-item-icon" aria-hidden="true">track_changes</i> Order Summary
+                            </a>
+                        </div>
+                    </nav>
+                </div>
+                <div class="profile-actions">
+                    <a href="javascript:;">Settings</a>
+                    <span class="divider"></span>
+                    <a href="pages/samples/login.html">Logout</a>
+                </div>
+            </div>
+        </aside>
+        <!-- partial -->
+        <div class="main-wrapper mdc-drawer-app-content">
+            <!-- partial:partials/_navbar.html -->
+            <header class="mdc-top-app-bar" style="background-color:rgb(188,178,123)">
+                <div class="mdc-top-app-bar__row">
+                    <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button sidebar-toggler">menu</button>
+                        <span class="">           <img src="../assets/images/realLogo.png" class="center" height="50px" alt="logo"></span>
+                        <span style="padding-left:50px;">   <i style="font-size:24px" class="fa">&#xf1eb;</i></span>
+                      
+                    </div>
+                </div>
+            </header>
+
+            <!-- Main page content -->
+            <section class="page-wrapper mdc-toolbar-fixed-adjust">
+                <main class="content-wrapper">
+                    <div class="mdc-layout-grid">
+                        <!-- Table number selection section -->
+                        <section id="table-num" style="display: non;">
+                            <div class="mdc-layout-grid__cell--span-12">
+                                <div class="mdc-card" style="background-color:#675C2F;">
+                                    <h6 class="card-title" style="text-align:center; color:white; margin-top:-20px; margin-bottom:10px;">Rubber Plantation Incorporated </h6>
+                                    <h5 class="card-title" style="text-align:center; color:white; font-size:16.5px; margin-bottom:20px;"> &nbsp Monday,  Jan &nbsp 24, &nbsp2022 &nbsp 9:30 &nbsp AM</h5>
+                                    <h6 class="card-title" style="text-align:center; color:white; margin-bottom:20px;"><strong>OFFLINE DATA RECORDED</strong></h6>
+                                    <div class="template-demo">
+                                        <div class="row">
+                                            <div class="col"> <img src="../assets/images/icon.png" class="IConcenter" width="30" alt="logo"></div>
+                                            <div class="col"><i style="font-size:24px; color:#1A1110;" class="fa">&#xf017;</i></div>
+                                            <div class="col"><i style='font-size:24px; color:#1A1110;' class='fas'>&#xf0d1;</i></div>
+                                            <div class="col"><i style='font-size:24px;  color:#1A1110;' class='fas'>&#xf0ae;</i></div>
+                                          </div>
+                                          <div class="row">
+                                            <div class="col"> 0</div>
+                                            <div class="col">15</div>
+                                            <div class="col">26</div>
+                                            <div class="col">0</div>
+                                          </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Table numbers on cards -->
+                            <div class="table-num-cards">
+                                <div class="table-num-card-item">1</div>
+                                <div class="table-num-card-item">2</div>
+                                <div class="table-num-card-item">3</div>
+                                <div class="table-num-card-item">4</div>
+                                <div class="table-num-card-item">5</div>
+                                <div class="table-num-card-item">6</div>
+                                <div class="table-num-card-item">7</div>
+                                <div class="table-num-card-item">8</div>
+                                <div class="table-num-card-item">9</div>
+                                <div class="table-num-card-item">10</div>
+                                <div class="table-num-card-item">11</div>
+                                <div class="table-num-card-item">12</div>
+                            </div>
+                        </section>
+
+                        <!-- Restaurant Menu Section -->
+                        <section id="food-menu" style="display: bloc;">
+                            <h1 class="text-muted">Menu</h1>
+                            <!-- Search bar -->
+                            <div class="input-group">
+                                <input id="search" autocomplete="off" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                                <!-- <button type="button" class="btn btn-outline-primary">search</button> -->
+                            </div>
+                            <br>
+
+                            <!-- Tab names -->
+                            <nav>
+                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                    <button class="nav-link active restaurant-menu" id="nav-food-tab" data-bs-toggle="tab" data-bs-target="#nav-food" type="button" role="tab" aria-controls="nav-food" aria-selected="true">Food</button>
+                                    <button class="nav-link restaurant-menu" id="nav-drinks-tab" data-bs-toggle="tab" data-bs-target="#nav-drinks" type="button" role="tab" aria-controls="nav-drinks" aria-selected="false">Drinks</button>
+                                    <button class="nav-link restaurant-menu" id="nav-item-selected-tab" data-bs-toggle="tab" data-bs-target="#nav-item-selected" type="button" role="tab" aria-controls="nav-item-selected" aria-selected="false">Items Selected</button>
+                                </div>
+                            </nav>
+
+                            <!-- Tab data -->
+                            <div class="tab-content" id="nav-tabContent">
+                                <!-- Food list tab -->
+                                <div class="tab-pane fade show active restaurant-menu" id="nav-food" role="tabpanel" aria-labelledby="nav-food-tab">
+                                    <div id="food-menu-list"></div>
+                                </div>
+
+                                <!-- Drinks list tab -->
+                                <div class="tab-pane fade restaurant-menu" id="nav-drinks" role="tabpanel" aria-labelledby="nav-drinks-tab">
+                                    <div id="drinks-menu-list"></div>
+                                </div>
+
+                                <!-- Items selected tab -->
+                                <div class="tab-pane fade restaurant-menu" id="nav-item-selected" role="tabpanel" aria-labelledby="nav-item-selected-tab">
+                                    <div id="selected-menu-list"></div>
+                                </div>
+                            </div>
+
+                            <div class="action-btns mt-4">
+                                <button id="menu-selection-previous-btn" class="mdc-button mdc-button--outlined outlined-button--dark prev">Previous</button>
+                                <button id="menu-selection-next-btn" class="mdc-button mdc-button--outlined outlined-button--dark next">Next</button>
+                            </div>
+                        </section>
+
+                        <!-- Order details -->
+                        <section id="order-details" style="display: bloc;">
+                            <div class="card">
+                                <div class="card-header bg-white text-center py-3">
+                                    <h5 class="mb-0 fw-bold">Order Summary</h5>
+                                </div>
+
+                                <div class="card-body">
+                                    <strong>Total items:</strong>
+                                    <strong id="total-items">0</strong>
+                                    <br>
+                                    <strong>Total amount:</strong>
+                                    <strong id="order-details-grand-total">$0.00</strong>
+                                </div>
+                            </div>
+
+                            <div class="action-btns mt-4">
+                                <button id="order-details-previous-btn" class="mdc-button mdc-button--outlined outlined-button--dark prev">Previous</button>
+                                <button type="button" class="btn btn-success place-order" id="order-details-order-btn">Order</button>
+                            </div>
+
+                            <!-- Order details items -->
+                            <h5 class="mb-2 mt-4 fw-bold">Order Details</h5>
+
+                            <div id="order-details-items"></div>
+                        </section>
+                    </div>
+                </main>
+
+                <!-- partial:partials/_footer.html -->
+                <footer>
+                    <div>
+                        Built by: <a href="https://touchtechnologygroup.com" style="color: blue;" target="_blank">touchtechnologygroup </a>
+                    </div>
+                    <div>
+                        Copyright © 2021
+                    </div>
+                </footer>
+                <!-- partial -->
+            </section>
+        </div>
+    </div>
+    <!-- plugins:js -->
+    <script src="../assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <script src="../assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="../assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="../assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="../assets/js/material.js"></script>
+    <script src="../assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="../assets/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
+
+    <script src="../assets/js/bootstrap.min.js"></script>
+    <!-- <script src="../assets/js/mdb.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap5.min.js"></script>
+
+	<script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script> -->
+
+    <script src="../assets/js/sweet-alert.js"></script>
+    <script src="../assets/js/custom.js"></script>
+</body>
+
+<script src="cordova.js"></script>
+        <script src="js/index.js"></script>
+</html>

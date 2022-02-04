@@ -1,0 +1,112 @@
+/* general styles */
+
+#food-menu,
+#order-details,
+#menu-selection-next-btn {
+    display: none;
+}
+
+
+/* table number selection styles */
+
+.table-num-cards {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-between;
+}
+
+.table-num-card-item {
+    background: #fff;
+    font-size: 3em;
+    text-align: center;
+    margin-top: 20px;
+    box-shadow: #b3b3b3 1px 1px 3px;
+    border-radius: 2px;
+}
+
+.action-btns {
+    display: grid;
+    grid-template-columns: 40% 40%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.place-order,
+.next,
+.prev {
+    font-size: 20px;
+}
+
+
+/* food menu section styles */
+
+.food-menu-item {
+    display: grid;
+    grid-template-columns: 80% 20%;
+    background: #fff;
+    padding: 10px 0px 10px 20px;
+    border-radius: 2px;
+    margin-top: 10px;
+    box-shadow: #b3b3b3 1px 1px 3px;
+}
+
+.menu-item-title {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.menu-item-price {
+    font-weight: 300;
+}
+
+.menu-item-selection {
+    justify-self: center;
+}
+
+.menu-item-selection input[type="checkbox"] {
+    margin-top: 18px;
+}
+
+.menu-item-selection div {
+    margin-top: 4px;
+    font-size: 26px;
+}
+
+#food-menu .menu-search {
+    border: solid 1px;
+    border-right: none;
+}
+
+
+/* order details section styles */
+
+.order-details {
+    display: grid;
+    grid-template-columns: 15% 5% 80%;
+}
+
+.place-order {
+    padding: 4px 10px;
+}
+
+.order-details p {
+    font-size: 20px;
+}
+
+.decrease-qty,
+.increase-qty {
+    padding: 5px 20px;
+    border: solid 1px;
+    border-radius: 2px;
+}
+
+.decrease-qty {
+    margin-right: 10px;
+    font-weight: bolder;
+}
+
+.increase-qty {
+    margin-left: 10px;
+    font-size: 19px;
+    padding: 0px 18px;
+}

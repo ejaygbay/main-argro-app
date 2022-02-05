@@ -40,10 +40,25 @@
 }
 
 .brand-logo-text {
-    color: #fff;
+    color: #675C2F;
     font-size: 1.2em;
     text-align: center;
     margin-top: -26px;
+    font-weight: bold;
+}
+
+.mdc-drawer {
+    background: #fff;
+}
+
+.mdc-list-item {
+    background: rgb(188, 178, 123);
+    margin: 0px 4px 12px 4px !important;
+    border-radius: 8px !important;
+}
+
+.mdc-list-item a {
+    color: #000 !important;
 }
 
 

@@ -24,13 +24,26 @@
     justify-self: start;
 }
 
-#logo {
+.logo {
     justify-self: center;
+    height: 3em;
 }
 
 #wifi-icon {
     font-size: 1.4em;
     justify-self: end;
+}
+
+.mdc-drawer__header {
+    display: grid;
+    justify-content: center;
+}
+
+.brand-logo-text {
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: -26px;
 }
 
 

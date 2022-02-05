@@ -1,92 +1,11 @@
-let menu_obj = {
-    bucket_of_seafood_chowder: {
-        item: "Bucket Of Seafood Chowder",
-        price: 13.24,
-        type: "food"
-    },
-    "sirloin_tips_and_chicken_tenders_family_meal_deal": {
-        item: "Sirloin Tips And Chicken Tenders Family Meal Deal",
-        price: 54.75,
-        type: "food"
-    },
-    french_fries: {
-        item: "French Fries",
-        price: 5.00,
-        type: "food"
-    },
-    gingerbread: {
-        item: "Gingerbread",
-        price: 4.00,
-        type: "food"
-    },
-    fresh_strawberry_margarita: {
-        item: "Fresh Strawberry Margarita",
-        price: 14.00,
-        type: "drink"
-    },
-    frozen_lemonades: {
-        item: "Frozen Lemonades",
-        price: 4.59,
-        type: "drink"
-    },
-    fresh_fruit_sangria: {
-        item: "Fresh Fruit Sangria",
-        price: 7.39,
-        type: "drink"
-    },
-    sparkling_refreshers: {
-        item: "Sparkling Refreshers",
-        price: 3.26,
-        type: "drink"
-    }
-}
-let selected_menu_items = [];
+document.querySelector('.sidebar-toggler').addEventListener('click', () => {
+    showSection("#sidebar-cover");
+    showSection("#sidebar");
+});
 
-// General scripts
-let triggerTabList = [].slice.call(document.querySelectorAll('#nav-tab button'));
-// console.log(triggerTabList);
-triggerTabList.forEach(function(triggerEl) {
-    var tabTrigger = new bootstrap.Tab(triggerEl)
-
-    triggerEl.addEventListener('click', function(event) {
-        event.preventDefault()
-        tabTrigger.show()
-    })
-})
-
-// Next button in the table selection section
-document.querySelector("#table-selection-next-btn").addEventListener("click", () => {
-    hideSection("#table-num");
-    showSection("#food-menu");
-})
-
-// When a card number in the table selection section is clicked
-document.querySelectorAll(".table-num-card-item").forEach(ele => {
-    ele.addEventListener("click", () => {
-        hideSection("#table-num");
-        showSection("#food-menu");
-    })
-})
-
-// Next button in the menu selection section
-document.querySelector("#menu-selection-next-btn").addEventListener("click", () => {
-    hideSection("#food-menu");
-    showSection("#order-details");
-    clearSearchBar();
-    displayOrderSummary();
-    displayOrderDetails();
-})
-
-document.querySelector("#menu-selection-previous-btn").addEventListener("click", () => {
-    hideSection("#food-menu");
-    showSection("#table-num");
-    clearSearchBar();
-})
-
-document.querySelector("#order-details-previous-btn").addEventListener("click", () => {
-    hideSection("#order-details");
-    showSection("#food-menu");
-    clearSearchBar();
+document.querySelector("#sidebar-cover").addEventListener('click', () => {
+    hideSection("#sidebar");
+    hideSection("#sidebar-cover");
 })
 
 const hideSection = (ele) => {

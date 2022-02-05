@@ -32,7 +32,8 @@
     <script src="assets/js/preloader.js"></script>
     <div class="body-wrapper">
         <!-- partial:partials/_sidebar.html -->
-        <aside class="mdc-drawer mdc-drawer--dismissible mdc-drawer--open">
+        <section id="sidebar-cover"></section>
+        <aside id="sidebar" class="mdc-drawer">
             <div class="mdc-drawer__header">
                 <a href="index.html" class="brand-logo">
                     <img src="assets/images/realLogo.png" class="logo" alt="logo">
@@ -65,6 +66,7 @@
                 </div>
             </div>
         </aside>
+
         <!-- partial -->
         <div class="main-wrapper mdc-drawer-app-content">
             <!-- partial:partials/_navbar.html -->
@@ -73,7 +75,7 @@
                     <div class="top-bar mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
                         <button id="hamburger-icon" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button sidebar-toggler">menu</button>
 
-                        <img src="assets/images/realLogo.png" class="logo" alt="logo">
+                        <img id="logo1" src="assets/images/realLogo.png" class="logo" alt="logo">
 
                         <i id="wifi-icon" class="fa">&#xf1eb;</i>
                     </div>
@@ -254,7 +256,7 @@
 	<script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script> -->
 
     <script src="assets/js/sweet-alert.js"></script>
-    <!-- <script src="assets/js/custom.js"></script> -->
+    <script src="assets/js/custom.js"></script>
 </body>
 
 <script src="cordova.js"></script>

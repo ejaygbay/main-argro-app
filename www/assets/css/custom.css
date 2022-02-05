@@ -47,10 +47,6 @@
     font-weight: bold;
 }
 
-.mdc-drawer {
-    background: #fff;
-}
-
 .mdc-list-item {
     background: rgb(188, 178, 123);
     margin: 0px 4px 12px 4px !important;
@@ -59,6 +55,25 @@
 
 .mdc-list-item a {
     color: #000 !important;
+}
+
+#sidebar-cover {
+    background: whitesmoke;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+    display: none;
+}
+
+#sidebar {
+    background: whitesmoke;
+    height: 100vh;
+    width: 76%;
+    position: absolute;
+    z-index: 2;
+    display: none;
 }
 
 

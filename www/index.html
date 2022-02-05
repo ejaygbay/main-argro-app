@@ -29,21 +29,6 @@
 </head>
 
 <body>
-
-    <style>
-        .center {
-            margin-left: 50px;
-        }
-        
-        .MenuLogoCenter {
-            margin-left: 30px;
-        }
-        
-        .IConcenter {
-            margin-left: 15px;
-        }
-    </style>
-
     <script src="assets/js/preloader.js"></script>
     <div class="body-wrapper">
         <!-- partial:partials/_sidebar.html -->
@@ -89,13 +74,14 @@
         <!-- partial -->
         <div class="main-wrapper mdc-drawer-app-content">
             <!-- partial:partials/_navbar.html -->
-            <header class="mdc-top-app-bar" style="background-color:rgb(188,178,123)">
+            <header class="mdc-top-app-bar">
                 <div class="mdc-top-app-bar__row">
-                    <div class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
-                        <button class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button sidebar-toggler">menu</button>
-                        <span class="">           <img src="assets/images/realLogo.png" class="center" height="50px" alt="logo"></span>
-                        <span style="padding-left:50px;">   <i style="font-size:24px" class="fa">&#xf1eb;</i></span>
+                    <div class="top-bar mdc-top-app-bar__section mdc-top-app-bar__section--align-start">
+                        <button id="hamburger-icon" class="material-icons mdc-top-app-bar__navigation-icon mdc-icon-button sidebar-toggler">menu</button>
 
+                        <img src="assets/images/realLogo.png" id="logo" alt="logo" height="50px" alt="logo">
+
+                        <i id="wifi-icon" class="fa">&#xf1eb;</i>
                     </div>
                 </div>
             </header>

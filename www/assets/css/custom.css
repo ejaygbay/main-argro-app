@@ -10,6 +10,29 @@
     display: none;
 }
 
+.mdc-top-app-bar {
+    background: rgb(188, 178, 123);
+}
+
+.top-bar {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+#hamburger-icon {
+    font-size: 1.8em;
+    justify-self: start;
+}
+
+#logo {
+    justify-self: center;
+}
+
+#wifi-icon {
+    font-size: 1.4em;
+    justify-self: end;
+}
+
 
 /* table number selection styles */
 

@@ -49,12 +49,13 @@
 
 .mdc-list-item {
     background: rgb(188, 178, 123);
-    margin: 0px 4px 12px 4px !important;
+    margin: 0px 10px 12px 10px !important;
     border-radius: 8px !important;
 }
 
 .mdc-list-item a {
     color: #000 !important;
+    font-size: 1.1em !important;
 }
 
 #sidebar-cover {
@@ -70,7 +71,7 @@
 #sidebar {
     background: whitesmoke;
     height: 100vh;
-    width: 76%;
+    /* width: 76%; */
     position: absolute;
     z-index: 2;
     display: none;

@@ -4,9 +4,11 @@
     box-sizing: border-box;
 }
 
-#food-menu,
-#order-details,
-#menu-selection-next-btn {
+#sync-section,
+#announcement-section,
+#menu-selection-next-btn,
+#sidebar-cover,
+#sidebar {
     display: none;
 }
 
@@ -65,16 +67,29 @@
     position: absolute;
     z-index: 1;
     opacity: 0.5;
-    display: none;
 }
 
 #sidebar {
     background: whitesmoke;
     height: 100vh;
-    /* width: 76%; */
+    width: 76%;
     position: absolute;
     z-index: 2;
-    display: none;
+}
+
+header {
+    max-height: 10vh;
+    top: 0;
+}
+
+.page-wrapper {
+    min-height: 80vh;
+    max-height: 80vh;
+    overflow: scroll;
+}
+
+footer {
+    max-height: 10vh;
 }
 
 

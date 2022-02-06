@@ -83,152 +83,150 @@
             </header>
 
             <!-- Main page content -->
-            <section class="page-wrapper mdc-toolbar-fixed-adjust">
-                <main class="content-wrapper">
-                    <div class="mdc-layout-grid">
-                        <!-- Table number selection section -->
-                        <section id="table-num">
-                            <div class="mdc-layout-grid__cell--span-12">
-                                <div class="mdc-card">
-                                    <h6 class="card-title card-title1">Rubber Plantation Incorporated</h6>
-                                    <h5 class="card-title card-title2">Monday, Jan &nbsp; 24, &nbsp; 2022 &nbsp; 9:30 &nbsp; AM</h5>
-                                    <h6 class="card-title card-title3">
-                                        <strong>OFFLINE DATA RECORDED</strong>
-                                    </h6>
-                                    <div class="template-demo">
-                                        <div class="row">
-                                            <div class="col statistics-card">
-                                                <i class="fas statistics-card-icon">&#xf07a;</i>
-                                                <div class="col statistics-card-text">0</div>
-                                            </div>
-                                            <div class="col">
-                                                <i class="fa statistics-card-icon">&#xf017;</i>
-                                                <div class="col statistics-card-text">15</div>
-                                            </div>
-                                            <div class="col">
-                                                <i class='fas statistics-card-icon'>&#xf0d1;</i>
-                                                <div class="col statistics-card-text">26</div>
-                                            </div>
-                                            <div class="col">
-                                                <i class='fas statistics-card-icon'>&#xf0ae;</i>
-                                                <div class="col statistics-card-text">0</div>
-                                            </div>
+            <section class="page-wrapper md-toolbar-fixed-adjust">
+                <main style="display: non" class="content-wrapper">
+                    <!-- Table number selection section -->
+                    <section id="home-section">
+                        <div class="mdc-layout-grid__cell--span-12">
+                            <div class="mdc-card">
+                                <h6 class="card-title card-title1">Rubber Plantation Incorporated</h6>
+                                <h5 class="card-title card-title2">Monday, Jan &nbsp; 24, &nbsp; 2022 &nbsp; 9:30 &nbsp; AM</h5>
+                                <h6 class="card-title card-title3">
+                                    <strong>OFFLINE DATA RECORDED</strong>
+                                </h6>
+                                <div class="template-demo">
+                                    <div class="row">
+                                        <div class="col statistics-card">
+                                            <i class="fas statistics-card-icon">&#xf07a;</i>
+                                            <div class="col statistics-card-text">0</div>
                                         </div>
-
+                                        <div class="col">
+                                            <i class="fa statistics-card-icon">&#xf017;</i>
+                                            <div class="col statistics-card-text">15</div>
+                                        </div>
+                                        <div class="col">
+                                            <i class='fas statistics-card-icon'>&#xf0d1;</i>
+                                            <div class="col statistics-card-text">26</div>
+                                        </div>
+                                        <div class="col">
+                                            <i class='fas statistics-card-icon'>&#xf0ae;</i>
+                                            <div class="col statistics-card-text">0</div>
+                                        </div>
                                     </div>
+
                                 </div>
                             </div>
+                        </div>
 
-                            <!-- Table numbers on cards -->
-                            <div class="table-num-cards">
-                                <div class="table-num-card-item">
-                                    <i class="fas card-icon">&#xf07a;</i>
-                                    <div class="col card-text">BUY</div>
-                                </div>
-                                <div class="table-num-card-item">
-                                    <i class="fas card-icon">&#xf0d1;</i>
-                                    <div class="col card-text">COLLECT</div>
-                                </div>
-                                <div class="table-num-card-item">
-                                    <i class="fa card-icon">&#xf017;</i>
-                                    <div class="col card-text">WEIGH BRIDGE</div>
-                                </div>
-                                <div class="table-num-card-item">
-                                    <i class="fas card-icon">&#xf0ae;</i>
-                                    <div class="col card-text">MY TASKS</div>
-                                </div>
+                        <!-- Table numbers on cards -->
+                        <div class="table-num-cards">
+                            <div class="table-num-card-item">
+                                <i class="fas card-icon">&#xf07a;</i>
+                                <div class="col card-text">BUY</div>
                             </div>
-                        </section>
-
-                        <!-- Restaurant Menu Section -->
-                        <section id="food-menu" style="display: bloc;">
-                            <h1 class="text-muted">Menu</h1>
-                            <!-- Search bar -->
-                            <div class="input-group">
-                                <input id="search" autocomplete="off" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                                <!-- <button type="button" class="btn btn-outline-primary">search</button> -->
+                            <div class="table-num-card-item">
+                                <i class="fas card-icon">&#xf0d1;</i>
+                                <div class="col card-text">COLLECT</div>
                             </div>
-                            <br>
+                            <div class="table-num-card-item">
+                                <i class="fa card-icon">&#xf017;</i>
+                                <div class="col card-text">WEIGH BRIDGE</div>
+                            </div>
+                            <div class="table-num-card-item">
+                                <i class="fas card-icon">&#xf0ae;</i>
+                                <div class="col card-text">MY TASKS</div>
+                            </div>
+                        </div>
+                    </section>
 
-                            <!-- Tab names -->
-                            <nav>
-                                <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                    <button class="nav-link active restaurant-menu" id="nav-food-tab" data-bs-toggle="tab" data-bs-target="#nav-food" type="button" role="tab" aria-controls="nav-food" aria-selected="true">Food</button>
-                                    <button class="nav-link restaurant-menu" id="nav-drinks-tab" data-bs-toggle="tab" data-bs-target="#nav-drinks" type="button" role="tab" aria-controls="nav-drinks" aria-selected="false">Drinks</button>
-                                    <button class="nav-link restaurant-menu" id="nav-item-selected-tab" data-bs-toggle="tab" data-bs-target="#nav-item-selected" type="button" role="tab" aria-controls="nav-item-selected" aria-selected="false">Items Selected</button>
-                                </div>
-                            </nav>
+                    <!-- Restaurant Menu Section -->
+                    <section id="sync-section" style="display: bloc;">
+                        <h1 class="text-muted">Menu</h1>
+                        <!-- Search bar -->
+                        <div class="input-group">
+                            <input id="search" autocomplete="off" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+                            <!-- <button type="button" class="btn btn-outline-primary">search</button> -->
+                        </div>
+                        <br>
 
-                            <!-- Tab data -->
-                            <div class="tab-content" id="nav-tabContent">
-                                <!-- Food list tab -->
-                                <div class="tab-pane fade show active restaurant-menu" id="nav-food" role="tabpanel" aria-labelledby="nav-food-tab">
-                                    <div id="food-menu-list"></div>
-                                </div>
+                        <!-- Tab names -->
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <button class="nav-link active restaurant-menu" id="nav-food-tab" data-bs-toggle="tab" data-bs-target="#nav-food" type="button" role="tab" aria-controls="nav-food" aria-selected="true">Food</button>
+                                <button class="nav-link restaurant-menu" id="nav-drinks-tab" data-bs-toggle="tab" data-bs-target="#nav-drinks" type="button" role="tab" aria-controls="nav-drinks" aria-selected="false">Drinks</button>
+                                <button class="nav-link restaurant-menu" id="nav-item-selected-tab" data-bs-toggle="tab" data-bs-target="#nav-item-selected" type="button" role="tab" aria-controls="nav-item-selected" aria-selected="false">Items Selected</button>
+                            </div>
+                        </nav>
 
-                                <!-- Drinks list tab -->
-                                <div class="tab-pane fade restaurant-menu" id="nav-drinks" role="tabpanel" aria-labelledby="nav-drinks-tab">
-                                    <div id="drinks-menu-list"></div>
-                                </div>
-
-                                <!-- Items selected tab -->
-                                <div class="tab-pane fade restaurant-menu" id="nav-item-selected" role="tabpanel" aria-labelledby="nav-item-selected-tab">
-                                    <div id="selected-menu-list"></div>
-                                </div>
+                        <!-- Tab data -->
+                        <div class="tab-content" id="nav-tabContent">
+                            <!-- Food list tab -->
+                            <div class="tab-pane fade show active restaurant-menu" id="nav-food" role="tabpanel" aria-labelledby="nav-food-tab">
+                                <div id="food-menu-list"></div>
                             </div>
 
-                            <div class="action-btns mt-4">
-                                <button id="menu-selection-previous-btn" class="mdc-button mdc-button--outlined outlined-button--dark prev">Previous</button>
-                                <button id="menu-selection-next-btn" class="mdc-button mdc-button--outlined outlined-button--dark next">Next</button>
-                            </div>
-                        </section>
-
-                        <!-- Order details -->
-                        <section id="order-details" style="display: bloc;">
-                            <div class="card">
-                                <div class="card-header bg-white text-center py-3">
-                                    <h5 class="mb-0 fw-bold">Order Summary</h5>
-                                </div>
-
-                                <div class="card-body">
-                                    <strong>Total items:</strong>
-                                    <strong id="total-items">0</strong>
-                                    <br>
-                                    <strong>Total amount:</strong>
-                                    <strong id="order-details-grand-total">$0.00</strong>
-                                </div>
+                            <!-- Drinks list tab -->
+                            <div class="tab-pane fade restaurant-menu" id="nav-drinks" role="tabpanel" aria-labelledby="nav-drinks-tab">
+                                <div id="drinks-menu-list"></div>
                             </div>
 
-                            <div class="action-btns mt-4">
-                                <button id="order-details-previous-btn" class="mdc-button mdc-button--outlined outlined-button--dark prev">Previous</button>
-                                <button type="button" class="btn btn-success place-order" id="order-details-order-btn">Order</button>
+                            <!-- Items selected tab -->
+                            <div class="tab-pane fade restaurant-menu" id="nav-item-selected" role="tabpanel" aria-labelledby="nav-item-selected-tab">
+                                <div id="selected-menu-list"></div>
+                            </div>
+                        </div>
+
+                        <div class="action-btns mt-4">
+                            <button id="menu-selection-previous-btn" class="mdc-button mdc-button--outlined outlined-button--dark prev">Previous</button>
+                            <button id="menu-selection-next-btn" class="mdc-button mdc-button--outlined outlined-button--dark next">Next</button>
+                        </div>
+                    </section>
+
+                    <!-- Order details -->
+                    <section id="announcement-section" style="display: bloc;">
+                        <div class="card">
+                            <div class="card-header bg-white text-center py-3">
+                                <h5 class="mb-0 fw-bold">Order Summary</h5>
                             </div>
 
-                            <!-- Order details items -->
-                            <h5 class="mb-2 mt-4 fw-bold">Order Details</h5>
+                            <div class="card-body">
+                                <strong>Total items:</strong>
+                                <strong id="total-items">0</strong>
+                                <br>
+                                <strong>Total amount:</strong>
+                                <strong id="order-details-grand-total">$0.00</strong>
+                            </div>
+                        </div>
 
-                            <div id="order-details-items"></div>
-                        </section>
-                    </div>
+                        <div class="action-btns mt-4">
+                            <button id="order-details-previous-btn" class="mdc-button mdc-button--outlined outlined-button--dark prev">Previous</button>
+                            <button type="button" class="btn btn-success place-order" id="order-details-order-btn">Order</button>
+                        </div>
+
+                        <!-- Order details items -->
+                        <h5 class="mb-2 mt-4 fw-bold">Order Details</h5>
+
+                        <div id="order-details-items"></div>
+                    </section>
                 </main>
-
-                <!-- partial:partials/_footer.html -->
-                <footer>
-                    <div class="col footer-col">
-                        <i class="fa footer-col-icon">&#xf015;</i>
-                        <div class="col footer-col-text">HOME</div>
-                    </div>
-                    <div class="col footer-col">
-                        <i class="fa footer-col-icon">&#xf021;</i>
-                        <div class="col footer-col-text">SYNC</div>
-                    </div>
-                    <div class="col footer-col">
-                        <i class="fas footer-col-icon">&#xf0a1;</i>
-                        <div class="col footer-col-text">ANNOUNCEMENT</div>
-                    </div>
-                </footer>
-                <!-- partial -->
             </section>
+
+            <!-- partial:partials/_footer.html -->
+            <footer>
+                <div id="home-icon" class="col footer-col">
+                    <i class="fa footer-col-icon">&#xf015;</i>
+                    <div class="col footer-col-text">HOME</div>
+                </div>
+                <div id="sync-icon" class="col footer-col">
+                    <i class="fa footer-col-icon">&#xf021;</i>
+                    <div class="col footer-col-text">SYNC</div>
+                </div>
+                <div id="announcement-icon" class="col footer-col">
+                    <i class="fas footer-col-icon">&#xf0a1;</i>
+                    <div class="col footer-col-text">ANNOUNCEMENT</div>
+                </div>
+            </footer>
+            <!-- partial -->
         </div>
     </div>
     <!-- plugins:js -->

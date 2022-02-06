@@ -13,6 +13,33 @@ document.querySelector("#sidebar-cover").addEventListener('click', () => {
 })
 
 /**
+ * Home cards eventlisteners
+ */
+document.querySelector("#buy-card").addEventListener('click', () => {
+    hideElement(current_ele);
+    current_ele = "#buy-section";
+    showElement(current_ele);
+})
+
+document.querySelector("#collect-card").addEventListener('click', () => {
+    hideElement(current_ele);
+    current_ele = "#collect-section";
+    showElement(current_ele);
+})
+
+document.querySelector("#weigh-card").addEventListener('click', () => {
+    hideElement(current_ele);
+    current_ele = "#weigh-section";
+    showElement(current_ele);
+})
+
+document.querySelector("#my-tasks-card").addEventListener('click', () => {
+    hideElement(current_ele);
+    current_ele = "#my-tasks-section";
+    showElement(current_ele);
+})
+
+/**
  * Tap bar eventlisteners
  */
 document.querySelector("#home-icon").addEventListener('click', () => {

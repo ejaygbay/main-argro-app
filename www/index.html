@@ -85,7 +85,7 @@
             <!-- Main page content -->
             <section class="page-wrapper md-toolbar-fixed-adjust">
                 <main style="display: non" class="content-wrapper">
-                    <!-- Table number selection section -->
+                    <!-- Home section -->
                     <section id="home-section">
                         <div class="mdc-layout-grid__cell--span-12">
                             <div class="mdc-card">
@@ -120,93 +120,77 @@
 
                         <!-- Table numbers on cards -->
                         <div class="table-num-cards">
-                            <div class="table-num-card-item">
+                            <div id="buy-card" class="table-num-card-item">
                                 <i class="fas card-icon">&#xf07a;</i>
                                 <div class="col card-text">BUY</div>
                             </div>
-                            <div class="table-num-card-item">
+                            <div id="collect-card" class="table-num-card-item">
                                 <i class="fas card-icon">&#xf0d1;</i>
                                 <div class="col card-text">COLLECT</div>
                             </div>
-                            <div class="table-num-card-item">
+                            <div id="weigh-card" class="table-num-card-item">
                                 <i class="fa card-icon">&#xf017;</i>
                                 <div class="col card-text">WEIGH BRIDGE</div>
                             </div>
-                            <div class="table-num-card-item">
+                            <div id="my-tasks-card" class="table-num-card-item">
                                 <i class="fas card-icon">&#xf0ae;</i>
                                 <div class="col card-text">MY TASKS</div>
                             </div>
                         </div>
                     </section>
 
-                    <!-- Restaurant Menu Section -->
+                    <!-- Sync section -->
                     <section id="sync-section" style="display: bloc;">
-                        <h1 class="text-muted">Menu</h1>
-                        <!-- Search bar -->
-                        <div class="input-group">
-                            <input id="search" autocomplete="off" type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-                            <!-- <button type="button" class="btn btn-outline-primary">search</button> -->
-                        </div>
-                        <br>
-
-                        <!-- Tab names -->
-                        <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <button class="nav-link active restaurant-menu" id="nav-food-tab" data-bs-toggle="tab" data-bs-target="#nav-food" type="button" role="tab" aria-controls="nav-food" aria-selected="true">Food</button>
-                                <button class="nav-link restaurant-menu" id="nav-drinks-tab" data-bs-toggle="tab" data-bs-target="#nav-drinks" type="button" role="tab" aria-controls="nav-drinks" aria-selected="false">Drinks</button>
-                                <button class="nav-link restaurant-menu" id="nav-item-selected-tab" data-bs-toggle="tab" data-bs-target="#nav-item-selected" type="button" role="tab" aria-controls="nav-item-selected" aria-selected="false">Items Selected</button>
+                        <div class="card">
+                            <div class="card-header bg-white text-center py-3">
+                                <h5 class="mb-0 fw-bold">Sync</h5>
                             </div>
-                        </nav>
-
-                        <!-- Tab data -->
-                        <div class="tab-content" id="nav-tabContent">
-                            <!-- Food list tab -->
-                            <div class="tab-pane fade show active restaurant-menu" id="nav-food" role="tabpanel" aria-labelledby="nav-food-tab">
-                                <div id="food-menu-list"></div>
-                            </div>
-
-                            <!-- Drinks list tab -->
-                            <div class="tab-pane fade restaurant-menu" id="nav-drinks" role="tabpanel" aria-labelledby="nav-drinks-tab">
-                                <div id="drinks-menu-list"></div>
-                            </div>
-
-                            <!-- Items selected tab -->
-                            <div class="tab-pane fade restaurant-menu" id="nav-item-selected" role="tabpanel" aria-labelledby="nav-item-selected-tab">
-                                <div id="selected-menu-list"></div>
-                            </div>
-                        </div>
-
-                        <div class="action-btns mt-4">
-                            <button id="menu-selection-previous-btn" class="mdc-button mdc-button--outlined outlined-button--dark prev">Previous</button>
-                            <button id="menu-selection-next-btn" class="mdc-button mdc-button--outlined outlined-button--dark next">Next</button>
                         </div>
                     </section>
 
-                    <!-- Order details -->
+                    <!-- Announcement section -->
                     <section id="announcement-section" style="display: bloc;">
                         <div class="card">
                             <div class="card-header bg-white text-center py-3">
-                                <h5 class="mb-0 fw-bold">Order Summary</h5>
-                            </div>
-
-                            <div class="card-body">
-                                <strong>Total items:</strong>
-                                <strong id="total-items">0</strong>
-                                <br>
-                                <strong>Total amount:</strong>
-                                <strong id="order-details-grand-total">$0.00</strong>
+                                <h5 class="mb-0 fw-bold">Announcement</h5>
                             </div>
                         </div>
+                    </section>
 
-                        <div class="action-btns mt-4">
-                            <button id="order-details-previous-btn" class="mdc-button mdc-button--outlined outlined-button--dark prev">Previous</button>
-                            <button type="button" class="btn btn-success place-order" id="order-details-order-btn">Order</button>
+                    <!-- Buy section -->
+                    <section id="buy-section" style="display: bloc;">
+                        <div class="card">
+                            <div class="card-header bg-white text-center py-3">
+                                <h5 class="mb-0 fw-bold">Buy</h5>
+                            </div>
                         </div>
+                    </section>
 
-                        <!-- Order details items -->
-                        <h5 class="mb-2 mt-4 fw-bold">Order Details</h5>
+                    <!-- Collect section -->
+                    <section id="collect-section" style="display: bloc;">
+                        <div class="card">
+                            <div class="card-header bg-white text-center py-3">
+                                <h5 class="mb-0 fw-bold">Collect</h5>
+                            </div>
+                        </div>
+                    </section>
 
-                        <div id="order-details-items"></div>
+                    <!-- Sync section -->
+                    <section id="weigh-section" style="display: bloc;">
+                        <div class="card">
+                            <div class="card-header bg-white text-center py-3">
+                                <h5 class="mb-0 fw-bold">Weigh</h5>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Sync section -->
+                    <section id="my-tasks-section" style="display: bloc;">
+                        <div class="card">
+                            <div class="card-header bg-white text-center py-3">
+                                <h5 class="mb-0 fw-bold">My Tasks</h5>
+                            </div>
+                        </div>
                     </section>
                 </main>
             </section>

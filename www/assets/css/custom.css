@@ -8,7 +8,11 @@
 #announcement-section,
 #menu-selection-next-btn,
 #sidebar-cover,
-#sidebar {
+#sidebar,
+#buy-section,
+#collect-section,
+#weigh-section,
+#my-tasks-section {
     display: none;
 }
 

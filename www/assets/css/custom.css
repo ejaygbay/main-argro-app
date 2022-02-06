@@ -81,6 +81,11 @@
     z-index: 2;
 }
 
+.login-user {
+    text-align: center;
+    padding-bottom: 26px;
+}
+
 header {
     max-height: 10vh;
     top: 0;

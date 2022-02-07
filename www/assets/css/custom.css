@@ -20,6 +20,23 @@
     background: rgb(188, 178, 123);
 }
 
+.flote-button {
+    margin-top: 10px;
+}
+
+.button {
+    float: right;
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 5px 53px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
 .top-bar {
     display: grid;
     grid-template-columns: 20% 60% 20%;
@@ -59,6 +76,21 @@
     border-radius: 8px !important;
 }
 
+.cuplumps {
+    background-color: #beb17a;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.cuplumps2 {
+    background-color: #675c2f;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+}
+
 .mdc-list-item a {
     color: #000 !important;
     font-size: 1.1em !important;
@@ -95,7 +127,6 @@ header {
     min-height: 80vh;
     max-height: 80vh;
     overflow: scroll;
-    padding: 16px;
 }
 
 footer {
@@ -163,7 +194,17 @@ footer {
 }
 
 .mdc-card {
-    height: 40vh;
+    height: 42vh;
+    border-radius: 15px;
+}
+
+.buy-input {
+    margin-top: 20px;
+    background-color: #bcb27b;
+}
+
+.buy_section-form {
+    margin-top: -23px;
 }
 
 .card-title1 {

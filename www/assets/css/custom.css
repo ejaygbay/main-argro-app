@@ -24,6 +24,20 @@
     margin-top: 10px;
 }
 
+.collect-button {
+    float: right;
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 2px 53px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 27px;
+}
+
 .button {
     float: right;
     background-color: #675C2F;
@@ -90,13 +104,17 @@ h5 {
 }
 
 .cuplumps {
+    padding: 2px 35px;
     background-color: #beb17a;
     text-align: center;
     padding-top: 5px;
     padding-bottom: 5px;
+    border: 0;
 }
 
 .cuplumps2 {
+    padding: 2px 55px;
+    border: 0;
     background-color: #675c2f;
     text-align: center;
     padding-top: 5px;
@@ -216,8 +234,19 @@ footer {
     background-color: #bcb27b;
 }
 
+.collect-input {
+    border-radius: 15px;
+    height: 30vh !important;
+    margin-top: 20px;
+    background-color: #bcb27b;
+}
+
 .buy_section-form {
     margin-top: -23px;
+}
+
+.collect_section-form {
+    margin-top: 23px;
 }
 
 .card-title1 {

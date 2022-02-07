@@ -163,6 +163,125 @@
                     <!-- Buy section -->
                     <section id="buy-section" style="display: bloc;">
                         <div class="container">
+                            <nav>
+                                <div class=" nav nav-tabs" id="nav-tab" role="tablist">
+                                  <button class="cuplumps  active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Cuplumps</button>
+                                  <button class=" cuplumps2 " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> Raw Latex</button>
+
+                                </div>
+                              </nav>
+                              <div class="tab-content" id="nav-tabContent">
+                                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"><div class="mdc-layout-grid__cell--span-12">
+                                    <div class="buy-input mdc-card">
+                                        <div class="buy_section-form row">
+                                            <div class="col-lg-4 col-md-6 form-group ">
+                                                <label style="font-size: 15px; ">Date:</label>
+                                                <input type="date" name="date" class="form-control" id="date" placeholder="">
+                                                <div class="validate "></div>
+                                            </div>
+                                            
+                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                                <label style="font-size: 15px; ">Select Farmer:</label>
+                    
+                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
+                                                            <option value="Regular" selected></option>
+                                                            <option value="VIP"></option>
+                                                        </select>
+                    
+                                                <div class="validate "></div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                                <label style="font-size: 15px; ">Enter Weight (KG):</label>
+                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
+                                                <div class="validate "></div>
+                                            </div>
+                                           
+                                        <div class="flote-button">
+                                            <button type="button" class="button" >Buy</button>
+                                        </div>
+                                        
+                                    </div>
+                                    
+                                </div>
+     
+                            </div>
+                            
+    
+                                <!-- <div class="card">
+                             
+                        <div class="card-header bg-white text-center py-3">
+                                    <h5 class="mb-0 fw-bold">Buy</h5>
+                                </div> 
+                            </div>  -->
+    
+                            <div class="buy-section-table col-lg-12">
+                                <div class="table-responsive"> 
+                                    <h5>View Buys</h5>
+                                  <table class="table table-bordered"> 
+                                    <thead> 
+                                      <tr>
+                                        
+                                          <th>Farmer</th> 
+                                          <th>Weight (KG)</th> 
+                                          <th>Date</th> 
+                                          
+                                       </tr> 
+                                    </thead> 
+                                    <tbody> 
+                                          <tr> 
+                                           
+                                            <td>Paye(32232)</td> 
+                                            <td>250 KG</td> 
+                                            <td>02-09-22</td> 
+                                            
+                                          </tr> 
+                                          <tr class="table-color"> 
+                                           
+                                           
+                                            <td>Paye(32232)</td> 
+                                            <td>250 KG</td> 
+                                            <td>02-09-22</td> 
+                                            
+                                          </tr> 
+                                          <tr> 
+                                           
+                                          
+                                            <td>Paye(32232)</td> 
+                                            <td>250 KG</td> 
+                                            <td>02-09-22</td> 
+                                            
+                                          </tr> 
+                                          <tr class="table-color"> 
+                                           
+                                            
+                                            <td>Paye(32232)</td> 
+                                            <td>250 KG</td> 
+                                            <td>02-09-22</td> 
+                                          </tr> 
+                                         
+                                        </tbody> 
+                                       </table> 
+                                     </div>
+                                </div></div>
+                                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">..dd.</div>
+     
+                              </div>
+                              
+                            <!-- <div class="row">
+                              <div class="cuplumps col">
+                                Cuplumps
+                              </div>
+                              <div class="cuplumps2 col">
+                              Raw Latex
+                              </div>
+                            </div> -->
+
+                            
+                    </section>
+
+                    <!-- Collect section -->
+                    <section id="collect-section" style="display: bloc;">
+                        <div class="container">
                             <div class="row">
                               <div class="cuplumps col">
                                 Cuplumps
@@ -173,7 +292,9 @@
                             </div>
 
                             <div class="mdc-layout-grid__cell--span-12">
-                                <div class="buy-input mdc-card">
+                                
+                                <div class="collect-input mdc-card">
+                                    
                                     <div class="buy_section-form row">
                                         <div class="col-lg-4 col-md-6 form-group ">
                                             <label style="font-size: 15px; ">Date:</label>
@@ -182,7 +303,7 @@
                                         </div>
                                         
                                         <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                            <label style="font-size: 15px; ">Select Farmer:</label>
+                                            <label style="font-size: 15px; ">Select Tapper:</label>
                 
                                             <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
                                                         <option value="Regular" selected></option>
@@ -192,13 +313,13 @@
                                             <div class="validate "></div>
                                         </div>
                                         <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                            <label style="font-size: 15px; ">Enter Weight (KG):</label>
-                                            <input type="text" class="form-control " name="weight" id="weight" placeholder="">
+                                            <label style="font-size: 15px; ">Enter Volume(L):
+                                                <button type="button" class="collect-button" >Enter</button>
+                                            </label>
+                                            
                                             <div class="validate "></div>
                                         </div>
                                        
-                                    <div class="flote-button">
-                                        <button type="button" class="button" >Buy</button>
                                     </div>
                                     
                                 </div>
@@ -217,13 +338,14 @@
 
                         <div class="buy-section-table col-lg-12">
                             <div class="table-responsive"> 
-                                <h5>View Buys</h5>
+                                <h5>View Raw Latex Collection</h5>
                               <table class="table table-bordered"> 
                                 <thead> 
                                   <tr>
                                     
                                       <th>Farmer</th> 
-                                      <th>Weight (KG)</th> 
+                                      <th>Gang</th>
+                                      <th>Volume(L)</th> 
                                       <th>Date</th> 
                                       
                                    </tr> 
@@ -231,48 +353,48 @@
                                 <tbody> 
                                       <tr> 
                                        
-                                        <td>Paye(32232)</td> 
-                                        <td>250 KG</td> 
-                                        <td>02-09-22</td> 
+                                        <td></td> 
+                                        <td></td> 
+                                        <td></td> 
+                                        <td></td> 
                                         
                                       </tr> 
                                       <tr class="table-color"> 
                                        
                                        
-                                        <td>Paye(32232)</td> 
-                                        <td>250 KG</td> 
-                                        <td>02-09-22</td> 
+                                        <td></td> 
+                                        <td></td> 
+                                        <td></td> 
+                                        <td></td> 
                                         
                                       </tr> 
                                       <tr> 
                                        
                                       
-                                        <td>Paye(32232)</td> 
-                                        <td>250 KG</td> 
-                                        <td>02-09-22</td> 
+                                        <td></td> 
+                                        <td></td> 
+                                        <td></td> 
+                                        <td></td> 
                                         
                                       </tr> 
                                       <tr class="table-color"> 
                                        
                                         
-                                        <td>Paye(32232)</td> 
-                                        <td>250 KG</td> 
-                                        <td>02-09-22</td> 
+                                        <td></td> 
+                                        <td></td> 
+                                        <td></td> 
+                                        <td></td> 
                                       </tr> 
                                      
                                     </tbody> 
                                    </table> 
                                  </div>
                             </div>
-                    </section>
-
-                    <!-- Collect section -->
-                    <section id="collect-section" style="display: bloc;">
-                        <div class="card">
+                        <!-- <div class="card">
                             <div class="card-header bg-white text-center py-3">
                                 <h5 class="mb-0 fw-bold">Collect</h5>
                             </div>
-                        </div>
+                        </div> -->
                     </section>
 
                     <!-- Sync section -->

@@ -75,6 +75,8 @@ const showElement = (ele) => {
 }
 
 
+
+
 /**
  * Food menu scripts
  */

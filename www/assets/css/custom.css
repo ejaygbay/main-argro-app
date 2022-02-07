@@ -112,6 +112,10 @@ h5 {
     border: 0;
 }
 
+.label {
+    display: inline-block;
+}
+
 .cuplumps2 {
     padding: 2px 55px;
     border: 0;
@@ -239,6 +243,10 @@ footer {
     height: 30vh !important;
     margin-top: 20px;
     background-color: #bcb27b;
+}
+
+.raw-latex {
+    height: 70vh !important;
 }
 
 .buy_section-form {

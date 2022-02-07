@@ -37,6 +37,19 @@
     border-radius: 10px;
 }
 
+.buy-section-table {
+    margin-top: 10px;
+}
+
+h5 {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.table-color {
+    background-color: rgb(188, 178, 123);
+}
+
 .top-bar {
     display: grid;
     grid-template-columns: 20% 60% 20%;

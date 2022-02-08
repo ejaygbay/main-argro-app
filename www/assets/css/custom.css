@@ -16,6 +16,31 @@
     display: none;
 }
 
+.weightDetail {
+    margin-top: 5px;
+    text-align: center;
+}
+
+.padding {
+    padding: 22px;
+}
+
+input {
+    width: 315px;
+    height: 50px;
+    padding-right: 40px;
+}
+
+.camera-bg {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    width: 30px;
+    height: 20px;
+    background: url(https://i.stack.imgur.com/5Vv2z.png) no-repeat;
+    background-position: 0 0;
+}
+
 .cancel {
     float: right;
     background-color: rgb(188, 178, 123);
@@ -76,6 +101,19 @@
     font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
+}
+
+.pending {
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 5px 45px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
 .buy-section-table {
@@ -209,6 +247,10 @@ footer {
     background-color: #675C2F;
 }
 
+.mdc-car {
+    background-color: #675C2F;
+}
+
 .card-title {
     text-align: center;
     color: white;
@@ -260,9 +302,14 @@ footer {
     border-radius: 15px;
 }
 
+.mdc-car {
+    height: 105vh;
+    border-radius: 15px;
+}
+
 .buy-input {
     margin-top: 20px;
-    background-color: #bcb27b;
+    background-color: #bcb27b70;
 }
 
 .collect-input {

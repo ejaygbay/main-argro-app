@@ -108,3 +108,15 @@ const setAsActive = (ele) => {
 const setAsInactive = (ele) => {
     document.querySelector(ele).style = "background: #675C2F; color: #fff;";
 }
+
+document.querySelector("#enterWeightButton").addEventListener('click', () => {
+    $('#exampleModal').modal('show');
+})
+
+document.querySelector("#latex-weightButton").addEventListener('click', () => {
+    $('#latex-collect-weight').modal('show');
+})
+
+function showCamera(toast) {
+    Android.showCamera(toast);
+}

@@ -371,7 +371,8 @@ input:checked+.slider:before {
 
 /* Sync section style */
 
-#sync-section .card {
+#sync-section .card,
+#announcement-section .card {
     background: #f0edd1;
     border: solid 1px rgb(160, 160, 160);
 }

@@ -94,7 +94,7 @@
             <section class="page-wrapper md-toolbar-fixed-adjust">
                 <main style="display: non" class="content-wrapper">
                     <!-- Home section -->
-                    <section style="display: non;" id="home-section">
+                    <section style="display: none;" id="home-section">
                         <div class="mdc-layout-grid__cell--span-12">
                             <div class="mdc-card">
                                 <h6 class="card-title card-title1">Rubber Plantation Incorporated</h6>
@@ -211,7 +211,7 @@
                     <!-- Buy section -->
                     <section id="buy-section" style="display: bloc;">
                         <nav>
-                            <div class=" nav nav-tabs" id="nav-tab" role="tablist">
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
                                 <button class="cuplumps  active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Cuplumps</button>
                                 <button class=" cuplumps2 " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> Raw Latex</button>
 
@@ -539,10 +539,21 @@
                     </section>
 
                     <!-- Weigh section -->
-                    <section id="weigh-section" style="display: bloc;">
-                        <div class="card">
-                            <div class="card-header bg-white text-center py-3">
-                                <h5 class="mb-0 fw-bold">Weigh</h5>
+                    <section id="weigh-section" style="display: block;">
+                        <nav id="weigh-section-tab">
+                            <div class="tab-head" id="tab-head-buy">Buy</div>
+                            <div class="tab-head" id="tab-head-estate">Estate</div>
+                            <div class="tab-head" id="tab-head-shipment">Shipment</div>
+                        </nav>
+                        <div id="tab-section-content">
+                            <div class="tab-content" id="tab-content-buy">
+                                <h1>Buy</h1>
+                            </div>
+                            <div class="tab-content" id="tab-content-estate">
+                                <h1>Estate</h1>
+                            </div>
+                            <div class="tab-content" id="tab-content-shipment">
+                                <h1>Shipment</h1>
                             </div>
                         </div>
                     </section>

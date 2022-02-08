@@ -405,7 +405,7 @@ input:checked+.slider:before {
     color: #000;
 }
 
-#tab-content-buy,
+#tab-content-estate,
 #tab-content-shipment {
     display: none;
 }

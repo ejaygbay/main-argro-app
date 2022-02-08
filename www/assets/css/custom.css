@@ -16,6 +16,33 @@
     display: none;
 }
 
+.cancel {
+    float: right;
+    background-color: rgb(188, 178, 123);
+    border: none;
+    color: white;
+    padding: 5px 53px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.weight-button {
+    float: right;
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 2px 53px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-left: 15px;
+}
+
 .mdc-top-app-bar {
     background: rgb(188, 178, 123);
 }

@@ -60,11 +60,6 @@ document.querySelector("#announcement-icon").addEventListener('click', () => {
     showElement(current_ele);
 })
 
-
-
-
-
-
 const hideElement = (ele) => {
     console.log("Hide:::::", ele);
     document.querySelector(ele).style = "display: none";
@@ -74,9 +69,10 @@ const showElement = (ele) => {
     document.querySelector(ele).style = "display: block";
 }
 
+document.querySelector("#enterWeightButton").addEventListener('click', () => {
+    $('#exampleModal').modal('show');
+})
 
-
-
-/**
- * Food menu scripts
- */
+document.querySelector("#latex-weightButton").addEventListener('click', () => {
+    $('#latex-collect-weight').modal('show');
+})

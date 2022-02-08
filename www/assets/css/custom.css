@@ -483,3 +483,29 @@ input:checked+.slider:before {
 #tab-content-shipment {
     display: none;
 }
+
+
+/* Weigh section style */
+
+#my-tasks-section-tab {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#my-tasks-section-tab .tab-head {
+    text-align: center;
+    padding: 8px 0px;
+    background: #675C2F;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#my-tasks-section-tab #tab-head-task-list {
+    background: #bcb27b;
+    color: #000;
+}
+
+#tab-content-completed {
+    display: none;
+}

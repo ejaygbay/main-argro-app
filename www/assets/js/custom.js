@@ -1,6 +1,8 @@
 let current_section = '#home-section';
 let current_weigh_section = "#tab-content-buy";
 let current_weigh_tab_head = "#tab-head-buy";
+let current_my_tasks_section = "#tab-content-task-list";
+let current_my_tasks_tab_head = "#tab-head-task-list";
 
 document.querySelector('.sidebar-toggler').addEventListener('click', () => {
     showElement("#sidebar-cover");
@@ -92,6 +94,27 @@ document.querySelector("#tab-head-shipment").addEventListener('click', () => {
     setAsActive(current_weigh_tab_head);
 })
 
+
+/**
+ * My Tasks section tab event listener
+ */
+document.querySelector("#tab-head-task-list").addEventListener('click', (e) => {
+    hideElement(current_my_tasks_section);
+    setAsInactive(current_my_tasks_tab_head);
+    current_my_tasks_section = "#tab-content-task-list";
+    current_my_tasks_tab_head = "#tab-head-task-list";
+    showElement(current_my_tasks_section);
+    setAsActive(current_my_tasks_tab_head);
+})
+
+document.querySelector("#tab-head-completed").addEventListener('click', () => {
+    hideElement(current_my_tasks_section);
+    setAsInactive(current_my_tasks_tab_head);
+    current_my_tasks_section = "#tab-content-completed";
+    current_my_tasks_tab_head = "#tab-head-completed";
+    showElement(current_my_tasks_section);
+    setAsActive(current_my_tasks_tab_head);
+})
 
 const hideElement = (ele) => {
     document.querySelector(ele).style = "display: none";

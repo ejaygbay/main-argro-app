@@ -583,8 +583,7 @@ input:checked+.slider:before {
     color: #000;
 }
 
-#tab-content-estate,
-#tab-content-shipment {
+#tab-content-estate {
     display: none;
 }
 

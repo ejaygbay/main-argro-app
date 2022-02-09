@@ -1,4 +1,8 @@
 let current_section = '#home-section';
+
+let current_weigh_sectio = "#tab-content-buy";
+let current_weigh_tab_hea = "#tab-head-bu";
+
 let current_weigh_section = "#tab-content-buy";
 let current_weigh_tab_head = "#tab-head-buy";
 let current_my_tasks_section = "#tab-content-task-list";
@@ -64,6 +68,27 @@ document.querySelector("#announcement-icon").addEventListener('click', () => {
     showElement(current_section);
 })
 
+// collect
+document.querySelector("#tab-head-bu").addEventListener('click', (e) => {
+    hideElement(current_weigh_sectio);
+    setAsInactive(current_weigh_tab_hea);
+    current_weigh_sectio = "#tab-content-bu";
+    current_weigh_tab_hea = "#tab-head-bu";
+    showElement(current_weigh_sectio);
+    setAsActive(current_weigh_tab_hea);
+})
+
+document.querySelector("#tab-head-estat").addEventListener('click', () => {
+    hideElement(current_weigh_sectio);
+    setAsInactive(current_weigh_tab_hea);
+    current_weigh_sectio = "#tab-content-estat";
+    current_weigh_tab_hea = "#tab-head-estat";
+    showElement(current_weigh_sectio);
+    setAsActive(current_weigh_tab_hea);
+})
+
+
+
 /**
  * Weigh section tab event listener
  */
@@ -86,16 +111,18 @@ document.querySelector("#tab-head-estate").addEventListener('click', () => {
 })
 
 document.querySelector("#tab-head-shipment").addEventListener('click', () => {
-        hideElement(current_weigh_section);
-        setAsInactive(current_weigh_tab_head);
-        current_weigh_section = "#tab-content-shipment";
-        current_weigh_tab_head = "#tab-head-shipment";
-        showElement(current_weigh_section);
-        setAsActive(current_weigh_tab_head);
-    })
-    /**
-     * My Tasks section tab event listener
-     */
+    hideElement(current_weigh_section);
+    setAsInactive(current_weigh_tab_head);
+    current_weigh_section = "#tab-content-shipment";
+    current_weigh_tab_head = "#tab-head-shipment";
+    showElement(current_weigh_section);
+    setAsActive(current_weigh_tab_head);
+})
+
+
+/**
+ * My Tasks section tab event listener
+ */
 document.querySelector("#tab-head-task-list").addEventListener('click', (e) => {
     hideElement(current_my_tasks_section);
     setAsInactive(current_my_tasks_tab_head);

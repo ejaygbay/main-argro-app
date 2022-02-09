@@ -221,7 +221,7 @@
                     <section id="buy-section" style="display: bloc;">
                         <nav id="buy-section-tab">
                             <div class="tab-head" id="tab-head-cuplumps">Cuplumps</div>
-                            <div class="tab-head" id="tab-head-buy">Raw Latex</div>
+                            <div class="tab-head" id="tab-head-raw-latex">Raw Latex</div>
                         </nav>
                         <div id="buy-tab-section-content">
                             <!-- Cuplumps -->
@@ -420,11 +420,10 @@
                     <!-- Collect section -->
                     <section id="collect-section" style="display: bloc;">
                         <nav id="weighs-section-tab">
-                            <div class="tab-head" id="tab-head-buy">Cuplumps</div>
-                            <div class="tab-head" id="tab-head-estate">Raw Latex</div>
-
+                            <div class="tab-head" id="tab-head-collect1">Cuplumps</div>
+                            <div class="tab-head" id="tab-head-collect2">Raw Latex</div>
                         </nav>
-                        <div id="weigh-tab-section-content">
+                        <div id="collect-tab-section-content">
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -578,7 +577,8 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="tab-content" id="tab-content-buy">
+
+                            <div class="tab-content" id="tab-content-collect1">
                                 <div class="mdc-layout-grid__cell--span-12">
                                     <div class="buy-input mdc-card">
                                         <div class="buy_section-form row">
@@ -665,7 +665,8 @@
                                 </label>
 
                             </div>
-                            <div class="tab-content" id="tab-content-estate">
+
+                            <div class="tab-content" id="tab-content-collect2">
                                 <div class="mdc-layout-grid__cell--span-12">
                                     <div class="buy-input mdc-card">
                                         <div class="buy_section-form row">
@@ -746,305 +747,93 @@
 
                                         </div>
                                     </div>
-
                                 </div>
-
+                            </div>
+                        </div>
 
                     </section>
 
                     <!-- Weigh section -->
-                    <section id="weigh-section" style="display: none;">
+                    <section id="weigh-section" style="display: block;">
                         <nav id="weigh-section-tab">
                             <div class="tab-head" id="tab-head-buy">Buy</div>
                             <div class="tab-head" id="tab-head-estate">Estate</div>
                             <div class="tab-head" id="tab-head-shipment">Shipment</div>
                         </nav>
                         <div id="weigh-tab-section-content">
+                            <!-- Buy -->
                             <div class="tab-content" id="tab-content-buy">
-                                <div class="mdc-layout-grid__cell--span-12">
-                                    <div class="buy-input mdc-card mdc-ca">
-                                        <div class="buy_section-form row">
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Date:</label>
-                                                <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 6px 10px 60px 10px; border-radius: 5px; margin-top: 50px">
 
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Farmer:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                                <option value="Regular" selected></option>
-                                                                <option value="VIP"></option>
-                                                            </select>
-
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Vehicle Plate:</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <h5 class="weightDetail">--- Enter Weight Details ---- </h5>
-
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Gross (KG):</label>
-                                                <div style="position:relative;display:inline-block;">
-
-                                                    <input type="text" maxlength="100">
-                                                    <div class="camera-bg"></div>
-                                                </div>
-
-                                            </div>
-
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Tare (KG):</label>
-                                                <div style="position:relative;display:inline-block;">
-
-                                                    <input type="text" maxlength="100">
-                                                    <div class="camera-bg"></div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Net (KG):</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Storage Area:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                                <option value="Regular" selected></option>
-                                                                <option value="VIP"></option>
-                                                            </select>
-
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="padding">
-                                                <button type="button" class="buy-cancel-button">Save</button>
-                                                <button type="button" class="Buy-submit-button">Submit</button>
-                                            </div>
-                                        </div>
-
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date" placeholder="Date">
+                                        <label for="business-date">Date</label>
                                     </div>
-                                    <button type="button" class="pending_button">View PENDING and SUBMITTED Entries</button>
 
-                                </div>
-                                </label>
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-farmer">
+                                            <option selected>Select a farmer</option>
+                                            <option value="1">Farmer One</option>
+                                            <option value="2">Farmer Two</option>
+                                            <option value="3">Farmer Three</option>
+                                        </select>
+                                        <label for="select-farmer">Select Farmer</label>
+                                    </div>
 
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="vehicle-late" placeholder="Vehicle Plate">
+                                        <label for="vehicle-late">Vehicle Plate</label>
+                                    </div>
+
+                                    <p>Enter Weigh Details</p>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="vehicle-late" placeholder="Vehicle Plate">
+                                        <label for="vehicle-late">Gross (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="tare" placeholder="Tare">
+                                        <label for="tare">Tare (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="net" placeholder="Net">
+                                        <label for="vehicle-late">Net (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="storage-area">
+                                            <option selected>Select a storage</option>
+                                            <option value="1">Storage One</option>
+                                            <option value="2">Storage Two</option>
+                                            <option value="3">Storage Three</option>
+                                        </select>
+                                        <label for="select-farmer">Storage Area</label>
+                                    </div>
+
+                                    <div id="btn-group">
+                                        <button type="button" class="btn btn-primary save-btn">Save</button>
+
+                                        <button type="button" class="btn btn-primary submit-btn">Submit</button>
+                                    </div>
+                                </section>
                             </div>
+
+                            <!-- Estate -->
                             <div class="tab-content" id="tab-content-estate">
-                                <div class="mdc-layout-grid__cell--span-12">
-                                    <div class="buy-input mdc-card mdc-car">
-                                        <div class="buy_section-form row">
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Date:</label>
-                                                <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Estate:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                                <option value="Regular" selected></option>
-                                                                <option value="VIP"></option>
-                                                            </select>
-
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Employee:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                                <option value="Regular" selected></option>
-                                                                <option value="VIP"></option>
-                                                            </select>
-
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Collection #:</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-
-
-                                            <h5 class="weightDetail">--- Enter Weight Details ---- </h5>
-
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Gross (KG):</label>
-                                                <div style="position:relative;display:inline-block;">
-
-                                                    <input type="text" maxlength="100">
-                                                    <div class="camera-bg"></div>
-                                                </div>
-
-                                            </div>
-
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Tare (KG):</label>
-                                                <div style="position:relative;display:inline-block;">
-
-                                                    <input type="text" maxlength="100">
-                                                    <div class="camera-bg"></div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Net (KG):</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Storage Area:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                                <option value="Regular" selected></option>
-                                                                <option value="VIP"></option>
-                                                            </select>
-
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="padding">
-                                                <button type="button" class="buy-cancel-button">Save</button>
-                                                <button type="button" class="Buy-submit-button">Submit</button>
-                                            </div>
-                                        </div>
-
-                                    </div>
-                                    <button type="button" class="pending">View PENDING and SUBMITTED Entries</button>
-
-                                </div>
-
+                                <h3>Estate</h3>
                             </div>
+
+                            <!-- Shipment -->
                             <div class="tab-content" id="tab-content-shipment">
-                                <div class="mdc-layout-grid__cell--span-12">
-                                    <div class="buy-input mdc-card mdc-car mdc-ca">
-                                        <div class="buy_section-form row">
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Date:</label>
-                                                <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Shipment #:</label>
-
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Vehicle Plate:</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Driver #:</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Container #:</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">NRI Seal #:</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Lot:</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Departure Time:</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-                                            <h5 class="weightDetail">--- Enter Weight Details ---- </h5>
-
-
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
-
-
-                                            </tr>
-                                            <tr>
-
-
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-
-
-                                            </tr>
-                                            <tr class="table-color">
-
-
-                                                <td></td>
-                                                <td></td>
-                                                <td></td>
-
-                                            </tr>
-
-                                            </tbody>
-                                            </table>
-
-                                        </div>
-
-                                        <div class="buy-input mdc-card mdc-w">
-                                            <div class="buy_section-form row">
-                                                <h5>ADD TASK</h5>
-                                                <div class="col-lg-4 col-md-6 form-group ">
-                                                    <label style="font-size: 15px; ">Task Name:</label>
-                                                    <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                    <div class="validate "></div>
-                                                </div>
-
-                                                <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                    <label style="font-size: 15px; ">Crate (KG):</label>
-                                                    <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                    <div class="validate "></div>
-                                                </div>
-                                                <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                    <label style="font-size: 15px; ">Destination:</label>
-
-                                                    <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                            <option value="Regular" selected></option>
-                                                            <option value="VIP"></option>
-                                                        </select>
-
-                                                    <div class="validate "></div>
-                                                </div>
-
-                                                <div class="padding">
-
-                                                    <button type="button" class="button">Submit</button>
-                                                </div>
-                                            </div>
-
-                                        </div>
-                                        <button type="button" class="pendings">View PENDING and SUBMITTED Entries</button>
-                                    </div>
+                                <h3>Shipment</h3>
+                            </div>
+                        </div>
                     </section>
 
                     <!-- My tasks section -->
-                    <section id="my-tasks-section" style="display: block;">
+                    <section id="my-tasks-section" style="display: bloc;">
                         <nav id="my-tasks-section-tab">
                             <div class="tab-head" id="tab-head-task-list">Task List</div>
                             <div class="tab-head" id="tab-head-completed">Completed</div>
@@ -1145,37 +934,37 @@
             </footer>
 
             </div>
-            </div>
+        </div>
 
-            <!-- plugins:js -->
-            <script src="assets/vendors/js/vendor.bundle.base.js"></script>
-            <!-- endinject -->
-            <!-- Plugin js for this page-->
-            <script src="assets/vendors/chartjs/Chart.min.js"></script>
-            <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
-            <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-            <!-- End plugin js for this page-->
-            <!-- inject:js -->
-            <script src="assets/js/material.js"></script>
-            <script src="assets/js/misc.js"></script>
-            <!-- endinject -->
-            <!-- Custom js for this page-->
-            <script src="assets/js/dashboard.js"></script>
-            <!-- End custom js for this page-->
+        <!-- plugins:js -->
+        <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+        <!-- endinject -->
+        <!-- Plugin js for this page-->
+        <script src="assets/vendors/chartjs/Chart.min.js"></script>
+        <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+        <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+        <!-- End plugin js for this page-->
+        <!-- inject:js -->
+        <script src="assets/js/material.js"></script>
+        <script src="assets/js/misc.js"></script>
+        <!-- endinject -->
+        <!-- Custom js for this page-->
+        <script src="assets/js/dashboard.js"></script>
+        <!-- End custom js for this page-->
 
-            <script src="assets/js/bootstrap.min.js"></script>
-            <!-- <script src="assets/js/mdb.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <!-- <script src="assets/js/mdb.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap5.min.js"></script>
 
         <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script> -->
 
-            <script src="assets/js/sweet-alert.js"></script>
-            <script src="assets/js/custom.js"></script>
+        <script src="assets/js/sweet-alert.js"></script>
+        <script src="assets/js/custom.js"></script>
 
-            <script src="cordova.js"></script>
-            <script src="js/index.js"></script>
+        <script src="cordova.js"></script>
+        <script src="js/index.js"></script>
 </body>
 
 </html>

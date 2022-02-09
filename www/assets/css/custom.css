@@ -348,7 +348,7 @@ footer {
 }
 
 .mdc-card {
-    height: 42vh;
+    height: 46vh;
     border-radius: 15px;
 }
 
@@ -385,7 +385,7 @@ footer {
 }
 
 .raw-latex {
-    height: 70vh !important;
+    height: 75vh !important;
 }
 
 .buy_section-form {
@@ -558,6 +558,32 @@ input:checked+.slider:before {
 
 #tab-content-estate,
 #tab-content-shipment {
+    display: none;
+}
+
+
+/* buy section style */
+
+#buying-section-tab {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#buying-section-tab .tab-head {
+    text-align: center;
+    padding: 8px 0px;
+    background: #675C2F;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#buying-section-tab #tab-head-task-list {
+    background: #bcb27b;
+    color: #000;
+}
+
+#tab-content-completed {
     display: none;
 }
 

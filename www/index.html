@@ -210,566 +210,217 @@
                     </section>
 
                     <!-- Buy section -->
+
                     <section id="buy-section" style="display: bloc;">
-                        <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <button class="cuplumps  active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Cuplumps</button>
-                                <button class=" cuplumps2 " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> Raw Latex</button>
-
-                            </div>
+                        <nav id="my-tasks-section-tab">
+                            <div class="tab-head" id="tab-head-task-list">Cuplumps</div>
+                            <div class="tab-head" id="tab-head-completed">Raw Latex</div>
                         </nav>
-
-                        <!--cuplumps tab-->
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                <div class="mdc-layout-grid__cell--span-12">
-                                    <div class="buy-input mdc-card">
-                                        <div class="buy_section-form row">
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Date:</label>
-                                                <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Farmer:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                                <option value="Regular" selected></option>
-                                                                <option value="VIP"></option>
-                                                            </select>
-
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Enter Weight (KG):</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="flote-button">
-                                                <button type="button" class="button">Buy</button>
-                                            </div>
+                        <div id="my-tasks-tab-section-content">
+                            <div class="tab-content" id="tab-content-task-list">
+                                <div class="buy-input mdc-card">
+                                    <div class="buy_section-form row">
+                                        <div class="col-lg-4 col-md-6 form-group ">
+                                            <label style="font-size: 15px; ">Date:</label>
+                                            <input type="date" name="date" class="form-control" id="date" placeholder="">
+                                            <div class="validate "></div>
+                                        </div>
+                    
+                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                            <label style="font-size: 15px; ">Select Farmer:</label>
+                    
+                                            <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
+                                                            <option value="Regular" selected></option>
+                                                            <option value="VIP"></option>
+                                                        </select>
+                    
+                                            <div class="validate "></div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                            <label style="font-size: 15px; ">Enter Weight (KG):</label>
+                                            <input type="text" class="form-control " name="weight" id="weight" placeholder="">
+                                            <div class="validate "></div>
+                                        </div>
+                    
+                                        <div class="flote-button">
+                                            <button type="button" class="button">Buy</button>
                                         </div>
                                     </div>
                                 </div>
+                                  <div class="buy-section-table col-lg-12">
+                                <div class="table-responsive">
+                                    <h5>View Buys</h5>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+
+                                                <th>Farmer</th>
+                                                <th>Weight (KG)</th>
+                                                <th>Date</th>
+
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+
+                                                <td>Paye(32232)</td>
+                                                <td>250 KG</td>
+                                                <td>02-09-22</td>
+
+                                            </tr>
+                                            <tr class="table-color">
 
 
-                                <div class="buy-section-table col-lg-12">
-                                    <div class="table-responsive">
-                                        <h5>View Buys</h5>
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
+                                                <td>Paye(32232)</td>
+                                                <td>250 KG</td>
+                                                <td>02-09-22</td>
 
-                                                    <th>Farmer</th>
-                                                    <th>Weight (KG)</th>
-                                                    <th>Date</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-
-                                                    <td>Paye(32232)</td>
-                                                    <td>250 KG</td>
-                                                    <td>02-09-22</td>
-
-                                                </tr>
-                                                <tr class="table-color">
+                                            </tr>
+                                            <tr>
 
 
-                                                    <td>Paye(32232)</td>
-                                                    <td>250 KG</td>
-                                                    <td>02-09-22</td>
+                                                <td>Paye(32232)</td>
+                                                <td>250 KG</td>
+                                                <td>02-09-22</td>
 
-                                                </tr>
-                                                <tr>
-
-
-                                                    <td>Paye(32232)</td>
-                                                    <td>250 KG</td>
-                                                    <td>02-09-22</td>
-
-                                                </tr>
-                                                <tr class="table-color">
+                                            </tr>
+                                            <tr class="table-color">
 
 
-                                                    <td>Paye(32232)</td>
-                                                    <td>250 KG</td>
-                                                    <td>02-09-22</td>
-                                                </tr>
+                                                <td>Paye(32232)</td>
+                                                <td>250 KG</td>
+                                                <td>02-09-22</td>
+                                            </tr>
 
-                                            </tbody>
-                                        </table>
-                                    </div>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
-                            <!--Raw latex tab-->
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                <div class="mdc-layout-grid__cell--span-12">
-                                    <div class="raw-latex buy-input mdc-card">
-                                        <div class="buy_section-form row">
-
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label class="label" style="font-size: 15px; ">Date:</label>
-                                                <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Farmer:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                                <option value="Regular" selected></option>
-                                                                <option value="VIP"></option>
-                                                            </select>
-
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Enter Volume (L):</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Calculate DRC:</label>
-                                                <label class="switch">
-                                                        <input type="checkbox" checked>
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Latexometer:</label>
-                                                <input type="text" name="Latexometer" class="form-control" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Dry Rubber (KG):</label>
-                                                <input type="text" name="Latexometer" class="form-control" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="flote-button">
-                                                <button type="button" class="button">Buy</button>
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-
-                                </div>
-
-                                <div class="buy-section-table col-lg-12">
-                                    <div class="table-responsive">
-                                        <h5>View Raw Latex</h5>
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-
-                                                    <th>Farmer</th>
-                                                    <th>Gang</th>
-                                                    <th>Volume(L)</th>
-                                                    <th>Date</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-
-                                                </tr>
-                                                <tr class="table-color">
-
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-
-                                                </tr>
-                                                <tr>
-
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-
-                                                </tr>
-                                                <tr class="table-color">
-
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
-
-                    </section>
-
-                    <!-- Collect section -->
-                    <section id="collect-section" style="display: bloc;">
-
-                        <div class="container">
-
-                            <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Please enter tapper weight (KG):</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="/form/submit" method="post">
-                                                <div>
-                                                    <label class="modal-label" for="name">Dolo(11233):</label>
-                                                    <input type="phonenumber" id="name" placeholder="124.00" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="age">Johnson(12300):</label>
-                                                    <input type="text" id="age" name="age" placeholder="65.60" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tokpah(45678):</label>
-                                                    <input type="text" id="country" name="country" placeholder="82.80" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Yah(14230):</label>
-                                                    <input type="text" id="country" name="country" placeholder="110.40" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-
-
-
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="cancel" data-dismiss="modal">Cancel</button>
-                                            <button type="button" class="button">Enter</button></label>
-                                        </div>
+                        <!--Raw latex-->
+                        <div class="tab-content" id="tab-content-completed">
+                            <div class="raw-latex buy-input mdc-card">
+                                <div class="buy_section-form row">
+                
+                                    <div class="col-lg-4 col-md-6 form-group ">
+                                        <label class="label" style="font-size: 15px; ">Date:</label>
+                                        <input type="date" name="date" class="form-control" id="date" placeholder="">
+                                        <div class="validate "></div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <!-- Modal 2 -->
-                            <div class="modal fade" id="latex-collect-weight" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Please enter tapper weight (KG):</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <form action="/form/submit" method="post">
-                                                <div>
-                                                    <label class="modal-label" for="name">Paye(11233):</label>
-                                                    <input type="phonenumber" id="name" placeholder="124.00" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="age">Yeaney(12300):</label>
-                                                    <input type="text" id="age" name="age" placeholder="65.60" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Dennis(45678):</label>
-                                                    <input type="text" id="country" name="country" placeholder="82.80" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Kollie(14230):</label>
-                                                    <input type="text" id="country" name="country" placeholder="110.40" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-                                                <div>
-                                                    <label class="modal-label" for="country">Tapper Name(00000)</label>
-                                                    <input type="text" id="country" name="country" placeholder="" />
-                                                </div>
-
-
-
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="cancel" data-dismiss="modal">Cancel</button>
-                                            <button type="button" class="button">Enter</button></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="cuplumps  active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Cuplumps</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="cuplumps2 " id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Raw Latex</button>
-                                </li>
-
-                            </ul>
-                            <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
-                                    <div class="buy-input mdc-card">
-                                        <div class="buy_section-form row">
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Date:</label>
-                                                <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Farmer:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
+                
+                                    <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                        <label style="font-size: 15px; ">Select Farmer:</label>
+                
+                                        <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
                                                         <option value="Regular" selected></option>
                                                         <option value="VIP"></option>
                                                     </select>
-
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Enter Weight (KG): <button type="button" class="weight-button" id="latex-weightButton" data-toggle="modal" data-target="#exampleModal" >Enter</button></label>
-
-                                            </div>
-
-                                        </div>
-
+                
+                                        <div class="validate "></div>
                                     </div>
-                                    <div class="buy-section-table col-lg-12">
-                                        <div class="table-responsive">
-                                            <h5>View Collections</h5>
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-
-                                                        <th>Tapper</th>
-                                                        <th>Gang</th>
-                                                        <th>Weight (KG)</th>
-                                                        <th>Date</th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-
-                                                    </tr>
-                                                    <tr class="table-color">
-
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-
-                                                    </tr>
-                                                    <tr>
-
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-
-                                                    </tr>
-                                                    <tr class="table-color">
-
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-
-                                        </div>
+                                    <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                        <label style="font-size: 15px; ">Enter Volume (L):</label>
+                                        <input type="text" class="form-control " name="weight" id="weight" placeholder="">
+                                        <div class="validate "></div>
                                     </div>
-
-
+                                    <div class="col-lg-4 col-md-6 form-group ">
+                                        <label style="font-size: 15px; ">Calculate DRC:</label>
+                                        <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                        <div class="validate "></div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-6 form-group ">
+                                        <label style="font-size: 15px; ">Latexometer:</label>
+                                        <input type="text" name="Latexometer" class="form-control" placeholder="">
+                                        <div class="validate "></div>
+                                    </div>
+                
+                                    <div class="col-lg-4 col-md-6 form-group ">
+                                        <label style="font-size: 15px; ">Dry Rubber (KG):</label>
+                                        <input type="text" name="Latexometer" class="form-control" placeholder="">
+                                        <div class="validate "></div>
+                                    </div>
+                
+                                    <div class="flote-button">
+                                        <button type="button" class="button">Buy</button>
+                                    </div>
+                
                                 </div>
-                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                    <div class="buy-input mdc-card">
-                                        <div class="buy_section-form row">
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Date:</label>
-                                                <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Farmer:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                    <option value="Regular" selected></option>
-                                                    <option value="VIP"></option>
-                                                </select>
-
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Enter Weight (KG): <button type="button" class="weight-button" id="enterWeightButton" data-toggle="modal" data-target="#latex-collect-weight" >Enter</button></label>
-
-                                            </div>
-
-
-
-
-                                        </div>
-
-
-                                    </div>
-                                    <div class="buy-section-table col-lg-12">
-                                        <div class="table-responsive">
-                                            <h5>View Raw Latex Collection</h5>
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-
-                                                        <th>Tapper</th>
-                                                        <th>Gang</th>
-                                                        <th>Weight (KG)</th>
-                                                        <th>Date</th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-
-                                                    </tr>
-                                                    <tr class="table-color">
-
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-
-                                                    </tr>
-                                                    <tr>
-
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-
-                                                    </tr>
-                                                    <tr class="table-color">
-
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-
-                                        </div>
-                                    </div>
-
-                                </div>
-
-
+                
                             </div>
-
+                            <div class="buy-section-table col-lg-12">
+                                <div class="table-responsive">
+                                    <h5>View Raw Latex</h5>
+                                    <table class="table table-bordered">
+                                        <thead>
+                                            <tr>
+                    
+                                                <th>Farmer</th>
+                                                <th>Gang</th>
+                                                <th>Volume(L)</th>
+                                                <th>Date</th>
+                    
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                    
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                    
+                                            </tr>
+                                            <tr class="table-color">
+                    
+                    
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                    
+                                            </tr>
+                                            <tr>
+                    
+                    
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                    
+                                            </tr>
+                                            <tr class="table-color">
+                    
+                    
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+                                            </tr>
+                    
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>   
                         </div>
                     </section>
+              
 
+                  
+
+                    <!-- Collect section -->
+                    
+                    <section  id="collect-section" style="display: bloc;">
+                      <nav id="my-tasks-section-tab">
+                            <div class="tab-head" id="tab-head-task-list">Cuplumps</div>
+                            <div class="tab-head" id="tab-head-completed">Raw Latex</div>
+                        </nav>
+                       
+                    </section>
+              
                     <!-- Weigh section -->
                     <section id="weigh-section" style="display: none;">
                         <nav id="weigh-section-tab">

@@ -437,12 +437,24 @@ footer {
 }
 
 .footer-col-icon {
-    font-size: 24px;
+    font-size: 20px;
     color: #1A1110;
 }
 
 .footer-col-text {
     color: #000;
+}
+
+.home_footer {
+    margin-left: 13px;
+}
+
+.sync_footer {
+    margin-left: 35px;
+}
+
+.announcement_footer {
+    margin-left: 30px;
 }
 
 .switch {

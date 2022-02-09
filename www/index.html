@@ -1054,41 +1054,75 @@
                         <div id="my-tasks-tab-section-content">
                             <!-- Task List section -->
                             <div class="tab-content" id="tab-content-task-list">
-                                <h5>ADD TASK</h5>
 
+                                <section>
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col" style="text-align: center;">Title</th>
+                                                <th scope="col" colSpan="2" style="text-align: center;">Assign To</th>
+                                                <th scope="col">Due Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td>Clear farm for planting</td>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td>Clear farm for planting</td>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td>Clear farm for planting</td>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
 
-                                <div class="form-floating mb-2">
-                                    <input type="text" class="form-control" id="task-name" placeholder="Task Name">
-                                    <label for="task-name">Task Name</label>
-                                </div>
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 6px 10px 60px 10px; border-radius: 5px; margin-top: 50px">
+                                    <h5 style="text-align: center;">ADD TASK</h5>
 
-                                <div class="form-floating mb-2">
-                                    <textarea style="height: 100px" class="form-control" id="task-details" cols="34" placeholder="Please enter the details for this task"></textarea>
-                                    <label for="task-details">Details</label>
-                                </div>
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="task-name" placeholder="Task Name">
+                                        <label for="task-name">Task Name</label>
+                                    </div>
 
-                                <div class="form-floating mb-2">
-                                    <input type="date" class="form-control" id="due-date" placeholder="Due Date">
-                                    <label for="due-date">Due Date</label>
-                                </div>
+                                    <div class="form-floating mb-2">
+                                        <textarea style="height: 100px" class="form-control" id="task-details" cols="34" placeholder="Please enter the details for this task"></textarea>
+                                        <label for="task-details">Details</label>
+                                    </div>
 
-                                <div class="form-floating mb-3">
-                                    <select class="form-select" id="assign-to">
-                                        <option selected>Select a staff</option>
-                                        <option value="1">Staff One</option>
-                                        <option value="2">Staff Two</option>
-                                        <option value="3">Staff Three</option>
-                                    </select>
-                                    <label for="assign-to">Assign To</label>
-                                </div>
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="due-date" placeholder="Due Date">
+                                        <label for="due-date">Due Date</label>
+                                    </div>
 
-                                <button type="button" class="btn btn-primary submit-btn">Submit</button>
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="assign-to">
+                                            <option selected>Select a staff</option>
+                                            <option value="1">Staff One</option>
+                                            <option value="2">Staff Two</option>
+                                            <option value="3">Staff Three</option>
+                                        </select>
+                                        <label for="assign-to">Assign To</label>
+                                    </div>
+
+                                    <button type="button" class="btn btn-primary submit-btn">Submit</button>
+                                </section>
                             </div>
+
 
                             <!-- Completed task section -->
-                            <div class="tab-content" id="tab-content-completed">
-
-                            </div>
+                            <div class="tab-content" id="tab-content-completed"></div>
                         </div>
                     </section>
                 </main>

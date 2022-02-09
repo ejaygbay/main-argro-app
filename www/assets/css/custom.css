@@ -367,6 +367,11 @@ footer {
     border-radius: 15px;
 }
 
+.mdc-w {
+    height: 76vh;
+    border-radius: 15px;
+}
+
 .buy-input {
     margin-top: 20px;
     background-color: #bcb27b70;

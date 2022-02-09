@@ -1052,61 +1052,87 @@
                         </nav>
                         <div id="my-tasks-tab-section-content">
                             <div class="tab-content" id="tab-content-task-list">
-                                <div class="mdc-layout-grid__cell--span-12">
-                                    <div class="buy-input mdc-card mdc-car">
+                                <div class="buy-section-table col-lg-12">
+                                    <div class="table-responsive">
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+
+                                                    <th>TITLE</th>
+                                                    <th>ASSIGN TO</th>
+                                                    <th>DUE DATE</th>
+                                                    
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    
+
+                                                </tr>
+                                                <tr class="table-color">
+
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                   
+
+                                                </tr>
+                                                <tr>
+
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                 
+
+                                                </tr>
+                                                <tr class="table-color">
+
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                  
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+
+                                     <div class="buy-input mdc-card mdc-w">
                                         <div class="buy_section-form row">
+                                            <h5>ADD TASK</h5>
                                             <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Date:</label>
+                                                <label style="font-size: 15px; ">Task Name:</label>
+                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
+                                                <div class="validate "></div>
+                                            </div>
+
+                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                                <label style="font-size: 15px; ">Details:</label>
+
+                                                <textarea id="w3review" name="w3review" rows="4" cols="30">
+                                                  
+                                                    </textarea>
+
+                                                <div class="validate "></div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                                <label style="font-size: 15px; ">Due Date:</label>
                                                 <input type="date" name="date" class="form-control" id="date" placeholder="">
                                                 <div class="validate "></div>
                                             </div>
 
+       
                                             <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Farmer:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                                <option value="Regular" selected></option>
-                                                                <option value="VIP"></option>
-                                                            </select>
-
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Vehicle Plate:</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <h5 class="weightDetail">--- Enter Weight Details ---- </h5>
-
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Gross (KG):</label>
-                                                <div style="position:relative;display:inline-block;">
-
-                                                    <input type="text" maxlength="100">
-                                                    <div class="camera-bg"></div>
-                                                </div>
-
-                                            </div>
-
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Tare (KG):</label>
-                                                <div style="position:relative;display:inline-block;">
-
-                                                    <input type="text" maxlength="100">
-                                                    <div class="camera-bg"></div>
-                                                </div>
-
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Net (KG):</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Storage Area:</label>
+                                                <label style="font-size: 15px; ">Assign To:</label>
 
                                                 <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
                                                                 <option value="Regular" selected></option>
@@ -1117,20 +1143,16 @@
                                             </div>
 
                                             <div class="padding">
-                                                <button type="button" class="cancel">Save</button>
+                     
                                                 <button type="button" class="button">Submit</button>
                                             </div>
                                         </div>
 
                                     </div>
-                                    <button type="button" class="pending">View PENDING and SUBMITTED Entries</button>
-
-                                </div>
-                                </label>
 
                             </div>
                             <div class="tab-content" id="tab-content-completed">
-                                <h1>Completed</h1>
+                                
                             </div>
                         </div>
                     </section>

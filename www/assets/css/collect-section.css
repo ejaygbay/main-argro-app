@@ -1,0 +1,24 @@
+/* Collect section style */
+
+#weighs-section-tab {
+    display: grid;
+    grid-template-columns: 50% 50% repeat(auto-fill, 35%);
+}
+
+#weighs-section-tab .tab-head {
+    text-align: center;
+    padding: 8px 0px;
+    background: #675C2F;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#weighs-section-tab #tab-head-buy {
+    background: #bcb27b;
+    color: #000;
+}
+
+#tab-content-estate {
+    display: none;
+}

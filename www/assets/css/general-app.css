@@ -1,0 +1,143 @@
+/* general styles */
+
+* {
+    box-sizing: border-box;
+}
+
+#tab-content-task-list .submit-btn {
+    background: #bcb27b;
+    color: #000;
+    font-weight: bold;
+    float: right;
+    font-size: 1.1em;
+    padding: 8px 50px;
+}
+
+#sync-section,
+#announcement-section,
+#menu-selection-next-btn,
+#sidebar-cover,
+#sidebar,
+#buy-section,
+#collect-section,
+#weigh-section,
+#my-tasks-section {
+    display: none;
+}
+
+.top-bar {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+#hamburger-icon {
+    font-size: 1.8em;
+    justify-self: start;
+}
+
+.logo {
+    justify-self: center;
+    height: 3em;
+}
+
+#wifi-icon {
+    font-size: 1.4em;
+    justify-self: end;
+}
+
+.mdc-drawer__header {
+    display: grid;
+    justify-content: center;
+}
+
+.brand-logo-text {
+    color: #675C2F;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: -26px;
+    font-weight: bold;
+}
+
+.mdc-list-item {
+    background: rgb(188, 178, 123);
+    margin: 0px 10px 12px 10px !important;
+    border-radius: 8px !important;
+}
+
+.mdc-list-item a {
+    color: #000 !important;
+    font-size: 1.1em !important;
+}
+
+#sidebar-cover {
+    background: whitesmoke;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    opacity: 0.5;
+}
+
+#sidebar {
+    background: whitesmoke;
+    height: 100vh;
+    width: 76%;
+    position: absolute;
+    z-index: 2;
+}
+
+.login-user {
+    text-align: center;
+    padding-bottom: 26px;
+}
+
+header {
+    max-height: 10vh;
+    top: 0;
+}
+
+.page-wrapper {
+    min-height: 80vh;
+    max-height: 80vh;
+    overflow: scroll;
+}
+
+footer {
+    max-height: 10vh;
+}
+
+footer {
+    background-color: #675C2F;
+    height: 10vh;
+    display: grid;
+    grid-template-columns: 30% 30% 40%;
+    justify-content: space-around;
+    padding-top: 10px;
+}
+
+.footer-col {
+    justify-self: start;
+    display: grid;
+    justify-items: center;
+}
+
+.footer-col-icon {
+    font-size: 20px;
+    color: #1A1110;
+}
+
+.footer-col-text {
+    color: #000;
+}
+
+.home_footer {
+    margin-left: 13px;
+}
+
+.sync_footer {
+    margin-left: 35px;
+}
+
+.announcement_footer {
+    margin-left: 30px;
+}

@@ -1,8 +1,4 @@
 let current_section = '#home-section';
-
-let current_weigh_sectio = "#tab-content-buy";
-let current_weigh_tab_hea = "#tab-head-bu";
-
 let current_weigh_section = "#tab-content-buy";
 let current_weigh_tab_head = "#tab-head-buy";
 let current_my_tasks_section = "#tab-content-task-list";
@@ -67,27 +63,6 @@ document.querySelector("#announcement-icon").addEventListener('click', () => {
     current_section = "#announcement-section";
     showElement(current_section);
 })
-
-// collect
-document.querySelector("#tab-head-bu").addEventListener('click', (e) => {
-    hideElement(current_weigh_sectio);
-    setAsInactive(current_weigh_tab_hea);
-    current_weigh_sectio = "#tab-content-bu";
-    current_weigh_tab_hea = "#tab-head-bu";
-    showElement(current_weigh_sectio);
-    setAsActive(current_weigh_tab_hea);
-})
-
-document.querySelector("#tab-head-estat").addEventListener('click', () => {
-    hideElement(current_weigh_sectio);
-    setAsInactive(current_weigh_tab_hea);
-    current_weigh_sectio = "#tab-content-estat";
-    current_weigh_tab_hea = "#tab-head-estat";
-    showElement(current_weigh_sectio);
-    setAsActive(current_weigh_tab_hea);
-})
-
-
 
 /**
  * Weigh section tab event listener

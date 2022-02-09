@@ -26,7 +26,7 @@
 }
 
 .weightDetail {
-    margin-top: 5px;
+    margin-top: 7px;
     text-align: center;
 }
 
@@ -48,6 +48,30 @@ input {
     height: 20px;
     background: url(https://i.stack.imgur.com/5Vv2z.png) no-repeat;
     background-position: 0 0;
+}
+
+.buy-cancel-button {
+    background-color: rgb(188, 178, 123);
+    border: none;
+    color: white;
+    padding: 5px 45px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.Buy-submit-button {
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 5px 53px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 10px;
 }
 
 .cancel {
@@ -110,6 +134,19 @@ input {
     font-size: 16px;
     cursor: pointer;
     border-radius: 10px;
+}
+
+.pending_button {
+    background-color: #675C2F;
+    border: none;
+    color: white;
+    padding: 2px 50px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
 .pending {
@@ -320,17 +357,27 @@ footer {
 }
 
 .mdc-card {
-    height: 42vh;
-    border-radius: 15px;
-}
-
-.mdc-car {
-    height: 105vh;
+    height: 46vh;
     border-radius: 15px;
 }
 
 .mdc-ca {
-    height: 165vh;
+    height: 108vh;
+    border-radius: 15px;
+}
+
+.mdc-car {
+    height: 120vh;
+    border-radius: 15px;
+}
+
+.mdc-c {
+    height: 175vh;
+    border-radius: 15px;
+}
+
+.mdc-w {
+    height: 76vh;
     border-radius: 15px;
 }
 
@@ -347,7 +394,7 @@ footer {
 }
 
 .raw-latex {
-    height: 70vh !important;
+    height: 75vh !important;
 }
 
 .buy_section-form {
@@ -399,12 +446,24 @@ footer {
 }
 
 .footer-col-icon {
-    font-size: 24px;
+    font-size: 20px;
     color: #1A1110;
 }
 
 .footer-col-text {
     color: #000;
+}
+
+.home_footer {
+    margin-left: 13px;
+}
+
+.sync_footer {
+    margin-left: 35px;
+}
+
+.announcement_footer {
+    margin-left: 30px;
 }
 
 .switch {
@@ -487,6 +546,36 @@ input:checked+.slider:before {
 
 /* Weigh section style */
 
+#weig-section-tab {
+    display: grid;
+    grid-template-columns: 30% repeat(auto-fill, 35%);
+}
+
+#weig-section-tab .tab-head {
+    text-align: center;
+    padding: 8px 0px;
+    background: #675C2F;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#weig-section-tab #tab-head-buy {
+    background: #bcb27b;
+    color: #000;
+}
+
+#tab-content-estate,
+#tab-content-shipment {
+    display: none;
+}
+
+
+/*  */
+
+
+/* Weigh section style */
+
 #weigh-section-tab {
     display: grid;
     grid-template-columns: 30% repeat(auto-fill, 35%);
@@ -512,7 +601,59 @@ input:checked+.slider:before {
 }
 
 
-/* Weigh section style */
+/* collect section style */
+
+#weighs-section-tab {
+    display: grid;
+    grid-template-columns: 50% 50% repeat(auto-fill, 35%);
+}
+
+#weighs-section-tab .tab-head {
+    text-align: center;
+    padding: 8px 0px;
+    background: #675C2F;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#weighs-section-tab #tab-head-buy {
+    background: #bcb27b;
+    color: #000;
+}
+
+#tab-content-estate {
+    display: none;
+}
+
+
+/* buy section style */
+
+#buying-section-tab {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+#buying-section-tab .tab-head {
+    text-align: center;
+    padding: 8px 0px;
+    background: #675C2F;
+    color: #fff;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+
+#buying-section-tab #tab-head-task-list {
+    background: #bcb27b;
+    color: #000;
+}
+
+#tab-content-completed {
+    display: none;
+}
+
+
+/* task section style */
 
 #my-tasks-section-tab {
     display: grid;

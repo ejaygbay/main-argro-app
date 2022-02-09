@@ -130,11 +130,12 @@
                                 <div class="col card-text">BUY</div>
                             </div>
                             <div id="collect-card" class="table-num-card-item">
-                                <i class="fas card-icon">&#xf0d1;</i>
+                                <i class="fa card-icon">&#xf017;</i>
                                 <div class="col card-text">COLLECT</div>
                             </div>
                             <div id="weigh-card" class="table-num-card-item">
-                                <i class="fa card-icon">&#xf017;</i>
+                                <i class="fas card-icon">&#xf0d1;</i>
+
                                 <div class="col card-text">WEIGH BRIDGE</div>
                             </div>
                             <div id="my-tasks-card" class="table-num-card-item">
@@ -209,51 +210,43 @@
                     </section>
 
                     <!-- Buy section -->
+
                     <section id="buy-section" style="display: bloc;">
-                        <nav>
-                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                                <button class="cuplumps  active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Cuplumps</button>
-                                <button class=" cuplumps2 " id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false"> Raw Latex</button>
-
-                            </div>
+                        <nav id="my-tasks-section-tab">
+                            <div class="tab-head" id="tab-head-task-list">Cuplumps</div>
+                            <div class="tab-head" id="tab-head-completed">Raw Latex</div>
                         </nav>
+                        <div id="my-tasks-tab-section-content">
+                            <div class="tab-content" id="tab-content-task-list">
+                                <div class="buy-input mdc-card">
+                                    <div class="buy_section-form row">
+                                        <div class="col-lg-4 col-md-6 form-group ">
+                                            <label style="font-size: 15px; ">Date:</label>
+                                            <input type="date" name="date" class="form-control" id="date" placeholder="">
+                                            <div class="validate "></div>
+                                        </div>
 
-                        <!--cuplumps tab-->
-                        <div class="tab-content" id="nav-tabContent">
-                            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
-                                <div class="mdc-layout-grid__cell--span-12">
-                                    <div class="buy-input mdc-card">
-                                        <div class="buy_section-form row">
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Date:</label>
-                                                <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
+                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                            <label style="font-size: 15px; ">Select Farmer:</label>
 
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Farmer:</label>
+                                            <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
+                                                            <option value="Regular" selected></option>
+                                                            <option value="VIP"></option>
+                                                        </select>
 
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                                <option value="Regular" selected></option>
-                                                                <option value="VIP"></option>
-                                                            </select>
+                                            <div class="validate "></div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                            <label style="font-size: 15px; ">Enter Weight (KG):</label>
+                                            <input type="text" class="form-control " name="weight" id="weight" placeholder="">
+                                            <div class="validate "></div>
+                                        </div>
 
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Enter Weight (KG):</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="flote-button">
-                                                <button type="button" class="button">Buy</button>
-                                            </div>
+                                        <div class="flote-button">
+                                            <button type="button" class="button">Buy</button>
                                         </div>
                                     </div>
                                 </div>
-
-
                                 <div class="buy-section-table col-lg-12">
                                     <div class="table-responsive">
                                         <h5>View Buys</h5>
@@ -303,64 +296,61 @@
                                         </table>
                                     </div>
                                 </div>
+
                             </div>
-                            <!--Raw latex tab-->
-                            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                <div class="mdc-layout-grid__cell--span-12">
-                                    <div class="raw-latex buy-input mdc-card">
-                                        <div class="buy_section-form row">
+                            <!--Raw latex-->
+                            <div class="tab-content" id="tab-content-completed">
+                                <div class="raw-latex buy-input mdc-card">
+                                    <div class="buy_section-form row">
 
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label class="label" style="font-size: 15px; ">Date:</label>
-                                                <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
+                                        <div class="col-lg-4 col-md-6 form-group ">
+                                            <label class="label" style="font-size: 15px; ">Date:</label>
+                                            <input type="date" name="date" class="form-control" id="date" placeholder="">
+                                            <div class="validate "></div>
+                                        </div>
 
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Farmer:</label>
+                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                            <label style="font-size: 15px; ">Select Farmer:</label>
 
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                                <option value="Regular" selected></option>
-                                                                <option value="VIP"></option>
-                                                            </select>
+                                            <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
+                                                        <option value="Regular" selected></option>
+                                                        <option value="VIP"></option>
+                                                    </select>
 
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Enter Volume (L):</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Calculate DRC:</label>
-                                                <label class="switch">
-                                                        <input type="checkbox" checked>
-                                                        <span class="slider round"></span>
-                                                    </label>
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Latexometer:</label>
-                                                <input type="text" name="Latexometer" class="form-control" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
+                                            <div class="validate "></div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                            <label style="font-size: 15px; ">Enter Volume (L):</label>
+                                            <input type="text" class="form-control " name="weight" id="weight" placeholder="">
+                                            <div class="validate "></div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 form-group ">
+                                            <label style="font-size: 15px; ">Calculate DRC:</label>
+                                            <label class="switch">
+                                                <input type="checkbox" checked>
+                                                <span class="slider round"></span>
+                                            </label>
+                                            <div class="validate "></div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 form-group ">
+                                            <label style="font-size: 15px; ">Latexometer:</label>
+                                            <input type="text" name="Latexometer" class="form-control" placeholder="">
+                                            <div class="validate "></div>
+                                        </div>
 
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Dry Rubber (KG):</label>
-                                                <input type="text" name="Latexometer" class="form-control" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
+                                        <div class="col-lg-4 col-md-6 form-group ">
+                                            <label style="font-size: 15px; ">Dry Rubber (KG):</label>
+                                            <input type="text" name="Latexometer" class="form-control" placeholder="">
+                                            <div class="validate "></div>
+                                        </div>
 
-                                            <div class="flote-button">
-                                                <button type="button" class="button">Buy</button>
-                                            </div>
-
+                                        <div class="flote-button">
+                                            <button type="button" class="button">Buy</button>
                                         </div>
 
                                     </div>
 
                                 </div>
-
                                 <div class="buy-section-table col-lg-12">
                                     <div class="table-responsive">
                                         <h5>View Raw Latex</h5>
@@ -416,15 +406,20 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
                     </section>
 
+
+
+
                     <!-- Collect section -->
+
                     <section id="collect-section" style="display: bloc;">
+                        <nav id="weighs-section-tab">
+                            <div class="tab-head" id="tab-head-buy">Cuplumps</div>
+                            <div class="tab-head" id="tab-head-estate">Raw Latex</div>
 
-                        <div class="container">
-
+                        </nav>
+                        <div id="weigh-tab-section-content">
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">
@@ -432,8 +427,8 @@
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Please enter tapper weight (KG):</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                                         </div>
                                         <div class="modal-body">
                                             <form action="/form/submit" method="post">
@@ -509,8 +504,8 @@
                                         <div class="modal-header">
                                             <h5 class="modal-title" id="exampleModalLabel">Please enter tapper weight (KG):</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                                         </div>
                                         <div class="modal-body">
                                             <form action="/form/submit" method="post">
@@ -578,18 +573,8 @@
                                     </div>
                                 </div>
                             </div>
-
-                            <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
-                                <li class="nav-item" role="presentation">
-                                    <button class="cuplumps  active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Cuplumps</button>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <button class="cuplumps2 " id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Raw Latex</button>
-                                </li>
-
-                            </ul>
-                            <div class="tab-content" id="pills-tabContent">
-                                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+                            <div class="tab-content" id="tab-content-buy">
+                                <div class="mdc-layout-grid__cell--span-12">
                                     <div class="buy-input mdc-card">
                                         <div class="buy_section-form row">
                                             <div class="col-lg-4 col-md-6 form-group ">
@@ -602,9 +587,9 @@
                                                 <label style="font-size: 15px; ">Select Farmer:</label>
 
                                                 <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                        <option value="Regular" selected></option>
-                                                        <option value="VIP"></option>
-                                                    </select>
+                                    <option value="Regular" selected></option>
+                                    <option value="VIP"></option>
+                                </select>
 
                                                 <div class="validate "></div>
                                             </div>
@@ -671,10 +656,12 @@
 
                                         </div>
                                     </div>
-
-
                                 </div>
-                                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                </label>
+
+                            </div>
+                            <div class="tab-content" id="tab-content-estate">
+                                <div class="mdc-layout-grid__cell--span-12">
                                     <div class="buy-input mdc-card">
                                         <div class="buy_section-form row">
                                             <div class="col-lg-4 col-md-6 form-group ">
@@ -687,9 +674,9 @@
                                                 <label style="font-size: 15px; ">Select Farmer:</label>
 
                                                 <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                    <option value="Regular" selected></option>
-                                                    <option value="VIP"></option>
-                                                </select>
+                                <option value="Regular" selected></option>
+                                <option value="VIP"></option>
+                            </select>
 
                                                 <div class="validate "></div>
                                             </div>
@@ -697,13 +684,7 @@
                                                 <label style="font-size: 15px; ">Enter Weight (KG): <button type="button" class="weight-button" id="enterWeightButton" data-toggle="modal" data-target="#latex-collect-weight" >Enter</button></label>
 
                                             </div>
-
-
-
-
                                         </div>
-
-
                                     </div>
                                     <div class="buy-section-table col-lg-12">
                                         <div class="table-responsive">
@@ -764,11 +745,7 @@
                                 </div>
 
 
-                            </div>
-
-                        </div>
                     </section>
-
                     <!-- Weigh section -->
                     <section id="weigh-section" style="display: none;">
                         <nav id="weigh-section-tab">
@@ -779,7 +756,7 @@
                         <div id="weigh-tab-section-content">
                             <div class="tab-content" id="tab-content-buy">
                                 <div class="mdc-layout-grid__cell--span-12">
-                                    <div class="buy-input mdc-card mdc-car">
+                                    <div class="buy-input mdc-card mdc-ca">
                                         <div class="buy_section-form row">
                                             <div class="col-lg-4 col-md-6 form-group ">
                                                 <label style="font-size: 15px; ">Date:</label>
@@ -843,13 +820,13 @@
                                             </div>
 
                                             <div class="padding">
-                                                <button type="button" class="cancel">Save</button>
-                                                <button type="button" class="button">Submit</button>
+                                                <button type="button" class="buy-cancel-button">Save</button>
+                                                <button type="button" class="Buy-submit-button">Submit</button>
                                             </div>
                                         </div>
 
                                     </div>
-                                    <button type="button" class="pending">View PENDING and SUBMITTED Entries</button>
+                                    <button type="button" class="pending_button">View PENDING and SUBMITTED Entries</button>
 
                                 </div>
                                 </label>
@@ -866,7 +843,7 @@
                                             </div>
 
                                             <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Farmer:</label>
+                                                <label style="font-size: 15px; ">Select Estate:</label>
 
                                                 <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
                                                                 <option value="Regular" selected></option>
@@ -876,10 +853,22 @@
                                                 <div class="validate "></div>
                                             </div>
                                             <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Vehicle Plate:</label>
+                                                <label style="font-size: 15px; ">Employee:</label>
+
+                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
+                                                                <option value="Regular" selected></option>
+                                                                <option value="VIP"></option>
+                                                            </select>
+
+                                                <div class="validate "></div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                                <label style="font-size: 15px; ">Collection #:</label>
                                                 <input type="text" class="form-control " name="weight" id="weight" placeholder="">
                                                 <div class="validate "></div>
                                             </div>
+
+
 
                                             <h5 class="weightDetail">--- Enter Weight Details ---- </h5>
 
@@ -921,8 +910,8 @@
                                             </div>
 
                                             <div class="padding">
-                                                <button type="button" class="cancel">Save</button>
-                                                <button type="button" class="button">Submit</button>
+                                                <button type="button" class="buy-cancel-button">Save</button>
+                                                <button type="button" class="Buy-submit-button">Submit</button>
                                             </div>
                                         </div>
 
@@ -982,52 +971,70 @@
                                             </div>
                                             <h5 class="weightDetail">--- Enter Weight Details ---- </h5>
 
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Gross (KG):</label>
-                                                <div style="position:relative;display:inline-block;">
 
-                                                    <input type="text" maxlength="100">
-                                                    <div class="camera-bg"></div>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+
+
+                                            </tr>
+                                            <tr>
+
+
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+
+
+                                            </tr>
+                                            <tr class="table-color">
+
+
+                                                <td></td>
+                                                <td></td>
+                                                <td></td>
+
+                                            </tr>
+
+                                            </tbody>
+                                            </table>
+
+                                        </div>
+
+                                        <div class="buy-input mdc-card mdc-w">
+                                            <div class="buy_section-form row">
+                                                <h5>ADD TASK</h5>
+                                                <div class="col-lg-4 col-md-6 form-group ">
+                                                    <label style="font-size: 15px; ">Task Name:</label>
+                                                    <input type="text" class="form-control " name="weight" id="weight" placeholder="">
+                                                    <div class="validate "></div>
                                                 </div>
 
-                                            </div>
-
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Tare (KG):</label>
-                                                <div style="position:relative;display:inline-block;">
-
-                                                    <input type="text" maxlength="100">
-                                                    <div class="camera-bg"></div>
+                                                <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                                    <label style="font-size: 15px; ">Crate (KG):</label>
+                                                    <input type="text" class="form-control " name="weight" id="weight" placeholder="">
+                                                    <div class="validate "></div>
                                                 </div>
+                                                <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                                    <label style="font-size: 15px; ">Destination:</label>
 
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Crate (KG):</label>
-                                                <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Destination:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
+                                                    <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
                                                             <option value="Regular" selected></option>
                                                             <option value="VIP"></option>
                                                         </select>
 
-                                                <div class="validate "></div>
+                                                    <div class="validate "></div>
+                                                </div>
+
+                                                <div class="padding">
+
+                                                    <button type="button" class="button">Submit</button>
+                                                </div>
                                             </div>
 
-                                            <div class="padding">
-                                                <button type="button" class="cancel">Save</button>
-                                                <button type="button" class="button">Submit</button>
-                                            </div>
                                         </div>
-
+                                        <button type="button" class="pendings">View PENDING and SUBMITTED Entries</button>
                                     </div>
-                                    <button type="button" class="pendings">View PENDING and SUBMITTED Entries</button>
-                                </div>
                     </section>
 
                     <!-- My tasks section -->
@@ -1072,7 +1079,7 @@
 
                             <!-- Completed task section -->
                             <div class="tab-content" id="tab-content-completed">
-                                <h1>Completed</h1>
+
                             </div>
                         </div>
                     </section>
@@ -1081,15 +1088,15 @@
 
             <!-- partial:partials/_footer.html -->
             <footer>
-                <div id="home-icon" class="col footer-col">
+                <div id="home-icon" class="home_footer col footer-col">
                     <i class="fa footer-col-icon">&#xf015;</i>
                     <div class="col footer-col-text">HOME</div>
                 </div>
-                <div id="sync-icon" class="col footer-col">
+                <div id="sync-icon" class="sync_footer col footer-col">
                     <i class="fa footer-col-icon">&#xf021;</i>
                     <div class="col footer-col-text">SYNC</div>
                 </div>
-                <div id="announcement-icon" class="col footer-col">
+                <div id="announcement-icon" class="announcement_footer col footer-col">
                     <i class="fas footer-col-icon">&#xf0a1;</i>
                     <div class="col footer-col-text">ANNOUNCEMENT</div>
                 </div>

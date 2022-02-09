@@ -779,7 +779,7 @@
                         <div id="weigh-tab-section-content">
                             <div class="tab-content" id="tab-content-buy">
                                 <div class="mdc-layout-grid__cell--span-12">
-                                    <div class="buy-input mdc-card mdc-car">
+                                    <div class="buy-input mdc-card mdc-ca">
                                         <div class="buy_section-form row">
                                             <div class="col-lg-4 col-md-6 form-group ">
                                                 <label style="font-size: 15px; ">Date:</label>
@@ -843,13 +843,13 @@
                                             </div>
 
                                             <div class="padding">
-                                                <button type="button" class="cancel">Save</button>
-                                                <button type="button" class="button">Submit</button>
+                                                <button type="button" class="buy-cancel-button">Save</button>
+                                                <button type="button" class="Buy-submit-button">Submit</button>
                                             </div>
                                         </div>
 
                                     </div>
-                                    <button type="button" class="pending">View PENDING and SUBMITTED Entries</button>
+                                    <button type="button" class="pending_button">View PENDING and SUBMITTED Entries</button>
 
                                 </div>
                                 </label>
@@ -866,7 +866,7 @@
                                             </div>
 
                                             <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Farmer:</label>
+                                                <label style="font-size: 15px; ">Select Estate:</label>
 
                                                 <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
                                                                 <option value="Regular" selected></option>
@@ -876,11 +876,23 @@
                                                 <div class="validate "></div>
                                             </div>
                                             <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Vehicle Plate:</label>
+                                                <label style="font-size: 15px; ">Employee:</label>
+
+                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
+                                                                <option value="Regular" selected></option>
+                                                                <option value="VIP"></option>
+                                                            </select>
+
+                                                <div class="validate "></div>
+                                            </div>
+                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                                <label style="font-size: 15px; ">Collection #:</label>
                                                 <input type="text" class="form-control " name="weight" id="weight" placeholder="">
                                                 <div class="validate "></div>
                                             </div>
+                                           
 
+                                            
                                             <h5 class="weightDetail">--- Enter Weight Details ---- </h5>
 
                                             <div class="col-lg-4 col-md-6 form-group ">
@@ -921,20 +933,22 @@
                                             </div>
 
                                             <div class="padding">
-                                                <button type="button" class="cancel">Save</button>
-                                                <button type="button" class="button">Submit</button>
+                                                <button type="button" class="buy-cancel-button">Save</button>
+                                                <button type="button" class="Buy-submit-button">Submit</button>
                                             </div>
                                         </div>
                                         
                                     </div>
-                                    <button type="button" class="pending">View PENDING and SUBMITTED Entries</button>
+                                    <button type="button" class="pending_button">View PENDING and SUBMITTED Entries</button>
                                    
                             </div>
                            
                         </div>
+
+                        <!--ESATE SHIPMENT-->
                         <div class="tab-content" id="tab-content-shipment">
                             <div class="mdc-layout-grid__cell--span-12">
-                                <div class="buy-input mdc-card mdc-car mdc-ca">
+                                <div class="buy-input mdc-card mdc-car mdc-c">
                                     <div class="buy_section-form row">
                                         <div class="col-lg-4 col-md-6 form-group ">
                                             <label style="font-size: 15px; ">Date:</label>
@@ -1020,13 +1034,13 @@
                                         </div>
 
                                         <div class="padding">
-                                            <button type="button" class="cancel">Save</button>
-                                            <button type="button" class="button">Submit</button>
+                                            <button type="button" class="buy-cancel-button">Save</button>
+                                            <button type="button" class="Buy-submit-button">Submit</button>
                                         </div>
                                     </div>
                                     
                                 </div>
-                                <button type="button" class="pendings">View PENDING and SUBMITTED Entries</button>
+                                <button type="button" class="pending_button">View PENDING and SUBMITTED Entries</button>
                         </div>
                     </section>
 

@@ -50,8 +50,7 @@
 
 #btn-group {
     display: grid;
-    grid-template-columns: 40% 50%;
-    justify-content: space-between;
+    grid-template-columns: 50% 50%;
 }
 
 .submit-btn,
@@ -61,5 +60,20 @@
     font-weight: bold;
     font-size: 1.1em;
     padding: 8px 50px;
+}
+
+.submit-btn {
+    background: #675C2F;
+    color: #fff;
+    margin-left: 10px;
+}
+
+#pending-and-submitted-entries {
+    background: #bcb27b;
+    color: #000;
+    font-size: 1.1em;
+    padding: 8px 0px;
     text-align: center;
+    margin-top: 20px;
+    border-radius: 6px;
 }

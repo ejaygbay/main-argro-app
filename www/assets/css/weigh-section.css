@@ -1,11 +1,19 @@
 /* Weigh section style */
 
-#weig-section-tab {
+#weigh-section-tab {
     display: grid;
     grid-template-columns: 30% repeat(auto-fill, 35%);
 }
 
-#weig-section-tab .tab-head {
+#weigh-statistics-section-tab {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+
+/* #weigh-section-tab  */
+
+.tab-head {
     text-align: center;
     padding: 8px 0px;
     background: #675C2F;
@@ -14,19 +22,20 @@
     text-transform: uppercase;
 }
 
-#weig-section-tab #tab-head-buy {
+#tab-head-buy,
+#tab-head-pending {
     background: #bcb27b;
     color: #000;
 }
 
 #tab-content-estate,
-#tab-content-shipment {
+#tab-content-shipment,
+#tab-content-submitted,
+#weigh-statistics-section,
+.buy-statistics,
+.estate-statistics,
+.shipment-statistics {
     display: none;
-}
-
-#weigh-section-tab {
-    display: grid;
-    grid-template-columns: 30% repeat(auto-fill, 35%);
 }
 
 #weigh-section-tab .tab-head {

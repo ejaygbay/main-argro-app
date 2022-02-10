@@ -1,8 +1,11 @@
 let current_section = '#home-section';
-let current_weigh_section = "#tab-content-buy";
 let current_weigh_tab_head = "#tab-head-buy";
+let current_weigh_section = "#tab-content-buy";
+let current_weigh_statistics_tab_head = "#tab-head-pending";
+let current_weigh_statistics_section = "#tab-content-pending";
 let current_my_tasks_section = "#tab-content-task-list";
 let current_my_tasks_tab_head = "#tab-head-task-list";
+let current_statistics = "";
 
 document.querySelector('.sidebar-toggler').addEventListener('click', () => {
     showElement("#sidebar-cover");
@@ -94,6 +97,50 @@ document.querySelector("#tab-head-shipment").addEventListener('click', () => {
     setAsActive(current_weigh_tab_head);
 })
 
+/**
+ * Weigh statistics section tab event listener
+ */
+document.querySelector("#tab-head-pending").addEventListener('click', (e) => {
+    hideElement(current_weigh_statistics_section);
+    setAsInactive(current_weigh_statistics_tab_head);
+    current_weigh_statistics_section = "#tab-content-pending";
+    current_weigh_statistics_tab_head = "#tab-head-pending";
+    showElement(current_weigh_statistics_section);
+    setAsActive(current_weigh_statistics_tab_head);
+})
+
+document.querySelector("#tab-head-submitted").addEventListener('click', () => {
+    hideElement(current_weigh_statistics_section);
+    setAsInactive(current_weigh_statistics_tab_head);
+    current_weigh_statistics_section = "#tab-content-submitted";
+    current_weigh_statistics_tab_head = "#tab-head-submitted";
+    showElement(current_weigh_statistics_section);
+    setAsActive(current_weigh_statistics_tab_head);
+})
+
+document.querySelectorAll(".pending-and-submitted-entries").forEach(ele => {
+    ele.addEventListener('click', (e) => {
+        hideElement(current_section);
+        current_section = "#weigh-statistics-section";
+        showElement(current_section);
+
+        if (current_statistics.length > 0) {
+            hideElement(current_statistics);
+        }
+
+        if (e.target.parentNode.id === 'tab-content-buy') {
+            current_statistics = '.buy-statistics';
+            showElement(current_statistics);
+        } else if (e.target.parentNode.id === 'tab-content-estate') {
+            current_statistics = '.estate-statistics';
+            showElement(current_statistics);
+        } else if (e.target.parentNode.id === 'tab-content-shipment') {
+            current_statistics = '.shipment-statistics';
+            showElement(current_statistics);
+        }
+    })
+})
+
 
 /**
  * My Tasks section tab event listener
@@ -130,6 +177,10 @@ const setAsActive = (ele) => {
 
 const setAsInactive = (ele) => {
     document.querySelector(ele).style = "background: #675C2F; color: #fff;";
+}
+
+const clearSections = () => {
+    document.querySelector('.content-wrapper').innerHTML = '';
 }
 
 document.querySelector("#enterWeightButton").addEventListener('click', () => {

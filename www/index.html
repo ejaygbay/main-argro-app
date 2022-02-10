@@ -766,50 +766,50 @@
                                 <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
 
                                     <div class="form-floating mb-2">
-                                        <input type="date" class="form-control" id="business-date" placeholder="Date">
-                                        <label for="business-date">Date</label>
+                                        <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
+                                        <label for="business-date-buy">Date</label>
                                     </div>
 
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" id="select-farmer">
+                                        <select class="form-select" id="select-farmer-buy">
                                             <option selected>Select a farmer</option>
                                             <option value="1">Farmer One</option>
                                             <option value="2">Farmer Two</option>
                                             <option value="3">Farmer Three</option>
                                         </select>
-                                        <label for="select-farmer">Select Farmer</label>
+                                        <label for="select-farmer-buy">Select Farmer</label>
                                     </div>
 
                                     <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="vehicle-late" placeholder="Vehicle Plate">
-                                        <label for="vehicle-late">Vehicle Plate</label>
+                                        <input type="text" class="form-control" id="vehicle-late-buy" placeholder="Vehicle Plate">
+                                        <label for="vehicle-late-buy">Vehicle Plate</label>
                                     </div>
 
                                     <p style="text-align: center;">---------- Enter Weigh Details ----------</p>
 
                                     <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="vehicle-late" placeholder="Vehicle Plate">
-                                        <label for="vehicle-late">Gross (KG)</label>
+                                        <input type="text" class="form-control" id="gross-buy" placeholder="Gross">
+                                        <label for="gross-buy">Gross (KG)</label>
                                     </div>
 
                                     <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="tare" placeholder="Tare">
-                                        <label for="tare">Tare (KG)</label>
+                                        <input type="text" class="form-control" id="tare-buy" placeholder="Tare">
+                                        <label for="tare-buy">Tare (KG)</label>
                                     </div>
 
                                     <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="net" placeholder="Net">
-                                        <label for="vehicle-late">Net (KG)</label>
+                                        <input type="text" class="form-control" id="net-buy" placeholder="Net">
+                                        <label for="net-buy">Net (KG)</label>
                                     </div>
 
                                     <div class="form-floating mb-3">
-                                        <select class="form-select" id="storage-area">
+                                        <select class="form-select" id="storage-area-buy">
                                             <option selected>Select a storage</option>
                                             <option value="1">Storage One</option>
                                             <option value="2">Storage Two</option>
                                             <option value="3">Storage Three</option>
                                         </select>
-                                        <label for="select-farmer">Storage Area</label>
+                                        <label for="storage-area-buy">Storage Area</label>
                                     </div>
 
                                     <div id="btn-group">
@@ -819,12 +819,78 @@
                                     </div>
                                 </section>
 
-                                <p id="pending-and-submitted-entries">View PENDING and SUBMITTED Entries</p>
+                                <p class="pending-and-submitted-entries">View PENDING and SUBMITTED Entries</p>
                             </div>
 
                             <!-- Estate -->
                             <div class="tab-content" id="tab-content-estate">
-                                <h3>Estate</h3>
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
+
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date-estate" placeholder="Date">
+                                        <label for="business-date-estate">Date</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-estate">
+                                            <option selected>Select an estate</option>
+                                            <option value="1">Estate One</option>
+                                            <option value="2">Estate Two</option>
+                                            <option value="3">Estate Three</option>
+                                        </select>
+                                        <label for="select-estate">Select Farmer</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-employee-estate">
+                                            <option selected>Select an employee</option>
+                                            <option value="1">Employee One</option>
+                                            <option value="2">Employee Two</option>
+                                            <option value="3">Employee Three</option>
+                                        </select>
+                                        <label for="select-employee-estate">Select Employee</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="collection-number-estate" placeholder="Collection #">
+                                        <label for="collection-number-estate">Collection Number</label>
+                                    </div>
+
+                                    <p style="text-align: center;">---------- Enter Weigh Details ----------</p>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="gross-estate" placeholder="Gross">
+                                        <label for="gross-estate">Gross (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="tare-estate" placeholder="Tare">
+                                        <label for="tare-estate">Tare (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="net-estate" placeholder="Net">
+                                        <label for="net-estate">Net (KG)</label>
+                                    </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="storage-area-estate">
+                                            <option selected>Select a storage</option>
+                                            <option value="1">Storage One</option>
+                                            <option value="2">Storage Two</option>
+                                            <option value="3">Storage Three</option>
+                                        </select>
+                                        <label for="storage-area-estate">Storage Area</label>
+                                    </div>
+
+                                    <div id="btn-group">
+                                        <button type="button" class="btn btn-primary save-btn">Save</button>
+
+                                        <button type="button" class="btn btn-primary submit-btn">Submit</button>
+                                    </div>
+                                </section>
+
+                                <p class="pending-and-submitted-entries">View PENDING and SUBMITTED Entries</p>
                             </div>
 
                             <!-- Shipment -->

@@ -221,40 +221,38 @@
                     <section id="buy-section" style="display: bloc;">
                         <nav id="buy-section-tab">
                             <div class="tab-head" id="tab-head-cuplumps">Cuplumps</div>
-                            <div class="tab-head" id="tab-head-raw-latex">Raw Latex</div>
+                            <div class="tab-head" id="tab-head-buy-raw-latex">Raw Latex</div>
                         </nav>
                         <div id="buy-tab-section-content">
                             <!-- Cuplumps -->
                             <div class="tab-content" id="tab-content-cuplumps">
-                                <div class="buy-input mdc-card">
-                                    <div class="buy_section-form row">
-                                        <div class="col-lg-4 col-md-6 form-group ">
-                                            <label style="font-size: 15px; ">Date:</label>
-                                            <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                            <div class="validate "></div>
-                                        </div>
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
 
-                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                            <label style="font-size: 15px; ">Select Farmer:</label>
-
-                                            <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                            <option value="Regular" selected></option>
-                                                            <option value="VIP"></option>
-                                                        </select>
-
-                                            <div class="validate "></div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                            <label style="font-size: 15px; ">Enter Weight (KG):</label>
-                                            <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                            <div class="validate "></div>
-                                        </div>
-
-                                        <div class="flote-button">
-                                            <button type="button" class="button">Buy</button>
-                                        </div>
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
+                                        <label for="business-date-buy">Date</label>
                                     </div>
-                                </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-tapper-collect">
+                                            <option selected>Select Farmer:</option>
+                                            <option value="1"></option>
+                                            <option value="2"></option>
+                                            <option value="3"></option>
+                                        </select>
+                                        <label for="select-tapper-collect">Select Farmer:</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="enter-weight-collect" placeholder="Enter Weight">
+                                        <label for="enter-weight-collect">Enter Weight (KG)</label>
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-primary submit-btn" style="margin-left: 0">Enter</button>
+
+                                </section>
+
                                 <div class="buy-section-table col-lg-12">
                                     <div class="table-responsive">
                                         <h5>View Buys</h5>
@@ -305,10 +303,11 @@
                                     </div>
                                 </div>
 
+
                             </div>
 
                             <!--Raw latex-->
-                            <div class="tab-content" id="tab-content-raw-latex">
+                            <div class="tab-content" id="tab-content-buy-raw-latex">
                                 <div class="raw-latex buy-input mdc-card">
                                     <div class="buy_section-form row">
 
@@ -360,6 +359,7 @@
                                     </div>
 
                                 </div>
+
                                 <div class="buy-section-table col-lg-12">
                                     <div class="table-responsive">
                                         <h5>View Raw Latex</h5>
@@ -414,7 +414,9 @@
                                         </table>
                                     </div>
                                 </div>
+
                             </div>
+                        </div>
                     </section>
 
                     <!-- Collect section -->
@@ -1197,38 +1199,44 @@
                 </div>
             </footer>
 
-            </div>
         </div>
+    </div>
 
-        <!-- plugins:js -->
-        <script src="assets/vendors/js/vendor.bundle.base.js"></script>
-        <!-- endinject -->
-        <!-- Plugin js for this page-->
-        <script src="assets/vendors/chartjs/Chart.min.js"></script>
-        <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
-        <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
-        <!-- End plugin js for this page-->
-        <!-- inject:js -->
-        <script src="assets/js/material.js"></script>
-        <script src="assets/js/misc.js"></script>
-        <!-- endinject -->
-        <!-- Custom js for this page-->
-        <script src="assets/js/dashboard.js"></script>
-        <!-- End custom js for this page-->
+    <!-- plugins:js -->
+    <script src="assets/vendors/js/vendor.bundle.base.js"></script>
+    <!-- endinject -->
+    <!-- Plugin js for this page-->
+    <script src="assets/vendors/chartjs/Chart.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap.min.js"></script>
+    <script src="assets/vendors/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <!-- End plugin js for this page-->
+    <!-- inject:js -->
+    <script src="assets/js/material.js"></script>
+    <script src="assets/js/misc.js"></script>
+    <!-- endinject -->
+    <!-- Custom js for this page-->
+    <script src="assets/js/dashboard.js"></script>
+    <!-- End custom js for this page-->
 
-        <script src="assets/js/bootstrap.min.js"></script>
-        <!-- <script src="assets/js/mdb.min.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <!-- <script src="assets/js/mdb.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
         <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script>
         <script src="https://cdn.datatables.net/1.11.0/js/dataTables.bootstrap5.min.js"></script>
 
         <script src="https://cdn.datatables.net/1.11.0/js/jquery.dataTables.min.js"></script> -->
 
-        <script src="assets/js/sweet-alert.js"></script>
-        <script src="assets/js/custom.js"></script>
+    <script src="assets/js/sweet-alert.js"></script>
+    <script src="assets/js/custom.js"></script>
 
-        <script src="cordova.js"></script>
-        <script src="js/index.js"></script>
+    <script src="cordova.js"></script>
+    <script src="js/index.js"></script>
 </body>
+
+</html>
+
+</html>
+
+</html>
 
 </html>

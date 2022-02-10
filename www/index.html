@@ -102,7 +102,7 @@
             <section class="page-wrapper md-toolbar-fixed-adjust">
                 <main class="content-wrapper">
                     <!-- Home section -->
-                    <section style="display: non;" id="home-section">
+                    <section style="display: none;" id="home-section">
                         <div class="mdc-layout-grid__cell--span-12">
                             <div class="mdc-card">
                                 <h6 class="card-title card-title1">Rubber Plantation Incorporated</h6>
@@ -418,11 +418,186 @@
                     </section>
 
                     <!-- Collect section -->
-                    <section id="collect-section" style="display: bloc;">
-                        <nav id="weighs-section-tab">
-                            <div class="tab-head" id="tab-head-collect1">Cuplumps</div>
-                            <div class="tab-head" id="tab-head-collect2">Raw Latex</div>
+                    <section id="collect-section" style="display: block;">
+                        <nav id="collect-section-tab">
+                            <div class="tab-head" id="tab-head-collect-cuplumps">Cuplumps</div>
+                            <div class="tab-head" id="tab-head-collect-raw-latex">Raw Latex</div>
                         </nav>
+
+                        <!-- collect cuplumps -->
+                        <div class="tab-content" id="tab-content-collect-cuplumps">
+                            <div class="mdc-layout-grid__cell--span-12">
+                                <div class="buy-input mdc-card">
+                                    <div class="buy_section-form row">
+                                        <div class="col-lg-4 col-md-6 form-group ">
+                                            <label style="font-size: 15px; ">Date:</label>
+                                            <input type="date" name="date" class="form-control" id="date" placeholder="">
+                                            <div class="validate "></div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                            <label style="font-size: 15px; ">Select Farmer:</label>
+
+                                            <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
+                                <option value="Regular" selected></option>
+                                <option value="VIP"></option>
+                            </select>
+
+                                            <div class="validate "></div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                            <label style="font-size: 15px; ">Enter Weight (KG): <button type="button" class="weight-button" id="latex-weightButton" data-toggle="modal" data-target="#exampleModal" >Enter</button></label>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="buy-section-table col-lg-12">
+                                    <div class="table-responsive">
+                                        <h5>View Collections</h5>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+
+                                                    <th>Tapper</th>
+                                                    <th>Gang</th>
+                                                    <th>Weight (KG)</th>
+                                                    <th>Date</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+
+                                                </tr>
+                                                <tr class="table-color">
+
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+
+                                                </tr>
+                                                <tr>
+
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+
+                                                </tr>
+                                                <tr class="table-color">
+
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                            </label>
+
+                        </div>
+
+                        <!-- collect raw latex -->
+                        <div class="tab-content" id="tab-content-collect-raw-latex">
+                            <div class="mdc-layout-grid__cell--span-12">
+                                <div class="buy-input mdc-card">
+                                    <div class="buy_section-form row">
+                                        <div class="col-lg-4 col-md-6 form-group ">
+                                            <label style="font-size: 15px; ">Date:</label>
+                                            <input type="date" name="date" class="form-control" id="date" placeholder="">
+                                            <div class="validate "></div>
+                                        </div>
+
+                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                            <label style="font-size: 15px; ">Select Farmer:</label>
+
+                                            <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
+                            <option value="Regular" selected></option>
+                            <option value="VIP"></option>
+                        </select>
+
+                                            <div class="validate "></div>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
+                                            <label style="font-size: 15px; ">Enter Weight (KG): <button type="button" class="weight-button" id="enterWeightButton" data-toggle="modal" data-target="#latex-collect-weight" >Enter</button></label>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="buy-section-table col-lg-12">
+                                    <div class="table-responsive">
+                                        <h5>View Raw Latex Collection</h5>
+                                        <table class="table table-bordered">
+                                            <thead>
+                                                <tr>
+
+                                                    <th>Tapper</th>
+                                                    <th>Gang</th>
+                                                    <th>Weight (KG)</th>
+                                                    <th>Date</th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+
+                                                </tr>
+                                                <tr class="table-color">
+
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+
+                                                </tr>
+                                                <tr>
+
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+
+                                                </tr>
+                                                <tr class="table-color">
+
+
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                    <td></td>
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <div id="collect-tab-section-content">
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -573,178 +748,6 @@
                                         <div class="modal-footer">
                                             <button type="button" class="cancel" data-dismiss="modal">Cancel</button>
                                             <button type="button" class="button">Enter</button></label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="tab-content" id="tab-content-collect1">
-                                <div class="mdc-layout-grid__cell--span-12">
-                                    <div class="buy-input mdc-card">
-                                        <div class="buy_section-form row">
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Date:</label>
-                                                <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Farmer:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                    <option value="Regular" selected></option>
-                                    <option value="VIP"></option>
-                                </select>
-
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Enter Weight (KG): <button type="button" class="weight-button" id="latex-weightButton" data-toggle="modal" data-target="#exampleModal" >Enter</button></label>
-
-                                            </div>
-
-                                        </div>
-
-                                    </div>
-                                    <div class="buy-section-table col-lg-12">
-                                        <div class="table-responsive">
-                                            <h5>View Collections</h5>
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-
-                                                        <th>Tapper</th>
-                                                        <th>Gang</th>
-                                                        <th>Weight (KG)</th>
-                                                        <th>Date</th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-
-                                                    </tr>
-                                                    <tr class="table-color">
-
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-
-                                                    </tr>
-                                                    <tr>
-
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-
-                                                    </tr>
-                                                    <tr class="table-color">
-
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-
-                                        </div>
-                                    </div>
-                                </div>
-                                </label>
-
-                            </div>
-
-                            <div class="tab-content" id="tab-content-collect2">
-                                <div class="mdc-layout-grid__cell--span-12">
-                                    <div class="buy-input mdc-card">
-                                        <div class="buy_section-form row">
-                                            <div class="col-lg-4 col-md-6 form-group ">
-                                                <label style="font-size: 15px; ">Date:</label>
-                                                <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                                <div class="validate "></div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Select Farmer:</label>
-
-                                                <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                <option value="Regular" selected></option>
-                                <option value="VIP"></option>
-                            </select>
-
-                                                <div class="validate "></div>
-                                            </div>
-                                            <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                                <label style="font-size: 15px; ">Enter Weight (KG): <button type="button" class="weight-button" id="enterWeightButton" data-toggle="modal" data-target="#latex-collect-weight" >Enter</button></label>
-
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="buy-section-table col-lg-12">
-                                        <div class="table-responsive">
-                                            <h5>View Raw Latex Collection</h5>
-                                            <table class="table table-bordered">
-                                                <thead>
-                                                    <tr>
-
-                                                        <th>Tapper</th>
-                                                        <th>Gang</th>
-                                                        <th>Weight (KG)</th>
-                                                        <th>Date</th>
-
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    <tr>
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-
-                                                    </tr>
-                                                    <tr class="table-color">
-
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-
-                                                    </tr>
-                                                    <tr>
-
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-
-                                                    </tr>
-                                                    <tr class="table-color">
-
-
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                        <td></td>
-                                                    </tr>
-
-                                                </tbody>
-                                            </table>
-
                                         </div>
                                     </div>
                                 </div>

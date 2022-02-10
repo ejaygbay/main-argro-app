@@ -1,11 +1,11 @@
 /* Collect section style */
 
-#weighs-section-tab {
+#collect-section-tab {
     display: grid;
-    grid-template-columns: 50% 50% repeat(auto-fill, 35%);
+    grid-template-columns: 50% 50%;
 }
 
-#weighs-section-tab .tab-head {
+#collect-section-tab .tab-head {
     text-align: center;
     padding: 8px 0px;
     background: #675C2F;
@@ -14,11 +14,11 @@
     text-transform: uppercase;
 }
 
-#weighs-section-tab #tab-head-buy {
+#collect-section-tab #tab-head-collect-cuplumps {
     background: #bcb27b;
     color: #000;
 }
 
-#tab-content-estate {
+#tab-content-collect-raw-latex {
     display: none;
 }

@@ -8,6 +8,8 @@ let current_my_tasks_tab_head = "#tab-head-task-list";
 let current_statistics = "";
 let current_buy_tab_head = "#tab-head-cuplumps";
 let current_buy_section = "#tab-content-cuplumps";
+let current_collect_tab_head = "#tab-head-collect-cuplumps";
+let current_collect_section = "#tab-content-collect-cuplumps";
 
 
 document.querySelector('.sidebar-toggler').addEventListener('click', () => {
@@ -165,6 +167,26 @@ document.querySelectorAll(".pending-and-submitted-entries").forEach(ele => {
     })
 })
 
+/**
+ * Collect section tab event listener
+ */
+document.querySelector("#tab-head-collect-cuplumps").addEventListener('click', (e) => {
+    hideElement(current_collect_section);
+    setAsInactive(current_collect_tab_head);
+    current_collect_section = "#tab-content-collect-cuplumps";
+    current_collect_tab_head = "#tab-head-collect-cuplumps";
+    showElement(current_collect_section);
+    setAsActive(current_collect_tab_head);
+})
+
+document.querySelector("#tab-head-collect-raw-latex").addEventListener('click', () => {
+    hideElement(current_collect_section);
+    setAsInactive(current_collect_tab_head);
+    current_collect_section = "#tab-content-collect-raw-latex";
+    current_collect_tab_head = "#tab-head-collect-raw-latex";
+    showElement(current_collect_section);
+    setAsActive(current_collect_tab_head);
+})
 
 /**
  * My Tasks section tab event listener

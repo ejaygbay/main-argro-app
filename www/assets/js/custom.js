@@ -6,6 +6,9 @@ let current_weigh_statistics_section = "#tab-content-pending";
 let current_my_tasks_section = "#tab-content-task-list";
 let current_my_tasks_tab_head = "#tab-head-task-list";
 let current_statistics = "";
+let current_buy_section = "#tab-content-cuplumps";
+let current_buy_section = "#tab-content-cuplumps";
+
 
 document.querySelector('.sidebar-toggler').addEventListener('click', () => {
     showElement("#sidebar-cover");
@@ -65,6 +68,27 @@ document.querySelector("#announcement-icon").addEventListener('click', () => {
     hideElement(current_section);
     current_section = "#announcement-section";
     showElement(current_section);
+})
+
+/**
+ * Buy section tab event listener
+ */
+document.querySelector("#tab-head-cuplumps").addEventListener('click', (e) => {
+    hideElement(current_buy_section);
+    setAsInactive(current_buy_tab_head);
+    current_weigh_section = "#tab-content-cuplumps";
+    current_weigh_tab_head = "#tab-head-cuplumps";
+    showElement(current_buy_section);
+    setAsActive(current_buy_tab_head);
+})
+
+document.querySelector("#tab-head-raw-latex").addEventListener('click', () => {
+    hideElement(current_buy_section);
+    setAsInactive(current_buy_tab_head);
+    current_weigh_section = "#tab-content-raw-latex";
+    current_weigh_tab_head = "#tab-head-raw-latex";
+    showElement(current_buy_section);
+    setAsActive(current_buy_tab_head);
 })
 
 /**

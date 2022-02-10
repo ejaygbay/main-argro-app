@@ -1,11 +1,11 @@
 /* Buy section style */
 
-#buying-section-tab {
+#buy-section-tab {
     display: grid;
     grid-template-columns: 50% 50%;
 }
 
-#buying-section-tab .tab-head {
+#buy-section-tab .tab-head {
     text-align: center;
     padding: 8px 0px;
     background: #675C2F;
@@ -14,7 +14,7 @@
     text-transform: uppercase;
 }
 
-#buying-section-tab #tab-head-task-list {
+#buy-section-tab #tab-head-cuplumps {
     background: #bcb27b;
     color: #000;
 }

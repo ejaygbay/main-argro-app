@@ -102,7 +102,7 @@
             <section class="page-wrapper md-toolbar-fixed-adjust">
                 <main class="content-wrapper">
                     <!-- Home section -->
-                    <section style="display: none;" id="home-section">
+                    <section style="display: non;" id="home-section">
                         <div class="mdc-layout-grid__cell--span-12">
                             <div class="mdc-card">
                                 <h6 class="card-title card-title1">Rubber Plantation Incorporated</h6>
@@ -418,42 +418,43 @@
                     </section>
 
                     <!-- Collect section -->
-                    <section id="collect-section" style="display: block;">
+                    <section id="collect-section" style="display: bloc;">
                         <nav id="collect-section-tab">
                             <div class="tab-head" id="tab-head-collect-cuplumps">Cuplumps</div>
                             <div class="tab-head" id="tab-head-collect-raw-latex">Raw Latex</div>
                         </nav>
 
-                        <!-- collect cuplumps -->
-                        <div class="tab-content" id="tab-content-collect-cuplumps">
-                            <div class="mdc-layout-grid__cell--span-12">
-                                <div class="buy-input mdc-card">
-                                    <div class="buy_section-form row">
-                                        <div class="col-lg-4 col-md-6 form-group ">
-                                            <label style="font-size: 15px; ">Date:</label>
-                                            <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                            <div class="validate "></div>
-                                        </div>
+                        <div id="collect-tab-section-content">
+                            <!-- collect cuplumps -->
+                            <div class="tab-content" id="tab-content-collect-cuplumps">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
 
-                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                            <label style="font-size: 15px; ">Select Farmer:</label>
-
-                                            <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                <option value="Regular" selected></option>
-                                <option value="VIP"></option>
-                            </select>
-
-                                            <div class="validate "></div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                            <label style="font-size: 15px; ">Enter Weight (KG): <button type="button" class="weight-button" id="latex-weightButton" data-toggle="modal" data-target="#exampleModal" >Enter</button></label>
-
-                                        </div>
-
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
+                                        <label for="business-date-buy">Date</label>
                                     </div>
 
-                                </div>
-                                <div class="buy-section-table col-lg-12">
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-tapper-collect">
+                                            <option selected>Select a tapper</option>
+                                            <option value="1">Tapper One</option>
+                                            <option value="2">Tapper Two</option>
+                                            <option value="3">Tapper Three</option>
+                                        </select>
+                                        <label for="select-tapper-collect">Select Tapper</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="enter-weight-collect" placeholder="Enter Weight">
+                                        <label for="enter-weight-collect">Enter Weight (KG)</label>
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-primary submit-btn" style="margin-left: 0">Enter</button>
+
+                                </section>
+
+                                <div class="collect-section-table col-lg-12">
                                     <div class="table-responsive">
                                         <h5>View Collections</h5>
                                         <table class="table table-bordered">
@@ -509,37 +510,35 @@
                                     </div>
                                 </div>
                             </div>
-                            </label>
 
-                        </div>
+                            <!-- collect raw latex -->
+                            <div class="tab-content" id="tab-content-collect-raw-latex">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
 
-                        <!-- collect raw latex -->
-                        <div class="tab-content" id="tab-content-collect-raw-latex">
-                            <div class="mdc-layout-grid__cell--span-12">
-                                <div class="buy-input mdc-card">
-                                    <div class="buy_section-form row">
-                                        <div class="col-lg-4 col-md-6 form-group ">
-                                            <label style="font-size: 15px; ">Date:</label>
-                                            <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                            <div class="validate "></div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                            <label style="font-size: 15px; ">Select Farmer:</label>
-
-                                            <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                            <option value="Regular" selected></option>
-                            <option value="VIP"></option>
-                        </select>
-
-                                            <div class="validate "></div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                            <label style="font-size: 15px; ">Enter Weight (KG): <button type="button" class="weight-button" id="enterWeightButton" data-toggle="modal" data-target="#latex-collect-weight" >Enter</button></label>
-
-                                        </div>
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
+                                        <label for="business-date-buy">Date</label>
                                     </div>
-                                </div>
+
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-tapper-collect">
+                                                <option selected>Select a tapper</option>
+                                                <option value="1">Tapper One</option>
+                                                <option value="2">Tapper Two</option>
+                                                <option value="3">Tapper Three</option>
+                                            </select>
+                                        <label for="select-tapper-collect">Select Tapper</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" class="form-control" id="enter-weight-collect" placeholder="Enter Weight">
+                                        <label for="enter-weight-collect">Enter Volumn (L)</label>
+                                    </div>
+
+
+                                    <button type="button" class="btn btn-primary submit-btn" style="margin-left: 0">Enter</button>
+
+                                </section>
                                 <div class="buy-section-table col-lg-12">
                                     <div class="table-responsive">
                                         <h5>View Raw Latex Collection</h5>
@@ -596,9 +595,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div id="collect-tab-section-content">
+
                             <!-- Modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog" role="document">

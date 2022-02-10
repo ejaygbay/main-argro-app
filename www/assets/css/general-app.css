@@ -101,7 +101,7 @@ footer {
     background-color: #675C2F;
     height: 10vh;
     display: grid;
-    grid-template-columns: 30% 30% 40%;
+    grid-template-columns: 33% 34% 33%;
     justify-content: space-around;
     padding-top: 10px;
 }
@@ -126,9 +126,9 @@ footer {
 }
 
 .sync_footer {
-    margin-left: 35px;
+    margin-left: 20px;
 }
 
 .announcement_footer {
-    margin-left: 30px;
+    margin-left: -10px;
 }

@@ -76,8 +76,8 @@ document.querySelector("#announcement-icon").addEventListener('click', () => {
 document.querySelector("#tab-head-cuplumps").addEventListener('click', (e) => {
     hideElement(current_buy_section);
     setAsInactive(current_buy_tab_head);
-    current_weigh_section = "#tab-content-cuplumps";
-    current_weigh_tab_head = "#tab-head-cuplumps";
+    current_buy_section = "#tab-content-cuplumps";
+    current_buy_tab_head = "#tab-head-cuplumps";
     showElement(current_buy_section);
     setAsActive(current_buy_tab_head);
 })
@@ -85,8 +85,8 @@ document.querySelector("#tab-head-cuplumps").addEventListener('click', (e) => {
 document.querySelector("#tab-head-raw-latex").addEventListener('click', () => {
     hideElement(current_buy_section);
     setAsInactive(current_buy_tab_head);
-    current_weigh_section = "#tab-content-raw-latex";
-    current_weigh_tab_head = "#tab-head-raw-latex";
+    current_buy_section = "#tab-content-raw-latex";
+    current_buy_tab_head = "#tab-head-raw-latex";
     showElement(current_buy_section);
     setAsActive(current_buy_tab_head);
 })

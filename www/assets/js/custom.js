@@ -6,7 +6,7 @@ let current_weigh_statistics_section = "#tab-content-pending";
 let current_my_tasks_section = "#tab-content-task-list";
 let current_my_tasks_tab_head = "#tab-head-task-list";
 let current_statistics = "";
-let current_buy_section = "#tab-content-cuplumps";
+let current_buy_tab_head = "#tab-head-cuplumps";
 let current_buy_section = "#tab-content-cuplumps";
 
 

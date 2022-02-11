@@ -102,7 +102,7 @@
             <section class="page-wrapper md-toolbar-fixed-adjust">
                 <main class="content-wrapper">
                     <!-- Home section -->
-                    <section style="display: non;" id="home-section">
+                    <section style="display: none;" id="home-section">
                         <div class="mdc-layout-grid__cell--span-12">
                             <div class="mdc-card">
                                 <h6 class="card-title card-title1">Rubber Plantation Incorporated</h6>
@@ -218,7 +218,7 @@
                     </section>
 
                     <!-- Buy section -->
-                    <section id="buy-section" style="display: bloc;">
+                    <section id="buy-section" style="display: block;">
                         <nav id="buy-section-tab">
                             <div class="tab-head" id="tab-head-cuplumps">Cuplumps</div>
                             <div class="tab-head" id="tab-head-buy-raw-latex">Raw Latex</div>
@@ -226,7 +226,7 @@
                         <div id="buy-tab-section-content">
                             <!-- Cuplumps -->
                             <div class="tab-content" id="tab-content-cuplumps">
-                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px" class="mb-4">
 
                                     <div class="form-floating mb-2">
                                         <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
@@ -253,167 +253,124 @@
 
                                 </section>
 
-                                <div class="buy-section-table col-lg-12">
-                                    <div class="table-responsive">
-                                        <h5>View Buys</h5>
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-
-                                                    <th>Farmer</th>
-                                                    <th>Weight (KG)</th>
-                                                    <th>Date</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-
-                                                    <td>Paye(32232)</td>
-                                                    <td>250 KG</td>
-                                                    <td>02-09-22</td>
-
-                                                </tr>
-                                                <tr class="table-color">
-
-
-                                                    <td>Paye(32232)</td>
-                                                    <td>250 KG</td>
-                                                    <td>02-09-22</td>
-
-                                                </tr>
-                                                <tr>
-
-
-                                                    <td>Paye(32232)</td>
-                                                    <td>250 KG</td>
-                                                    <td>02-09-22</td>
-
-                                                </tr>
-                                                <tr class="table-color">
-
-
-                                                    <td>Paye(32232)</td>
-                                                    <td>250 KG</td>
-                                                    <td>02-09-22</td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-
+                                <section>
+                                    <h5>View Buys</h5>
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col" colSpan="2" style="text-align: center;">Farmer</th>
+                                                <th scope="col" style="white-space:nowrap;">Weight (KG)</th>
+                                                <th scope="col" style="text-align: center;">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
 
                             </div>
 
                             <!--Raw latex-->
                             <div class="tab-content" id="tab-content-buy-raw-latex">
-                                <div class="raw-latex buy-input mdc-card">
-                                    <div class="buy_section-form row">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px" class="mb-4">
 
-                                        <div class="col-lg-4 col-md-6 form-group ">
-                                            <label class="label" style="font-size: 15px; ">Date:</label>
-                                            <input type="date" name="date" class="form-control" id="date" placeholder="">
-                                            <div class="validate "></div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                            <label style="font-size: 15px; ">Select Farmer:</label>
-
-                                            <select class="form-select" name="selectFarmer" aria-label="Default select example"> 
-                                                        <option value="Regular" selected></option>
-                                                        <option value="VIP"></option>
-                                                    </select>
-
-                                            <div class="validate "></div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 form-group mt-3 ">
-                                            <label style="font-size: 15px; ">Enter Volume (L):</label>
-                                            <input type="text" class="form-control " name="weight" id="weight" placeholder="">
-                                            <div class="validate "></div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 form-group ">
-                                            <label style="font-size: 15px; ">Calculate DRC:</label>
-                                            <label class="switch">
-                                                <input type="checkbox" checked>
-                                                <span class="slider round"></span>
-                                            </label>
-                                            <div class="validate "></div>
-                                        </div>
-                                        <div class="col-lg-4 col-md-6 form-group ">
-                                            <label style="font-size: 15px; ">Latexometer:</label>
-                                            <input type="text" name="Latexometer" class="form-control" placeholder="">
-                                            <div class="validate "></div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 form-group ">
-                                            <label style="font-size: 15px; ">Dry Rubber (KG):</label>
-                                            <input type="text" name="Latexometer" class="form-control" placeholder="">
-                                            <div class="validate "></div>
-                                        </div>
-
-                                        <div class="flote-button">
-                                            <button type="button" class="button">Buy</button>
-                                        </div>
-
+                                    <div class="form-floating mb-2">
+                                        <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
+                                        <label for="business-date-buy">Date</label>
                                     </div>
 
-                                </div>
-
-                                <div class="buy-section-table col-lg-12">
-                                    <div class="table-responsive">
-                                        <h5>View Raw Latex</h5>
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-
-                                                    <th>Farmer</th>
-                                                    <th>Gang</th>
-                                                    <th>Volume(L)</th>
-                                                    <th>Date</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-
-                                                </tr>
-                                                <tr class="table-color">
-
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-
-                                                </tr>
-                                                <tr>
-
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-
-                                                </tr>
-                                                <tr class="table-color">
-
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
+                                    <div class="form-floating mb-3">
+                                        <select class="form-select" id="select-farmer-buy">
+                                            <option selected>Select Farmer:</option>
+                                            <option value="1"></option>
+                                            <option value="2"></option>
+                                            <option value="3"></option>
+                                        </select>
+                                        <label for="select-farmer-buy">Select Farmer:</label>
                                     </div>
-                                </div>
+
+                                    <div class="form-floating mb-3">
+                                        <input type="text" class="form-control" id="enter-volumn-buy" placeholder="Enter Weight">
+                                        <label for="enter-volumn-buy">Enter Volumn (L)</label>
+                                    </div>
+
+                                    <div class="col-lg-4 col-md-6 form-group mb-3">
+                                        <label for="calculate-drc-buy">Calculate DRC:</label>
+                                        <label class="switch">
+                                            <input id="calculate-drc-buy" type="checkbox" checked>
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" id="latexometer-buy" class="form-control" placeholder="Latexometer">
+                                        <label for="latexometer-buy">Latexometer</label>
+                                    </div>
+
+                                    <div class="form-floating mb-2">
+                                        <input type="text" id="dry-rubber-buy" class="form-control" placeholder="Dry Rubber (KG)">
+                                        <label for="dry-rubber-buy">Dry Rubber (KG)</label>
+                                    </div>
+
+                                    <button type="button" class="btn btn-primary submit-btn" style="margin-left: 0">Buy</button>
+                                </section>
+
+                                <section>
+                                    <h5>View Raw Latex</h5>
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col" colSpan="2" style="text-align: center;">Farmer</th>
+                                                <th scope="col">Gang</th>
+                                                <th scope="col">Volumn(L)</th>
+                                                <th scope="col" style="text-align: center;">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">300L</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">300L</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">300L</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
 
                             </div>
                         </div>

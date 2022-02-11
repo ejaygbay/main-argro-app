@@ -102,7 +102,7 @@
             <section class="page-wrapper md-toolbar-fixed-adjust">
                 <main class="content-wrapper">
                     <!-- Home section -->
-                    <section style="display: none;" id="home-section">
+                    <section style="display: non;" id="home-section">
                         <div class="mdc-layout-grid__cell--span-12">
                             <div class="mdc-card">
                                 <h6 class="card-title card-title1">Rubber Plantation Incorporated</h6>
@@ -218,7 +218,7 @@
                     </section>
 
                     <!-- Buy section -->
-                    <section id="buy-section" style="display: block;">
+                    <section id="buy-section" style="display: bloc;">
                         <nav id="buy-section-tab">
                             <div class="tab-head" id="tab-head-cuplumps">Cuplumps</div>
                             <div class="tab-head" id="tab-head-buy-raw-latex">Raw Latex</div>
@@ -386,7 +386,7 @@
                         <div id="collect-tab-section-content">
                             <!-- collect cuplumps -->
                             <div class="tab-content" id="tab-content-collect-cuplumps">
-                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px" class="mb-4">
 
                                     <div class="form-floating mb-2">
                                         <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
@@ -413,66 +413,48 @@
 
                                 </section>
 
-                                <div class="collect-section-table col-lg-12">
-                                    <div class="table-responsive">
-                                        <h5>View Collections</h5>
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
-
-                                                    <th>Tapper</th>
-                                                    <th>Gang</th>
-                                                    <th>Weight (KG)</th>
-                                                    <th>Date</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-
-                                                </tr>
-                                                <tr class="table-color">
-
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-
-                                                </tr>
-                                                <tr>
-
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-
-                                                </tr>
-                                                <tr class="table-color">
-
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                </div>
+                                <section>
+                                    <h5>View Collections</h5>
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col" colSpan="2" style="text-align: center;">Tapper</th>
+                                                <th scope="col">Gang</th>
+                                                <th scope="col" style="white-space:nowrap;">Weight (KG)</th>
+                                                <th scope="col" style="text-align: center;">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
                             </div>
 
                             <!-- collect raw latex -->
                             <div class="tab-content" id="tab-content-collect-raw-latex">
-                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
+                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px" class="mb-4">
 
                                     <div class="form-floating mb-2">
                                         <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
@@ -498,61 +480,44 @@
                                     <button type="button" class="btn btn-primary submit-btn" style="margin-left: 0">Enter</button>
 
                                 </section>
-                                <div class="buy-section-table col-lg-12">
-                                    <div class="table-responsive">
-                                        <h5>View Raw Latex Collection</h5>
-                                        <table class="table table-bordered">
-                                            <thead>
-                                                <tr>
 
-                                                    <th>Tapper</th>
-                                                    <th>Gang</th>
-                                                    <th>Weight (KG)</th>
-                                                    <th>Date</th>
-
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-
-                                                </tr>
-                                                <tr class="table-color">
-
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-
-                                                </tr>
-                                                <tr>
-
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-
-                                                </tr>
-                                                <tr class="table-color">
-
-
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                    <td></td>
-                                                </tr>
-
-                                            </tbody>
-                                        </table>
-
-                                    </div>
-                                </div>
+                                <section>
+                                    <h5>View Raw Latex Collection</h5>
+                                    <table class="table table-striped table-responsive">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col">#</th>
+                                                <th scope="col" colSpan="2" style="text-align: center;">Farmer</th>
+                                                <th scope="col">Gang</th>
+                                                <th scope="col" style="white-space:nowrap;">Weight (KG)</th>
+                                                <th scope="col" style="text-align: center;">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <th scope="row">1</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">2</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                            <tr>
+                                                <th scope="row">3</th>
+                                                <td colSpan="2">John Doe</td>
+                                                <td>2451</td>
+                                                <td style="text-align: center;">2451 KG</td>
+                                                <td>February 20, 2022</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </section>
                             </div>
 
 

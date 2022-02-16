@@ -631,7 +631,7 @@ function shipmentSubmitWeighBrigeData() {
 
     if (grossShipment == "") {
         showElement("#grossShipmentValidation");
-        document.getElementById("departure-time-shipment").scrollIntoView();
+        document.getElementById("weigh-section").scrollIntoView();
         return false;
 
     } else {
@@ -641,7 +641,7 @@ function shipmentSubmitWeighBrigeData() {
 
     if (tareShipment == "") {
         showElement("#tareShipmentValidation");
-        document.getElementById("departure-time-shipment").scrollIntoView();
+        document.getElementById("weigh-section").scrollIntoView();
         return false;
 
     } else {
@@ -651,7 +651,7 @@ function shipmentSubmitWeighBrigeData() {
 
     if (crate == "") {
         showElement("#crateValidation");
-        document.getElementById("departure-time-shipment").scrollIntoView();
+        document.getElementById("weigh-section").scrollIntoView();
         return false;
 
     } else {
@@ -660,7 +660,7 @@ function shipmentSubmitWeighBrigeData() {
     }
     if (shipmentStorage == "Select a storage") {
         showElement("#shipmentStorageValidation");
-        document.getElementById("departure-time-shipment").scrollIntoView();
+        document.getElementById("weigh-section").scrollIntoView();
         return false;
 
     } else {

@@ -61,7 +61,7 @@
 
             let post = JSON.stringify(postObj)
 
-            const url = "http://demo.agrotraderlatex.online/api/getLogin/posts"
+            const url = "https://cors-anywhere.herokuapp.com/http://demo.agrotraderlatex.online/api/getLogin/posts"
             let xhr = new XMLHttpRequest()
 
             xhr.open('POST', url, true)
@@ -73,6 +73,18 @@
                     console.log("Post successfully created!")
                 }
             }
+
+
+            $.ajax({
+                url: "https://cors-anywhere.herokuapp.com/http://demo.agrotraderlatex.online/api/collection/get_list_of_weighed_bags",
+                type: "GET",
+                success: function(result) {
+                    console.log(result);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            })
 
 
         }

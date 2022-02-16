@@ -1,4 +1,27 @@
 let current_section = '#home-section';
+
+let weighBridgevalidationElement = '#validationElement';
+let weighBridgevehicleValidationElement = '#vehicleValidationElement';
+
+
+
+let weighBridgeFarmerValidationElement = '#farmerValidationElement';
+
+let grossValidationElement = '#grossValidationElement';
+
+let weighTareValidationElement = '#tareValidationElement';
+
+
+
+let weighNetValidationElement = '#netValidationElement';
+
+
+
+let weighStorageValidationElement = '#storageValidationElement';
+
+// Estate section
+let dateValidation = '#dateValidation';
+
 let current_profile_tab_head = "#tab-head-view";
 let current_profile_section = "#tab-content-view";
 
@@ -85,6 +108,25 @@ document.querySelector("#collect-card").addEventListener('click', () => {
 })
 
 document.querySelector("#weigh-card").addEventListener('click', () => {
+
+    hideElement(weighBridgevalidationElement);
+    hideElement(weighBridgevehicleValidationElement);
+    hideElement(weighBridgeFarmerValidationElement);
+    hideElement(weighTareValidationElement)
+    hideElement(weighNetValidationElement)
+    hideElement(weighStorageValidationElement)
+
+    hideElement(grossValidationElement)
+    hideElement(dateValidation)
+    hideElement("#selectEstateValidation")
+
+    hideElement("#selectEmployeeValidation")
+    hideElement("#collectionValidation")
+    hideElement("#grossEstateValidation")
+    hideElement("#tareEstateValidation");
+    hideElement("#netEstateValidation")
+    hideElement("#storageEstateValidation")
+
     hideElement(current_section);
     current_section = "#weigh-section";
     showElement(current_section);
@@ -284,4 +326,188 @@ document.querySelector("#latex-weightButton").addEventListener('click', () => {
 
 function showCamera(toast) {
     Android.showCamera(toast);
+}
+
+//Submiting Weight brige input data
+
+function buySubmitWeighBrigeData() {
+
+    // validation if input field is empty
+    // Buy section
+    var buydateInput = document.forms["weighBridgeBuy"]["date"].value;
+    var buyFarmerInput = document.forms["weighBridgeBuy"]["farmer"].value;
+    var vehicalPlate = document.forms["weighBridgeBuy"]["vehicalPlate"].value;
+    var gross = document.forms["weighBridgeBuy"]["gross"].value;
+    var tare = document.forms["weighBridgeBuy"]["tare"].value;
+    var net = document.forms["weighBridgeBuy"]["net"].value;
+    var storage = document.forms["weighBridgeBuy"]["storage"].value;
+
+    if (buydateInput == "") {
+        showElement(weighBridgevalidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+        // Getting input fields data
+    } else {
+        hideElement(weighBridgevalidationElement);
+    }
+
+    if (buyFarmerInput == "Select a Farmer") {
+        showElement(weighBridgeFarmerValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement(weighBridgeFarmerValidationElement);
+
+    }
+
+    if (vehicalPlate == "") {
+        showElement(weighBridgevehicleValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+    } else {
+        hideElement(weighBridgevehicleValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+    if (gross == "") {
+        showElement(grossValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+    } else {
+        hideElement(grossValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+    if (tare == "") {
+        showElement(weighTareValidationElement);
+        document.getElementById("gross-buy").scrollIntoView();
+        return false;
+    } else {
+        hideElement(weighTareValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+    if (net == "") {
+        showElement(weighNetValidationElement);
+        document.getElementById("gross-buy").scrollIntoView();
+        return false;
+    } else {
+        hideElement(weighNetValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+    if (storage == "Select a storage") {
+        showElement(weighStorageValidationElement);
+        document.getElementById("gross-buy").scrollIntoView();
+        return false;
+    } else {
+        hideElement(weighStorageValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+}
+
+// Ends here
+
+// ESTASTE SECTION STARTS 
+function estateSubmitWeighBrigeData() {
+
+    // validation if input field is empty
+    // Buy section
+    var esateDate = document.forms["weighBridgeEstate"]["esateDate"].value;
+    var selectEstate = document.forms["weighBridgeEstate"]["selectEstate"].value;
+    var selectEmployee = document.forms["weighBridgeEstate"]["selectEmployee"].value;
+    var collection = document.forms["weighBridgeEstate"]["collection"].value;
+    var grossEstate = document.forms["weighBridgeEstate"]["grossEstate"].value;
+    var tareEstate = document.forms["weighBridgeEstate"]["tareEstate"].value;
+    var netEstate = document.forms["weighBridgeEstate"]["netEstate"].value;
+    var storageEstate = document.forms["weighBridgeEstate"]["storageEstate"].value;
+
+    if (esateDate == "") {
+        showElement(dateValidation);
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+        // Getting input fields data
+    } else {
+        hideElement(dateValidation);
+    }
+
+    if (selectEstate == "Select an estate") {
+        showElement("#selectEstateValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement("#selectEstateValidation");
+
+    }
+
+    if (selectEmployee == "Select an Employee") {
+        showElement("#selectEmployeeValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+    } else {
+        hideElement("#selectEmployeeValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+    if (collection == "") {
+        showElement("#collectionValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+    } else {
+        hideElement("#collectionValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+    if (grossEstate == "") {
+        showElement("#grossEstateValidation");
+        document.getElementById("gross-estate").scrollIntoView();
+        return false;
+    } else {
+        hideElement("#grossEstateValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+    if (tareEstate == "") {
+        showElement("#tareEstateValidation");
+        document.getElementById("gross-estate").scrollIntoView();
+        return false;
+    } else 
+    {
+        hideElement("#tareEstateValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+    if (netEstate == "") {
+        showElement("#netEstateValidation");
+        document.getElementById("gross-estate").scrollIntoView();
+        return false;
+    } else {
+        hideElement("#netEstateValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+
+    if (storageEstate == "Select a storage") {
+        showElement("#storageEstateValidation");
+        document.getElementById("gross-estate").scrollIntoView();
+        return false;
+    } else {
+        hideElement("#storageEstateValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
 }

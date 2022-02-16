@@ -688,59 +688,67 @@
                             <!-- Buy -->
                             <div class="tab-content" id="tab-content-buy">
                                 <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
+                                    <form name="weighBridgeBuy">
+                                        <div class="form-floating mb-2">
+                                            <input type="date" class="form-control" name="date" id="date" placeholder="Date">
+                                            <p id="validationElement"><span style="color:red;">&#9888;</span> please fill in Data</p>
+                                            <label for="business-date-buy">Date</label>
+                                        </div>
 
-                                    <div class="form-floating mb-2">
-                                        <input type="date" class="form-control" id="business-date-buy" placeholder="Date">
-                                        <label for="business-date-buy">Date</label>
-                                    </div>
-
-                                    <div class="form-floating mb-3">
-                                        <select class="form-select" id="select-farmer-buy">
-                                            <option selected>Select a farmer</option>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" name="farmer" id="farmer">
+                                            <option selected>Select a Farmer</option>
                                             <option value="1">Farmer One</option>
                                             <option value="2">Farmer Two</option>
                                             <option value="3">Farmer Three</option>
-                                        </select>
-                                        <label for="select-farmer-buy">Select Farmer</label>
-                                    </div>
+                                            </select>
+                                            <p id="farmerValidationElement"><span style="color:red;">&#9888;</span> please select a Farmer </p>
+                                            <label for="select-farmer-buy">Select Farmer</label>
+                                        </div>
 
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="vehicle-plate-buy" placeholder="Vehicle Plate">
-                                        <label for="vehicle-plate-buy">Vehicle Plate</label>
-                                    </div>
+                                        <div class="form-floating mb-2">
+                                            <input type="text" class="form-control" name="vehicalPlate" id="vehicle-plate-buy" placeholder="Vehicle Plate">
+                                            <p id="vehicleValidationElement"><span style="color:red;">&#9888;</span> please fill in Data</p>
+                                            <label for="vehicle-plate-buy">Vehicle Plate</label>
+                                        </div>
 
-                                    <p style="text-align: center;">---------- Enter Weigh Details ----------</p>
+                                        <p style="text-align: center;">---------- Enter Weigh Details ----------</p>
 
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="gross-buy" placeholder="Gross">
-                                        <label for="gross-buy">Gross (KG)</label>
-                                    </div>
+                                        <div class="form-floating mb-2">
+                                            <input type="text" class="form-control" name="gross" id="gross-buy" placeholder="Gross">
+                                            <p id="grossValidationElement"><span style="color:red;">&#9888;</span> please fill in form field</p>
+                                            <label for="gross-buy">Gross (KG)</label>
+                                        </div>
 
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="tare-buy" placeholder="Tare">
-                                        <label for="tare-buy">Tare (KG)</label>
-                                    </div>
+                                        <div class="form-floating mb-2">
+                                            <input type="text" class="form-control" id="tare-buy" name="tare" placeholder="Tare">
+                                            <p id="tareValidationElement"><span style="color:red;">&#9888;</span> please fill in form field</p>
+                                            <label for="tare-buy">Tare (KG)</label>
+                                        </div>
 
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="net-buy" placeholder="Net">
-                                        <label for="net-buy">Net (KG)</label>
-                                    </div>
+                                        <div class="form-floating mb-2">
+                                            <input type="text" class="form-control" id="net-buy" name="net" placeholder="Net">
+                                            <p id="netValidationElement"><span style="color:red;">&#9888;</span> please fill in form field</p>
+                                            <label for="net-buy">Net (KG)</label>
+                                        </div>
 
-                                    <div class="form-floating mb-3">
-                                        <select class="form-select" id="storage-area-buy">
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" name="storage" id="storage-area-buy">
                                             <option selected>Select a storage</option>
                                             <option value="1">Storage One</option>
                                             <option value="2">Storage Two</option>
                                             <option value="3">Storage Three</option>
                                         </select>
-                                        <label for="storage-area-buy">Storage Area</label>
-                                    </div>
+                                            <p id="storageValidationElement"><span style="color:red;">&#9888;</span> Please select a storage</p>
+                                            <label for="storage-area-buy">Storage Area</label>
+                                        </div>
 
-                                    <div id="btn-group">
-                                        <button type="button" class="btn btn-primary save-btn">Save</button>
+                                        <div id="btn-group">
+                                            <button type="button" class="btn btn-primary save-btn">Save</button>
 
-                                        <button type="button" class="btn btn-primary submit-btn">Submit</button>
-                                    </div>
+                                            <button type="button" class="btn btn-primary submit-btn" onclick="buySubmitWeighBrigeData()">Submit</button>
+                                        </div>
+                                    </form>
                                 </section>
 
                                 <p class="pending-and-submitted-entries">View PENDING and SUBMITTED Entries</p>
@@ -749,69 +757,78 @@
                             <!-- Estate -->
                             <div class="tab-content" id="tab-content-estate">
                                 <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
+                                    <form name="weighBridgeEstate">
+                                        <div class="form-floating mb-2">
+                                            <input type="date" class="form-control" name="esateDate" id="business-date-estate" placeholder="Date">
+                                            <p id="dateValidation"><span style="color:red;">&#9888;</span> please fill in Data</p>
+                                            <label for="business-date-estate">Date</label>
+                                        </div>
 
-                                    <div class="form-floating mb-2">
-                                        <input type="date" class="form-control" id="business-date-estate" placeholder="Date">
-                                        <label for="business-date-estate">Date</label>
-                                    </div>
-
-                                    <div class="form-floating mb-3">
-                                        <select class="form-select" id="select-estate">
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" name="selectEstate" id="select-estate">
                                             <option selected>Select an estate</option>
                                             <option value="1">Estate One</option>
                                             <option value="2">Estate Two</option>
                                             <option value="3">Estate Three</option>
                                         </select>
-                                        <label for="select-estate">Select Farmer</label>
-                                    </div>
+                                            <p id="selectEstateValidation"><span style="color:red;">&#9888;</span> please fill in Data</p>
+                                            <label for="select-estate">Select Farmer</label>
+                                        </div>
 
-                                    <div class="form-floating mb-3">
-                                        <select class="form-select" id="select-employee-estate">
-                                            <option selected>Select an employee</option>
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" name="selectEmployee" id="select-employee-estate">
+                                            <option selected>Select an Employee</option>
                                             <option value="1">Employee One</option>
                                             <option value="2">Employee Two</option>
                                             <option value="3">Employee Three</option>
                                         </select>
-                                        <label for="select-employee-estate">Select Employee</label>
-                                    </div>
+                                            <p id="selectEmployeeValidation"><span style="color:red;">&#9888;</span> please fill in Data</p>
+                                            <label for="select-employee-estate">Select Employee</label>
+                                        </div>
 
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="collection-number-estate" placeholder="Collection #">
-                                        <label for="collection-number-estate">Collection #</label>
-                                    </div>
+                                        <div class="form-floating mb-2">
+                                            <input type="text" class="form-control" id="collection-number-estate" name="collection" placeholder="Collection #">
+                                            <p id="collectionValidation"><span style="color:red;">&#9888;</span> please fill in Data</p>
+                                            <label for="collection-number-estate">Collection #</label>
+                                        </div>
 
-                                    <p style="text-align: center;">---------- Enter Weigh Details ----------</p>
+                                        <p style="text-align: center;">---------- Enter Weigh Details ----------</p>
 
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="gross-estate" placeholder="Gross">
-                                        <label for="gross-estate">Gross (KG)</label>
-                                    </div>
+                                        <div class="form-floating mb-2">
+                                            <input type="text" class="form-control" name="grossEstate" id="gross-estate" placeholder="Gross">
+                                            <p id="grossEstateValidation"><span style="color:red;">&#9888;</span> please fill in Data</p>
+                                            <label for="gross-estate">Gross (KG)</label>
+                                        </div>
 
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="tare-estate" placeholder="Tare">
-                                        <label for="tare-estate">Tare (KG)</label>
-                                    </div>
+                                        <div class="form-floating mb-2">
+                                            <input type="text" class="form-control" name="tareEstate" id="tare-estate" placeholder="Tare">
+                                            <p id="tareEstateValidation"><span style="color:red;">&#9888;</span> please fill in Data</p>
+                                            <label for="tare-estate">Tare (KG)</label>
+                                        </div>
 
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="net-estate" placeholder="Net">
-                                        <label for="net-estate">Net (KG)</label>
-                                    </div>
+                                        <div class="form-floating mb-2">
+                                            <input type="text" class="form-control" name="netEstate" id="net-estate" placeholder="Net">
+                                            <p id="netEstateValidation"><span style="color:red;">&#9888;</span> please fill in Data</p>
+                                            <label for="net-estate">Net (KG)</label>
+                                        </div>
 
-                                    <div class="form-floating mb-3">
-                                        <select class="form-select" id="storage-area-estate">
+                                        <div class="form-floating mb-3">
+                                            <select class="form-select" name="storageEstate" id="storage-area-estate">
                                             <option selected>Select a storage</option>
                                             <option value="1">Storage One</option>
                                             <option value="2">Storage Two</option>
                                             <option value="3">Storage Three</option>
                                         </select>
-                                        <label for="storage-area-estate">Storage Area</label>
-                                    </div>
+                                        <p id="storageEstateValidation"><span style="color:red;">&#9888;</span> Please select a Storage</p>
+                                            <label for="storage-area-estate">Storage Area</label>
+                                        </div>
 
-                                    <div id="btn-group">
-                                        <button type="button" class="btn btn-primary save-btn">Save</button>
+                                        <div id="btn-group">
+                                            <button type="button" class="btn btn-primary save-btn">Save</button>
 
-                                        <button type="button" class="btn btn-primary submit-btn">Submit</button>
-                                    </div>
+                                            <button type="button" class="btn btn-primary submit-btn" onclick="estateSubmitWeighBrigeData()">Submit</button>
+                                        </div>
+                                    </form>
                                 </section>
 
                                 <p class="pending-and-submitted-entries">View PENDING and SUBMITTED Entries</p>
@@ -1268,5 +1285,9 @@
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
 </body>
+
+</html>
+
+</html>
 
 </html>

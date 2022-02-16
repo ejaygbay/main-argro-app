@@ -126,6 +126,20 @@ document.querySelector("#weigh-card").addEventListener('click', () => {
     hideElement("#tareEstateValidation");
     hideElement("#netEstateValidation")
     hideElement("#storageEstateValidation")
+    hideElement("#shipmentDateValidation")
+    hideElement("#shipmentVehiclePlateValidation")
+    hideElement("#shipmentNumberValidation")
+
+    hideElement("#driverValidation")
+
+    hideElement("#containerNumberValidation")
+    hideElement("#nriSealValidation")
+    hideElement("#lotValidation")
+    hideElement("#dapartureTimeValidation")
+    hideElement("#grossShipmentValidation")
+    hideElement("#tareShipmentValidation")
+    hideElement("#crateValidation")
+    hideElement("#shipmentStorageValidation")
 
     hideElement(current_section);
     current_section = "#weigh-section";
@@ -483,8 +497,7 @@ function estateSubmitWeighBrigeData() {
         showElement("#tareEstateValidation");
         document.getElementById("gross-estate").scrollIntoView();
         return false;
-    } else 
-    {
+    } else {
         hideElement("#tareEstateValidation");
         document.getElementById("weigh-section").scrollIntoView();
 
@@ -509,5 +522,149 @@ function estateSubmitWeighBrigeData() {
         hideElement("#storageEstateValidation");
         document.getElementById("weigh-section").scrollIntoView();
 
+    }
+}
+
+// SHIPMENT
+
+function shipmentSubmitWeighBrigeData() {
+
+    // validation if input field is empty
+    // Buy section
+    var shipmentDate = document.forms["weighBridgeShipment"]["shipmentDate"].value;
+    var shipmentNumber = document.forms["weighBridgeShipment"]["shipmentNumber"].value;
+    var shipmentVehiclePlate = document.forms["weighBridgeShipment"]["shipmentVehiclePlate"].value;
+    var driver = document.forms["weighBridgeShipment"]["driver"].value;
+    var containerNumber = document.forms["weighBridgeShipment"]["containerNumber"].value;
+    var nriSeal = document.forms["weighBridgeShipment"]["nriSeal"].value;
+    var lot = document.forms["weighBridgeShipment"]["lot"].value;
+    var dapartureTime = document.forms["weighBridgeShipment"]["dapartureTime"].value;
+    var grossShipment = document.forms["weighBridgeShipment"]["grossShipment"].value;
+    var tareShipment = document.forms["weighBridgeShipment"]["tareShipment"].value;
+    var crate = document.forms["weighBridgeShipment"]["crate"].value;
+    var shipmentStorage = document.forms["weighBridgeShipment"]["shipmentStorage"].value;
+
+    if (shipmentDate == "") {
+        showElement("#shipmentDateValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+        // Getting input fields data
+    } else {
+        hideElement("#shipmentDateValidation");
+    }
+
+    if (shipmentNumber == "") {
+        showElement("#shipmentNumberValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement("#shipmentNumberValidation");
+
+    }
+
+    if (shipmentVehiclePlate == "") {
+        showElement("#shipmentVehiclePlateValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement("#shipmentVehiclePlateValidation");
+
+    }
+
+    if (driver == "") {
+        showElement("#driverValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement("#driverValidation");
+
+    }
+
+    if (containerNumber == "") {
+        showElement("#containerNumberValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement("#containerNumberValidation");
+
+    }
+
+    if (nriSeal == "") {
+        showElement("#nriSealValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement("#nriSealValidation");
+
+    }
+
+    if (lot == "") {
+        showElement("#lotValidation");
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement("#lotValidation");
+    }
+
+
+    if (dapartureTime == "") {
+        showElement("#dapartureTimeValidation");
+        document.getElementById("departure-time-shipment").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement("#dapartureTimeValidation");
+    }
+
+    if (grossShipment == "") {
+        showElement("#grossShipmentValidation");
+        document.getElementById("departure-time-shipment").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement("#grossShipmentValidation");
+    }
+
+    if (tareShipment == "") {
+        showElement("#tareShipmentValidation");
+        document.getElementById("departure-time-shipment").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement("#tareShipmentValidation");
+    }
+
+    if (crate == "") {
+        showElement("#crateValidation");
+        document.getElementById("departure-time-shipment").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement("#crateValidation");
+    }
+    if (shipmentStorage == "Select a storage") {
+        showElement("#shipmentStorageValidation");
+        document.getElementById("departure-time-shipment").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement("#shipmentStorageValidation");
     }
 }

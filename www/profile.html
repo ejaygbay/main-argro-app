@@ -30,7 +30,6 @@
     <link rel="stylesheet" href="assets/css/general-app.css">
     <link rel="stylesheet" href="assets/css/sync-section.css">
     <link rel="stylesheet" href="assets/css/weigh-section.css">
-    <link rel="stylesheet" href="assets/css/profile.css">
     <link rel="stylesheet" href="assets/css/collect-section.css">
     <link rel="stylesheet" href="assets/css/buy-section.css">
     <link rel="stylesheet" href="assets/css/my-tasks-section.css">
@@ -38,7 +37,7 @@
 
 </head>
 
-<body>
+<body onload="showProfileSection()">
     <script src="assets/js/preloader.js"></script>
 
     <div class="body-wrapper">
@@ -59,7 +58,7 @@
                     </h6>
                     <nav class="mdc-list mdc-drawer-menu">
                         <div class="mdc-list-item mdc-drawer-item">
-                            <a class="mdc-drawer-link" href="#" onclick="showProfileSection()">My Profile</a>
+                            <a class="mdc-drawer-link" href="profile.html">My Profile</a>
                         </div>
                         <div class="mdc-list-item mdc-drawer-item">
                             <a class="mdc-drawer-link" href="#">Download Tappers &amp; Gangs</a>
@@ -1017,121 +1016,6 @@
                             </div>
                         </div>
                     </section>
-
-                    <!-- My Profile section -->
-                    <section id="profile-section" style="display: none;">
-                        <nav id="profile-section-tab">
-                            <div class="tab-head" id="tab-head-view">View</div>
-                            <div class="tab-head" id="tab-head-edit">Edit</div>
-                            <div class="tab-head" id="tab-head-password">Change Password</div>
-                        </nav>
-                        <div id="profile-tab-section-content">
-                            <!-- View -->
-                            <div class="tab-content" id="tab-content-view">
-                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px;">
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="business-date-buy" value="Curtis Jackson" disabled>
-                                        <label for="business-date-buy">First Name:</label>
-                                    </div>
-
-
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="vehicle-plate-buy" value="Jackson" disabled>
-                                        <label for="vehicle-plate-buy">Last Name:</label>
-                                    </div>
-
-
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="gross-buy" value="" disabled>
-                                        <label for="gross-buy">Middle Name:</label>
-                                    </div>
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="tare-buy" value="System Admin" disabled>
-                                        <label for="tare-buy">Role:</label>
-                                    </div>
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="net-buy" value="" disabled>
-                                        <label for="net-buy">Group/Gang:</label>
-                                    </div>
-                                </section>
-
-                            </div>
-
-                            <!-- Edit -->
-                            <div class="tab-content" id="tab-content-edit">
-                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="business-date-buy" value="Curtis">
-                                        <label for="business-date-buy">First Name:</label>
-                                    </div>
-
-
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="vehicle-plate-buy" value="Jackson">
-                                        <label for="vehicle-plate-buy">Last Name:</label>
-                                    </div>
-
-
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="gross-buy" value="">
-                                        <label for="gross-buy">Middle Name:</label>
-                                    </div>
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="tare-buy" value="System Admin">
-                                        <label for="tare-buy">Role:</label>
-                                    </div>
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="net-buy" value="">
-                                        <label for="net-buy">Group/Gang:</label>
-                                    </div>
-                                    <button type="button" class="btn btn-primary submit-btn" style="margin-left: 0">Save</button>
-                                </section>
-
-
-                            </div>
-
-                            <!-- Password -->
-                            <div class="tab-content" id="tab-content-password">
-                                <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="business-date-buy" value="998(cjaskson)" disabled>
-                                        <label for="business-date-buy">User ID:</label>
-                                    </div>
-
-
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="vehicle-plate-buy" placeholder="Enter New Password">
-                                        <label for="vehicle-plate-buy">New Password:</label>
-                                    </div>
-
-
-
-                                    <div class="form-floating mb-2">
-                                        <input type="text" class="form-control" id="gross-buy" placeholder="Confrim Password">
-                                        <label for="gross-buy">Confrim Password:</label>
-                                    </div>
-
-
-                                    <button type="button" class="btn btn-primary submit-btn" style="margin-left: 0">Save</button>
-                                </section>
-
-
-                            </div>
-                        </div>
-                    </section>
-
 
                     <!-- My tasks section -->
                     <section id="my-tasks-section" style="display: bloc;">

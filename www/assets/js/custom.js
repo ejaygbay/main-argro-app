@@ -1,4 +1,7 @@
 let current_section = '#home-section';
+let current_profile_tab_head = "#tab-head-view";
+let current_profile_section = "#tab-content-view";
+
 let current_weigh_tab_head = "#tab-head-buy";
 let current_weigh_section = "#tab-content-buy";
 let current_weigh_statistics_tab_head = "#tab-head-pending";
@@ -32,6 +35,48 @@ document.querySelector("#buy-card").addEventListener('click', () => {
     current_section = "#buy-section";
     showElement(current_section);
 })
+
+// onload of the my profile section
+
+function showProfileSection() {
+    hideElement(current_section);
+    current_section = "#profile-section";
+    hideElement("#sidebar");
+    hideElement("#sidebar-cover");
+    current_weigh_tab_head = "#tab-head-view";
+    setAsActive(current_weigh_tab_head);
+    showElement(current_section);
+}
+
+document.querySelector("#tab-head-view").addEventListener('click', (e) => {
+    hideElement(current_profile_section);
+    setAsInactive(current_profile_tab_head);
+    current_profile_section = "#tab-content-view";
+    current_profile_tab_head = "#tab-head-view";
+    showElement(current_profile_section);
+    setAsActive(current_profile_tab_head);
+})
+
+document.querySelector("#tab-head-edit").addEventListener('click', () => {
+    hideElement(current_profile_section);
+    setAsInactive(current_profile_tab_head);
+    current_profile_section = "#tab-content-edit";
+    current_profile_tab_head = "#tab-head-edit";
+    showElement(current_profile_section);
+    setAsActive(current_profile_tab_head);
+})
+
+document.querySelector("#tab-head-password").addEventListener('click', () => {
+    hideElement(current_profile_section);
+    setAsInactive(current_profile_tab_head);
+    current_profile_section = "#tab-content-password";
+    current_profile_tab_head = "#tab-head-password";
+    showElement(current_profile_section);
+    setAsActive(current_profile_tab_head);
+})
+
+
+// Profile ends here
 
 document.querySelector("#collect-card").addEventListener('click', () => {
     hideElement(current_section);

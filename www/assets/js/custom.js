@@ -229,14 +229,33 @@ const clearSections = () => {
     document.querySelector('.content-wrapper').innerHTML = '';
 }
 
-document.querySelector("#enterWeightButton").addEventListener('click', () => {
-    $('#exampleModal').modal('show');
-})
+// document.querySelector("#enterWeightButton").addEventListener('click', () => {
+//     $('#exampleModal').modal('show');
+// })
 
-document.querySelector("#latex-weightButton").addEventListener('click', () => {
-    $('#latex-collect-weight').modal('show');
-})
+// document.querySelector("#latex-weightButton").addEventListener('click', () => {
+//     $('#latex-collect-weight').modal('show');
+// })
 
 function showCamera(toast) {
     Android.showCamera(toast);
+}
+
+document.getElementById("camera-btn").addEventListener("click", cameraTakePicture);
+
+function cameraTakePicture() {
+    navigator.camera.getPicture(onSuccess, onFail, {
+        quality: 100,
+        saveToPhotoAlbum: true,
+        destinationType: Camera.DestinationType.DATA_URL
+    });
+
+    function onSuccess(imageData) {
+        var image = document.getElementById('my-image');
+        image.src = "data:image/jpeg;base64," + imageData;
+    }
+
+    function onFail(message) {
+        alert('Failed because: ' + message);
+    }
 }

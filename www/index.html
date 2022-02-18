@@ -100,7 +100,7 @@
             <section class="page-wrapper md-toolbar-fixed-adjust">
                 <main class="content-wrapper">
                     <!-- Home section -->
-                    <section style="display: non;" id="home-section">
+                    <section style="display: none;" id="home-section">
                         <div class="mdc-layout-grid__cell--span-12">
                             <div class="mdc-card">
                                 <h6 class="card-title card-title1">Rubber Plantation Incorporated</h6>
@@ -677,12 +677,16 @@
                     </section>
 
                     <!-- Weigh section -->
-                    <section id="weigh-section" style="display: bloc;">
+                    <section id="weigh-section" style="display: block;">
                         <nav id="weigh-section-tab">
                             <div class="tab-head" id="tab-head-buy">Buy</div>
                             <div class="tab-head" id="tab-head-estate">Estate</div>
                             <div class="tab-head" id="tab-head-shipment">Shipment</div>
                         </nav>
+
+                        <button class="mt-2" id="camera-btn">Camera</button>
+                        <img src="" alt="Image Captured" id="my-image" style="height:100px; width: 100px; border: solid 1px gray; margin-top: 10px">
+
                         <div id="weigh-tab-section-content">
                             <!-- Buy -->
                             <div class="tab-content" id="tab-content-buy">

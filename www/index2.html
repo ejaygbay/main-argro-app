@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Login 08</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+    <section class="ftco-section">
+        <div class="container">
+
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-5">
+                    <div class="login-wrap p-4 p-md-5">
+
+                        <img src="assets/images/realLogo.png" class="center-img" alt="logo" width="300">
+
+
+                        <form action="#" class="login-form">
+                            <div class="form-group">
+                                <input type="text" name="username" id="username" class="form-control rounded-left" placeholder="Username" required>
+                            </div>
+                            <div class="form-group d-flex">
+                                <input type="password" name="password" id="password" class="form-control rounded-left" placeholder="Password" required>
+                            </div>
+                            <div class="form-group d-md-flex">
+
+                            </div>
+                            <div class="form-group">
+                                <button type="button" class="btn btn-primary rounded submit p-3 px-5" onclick="apiTest()">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js">
+    </script>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.8.10/themes/smoothness/jquery-ui.css" type="text/css">
+    <script type="text/javascript" src="//ajax.aspnetcdn.com/ajax/jquery.ui/1.8.10/jquery-ui.min.js"></script>
+
+    <script>
+        function apiTest() {
+            let postObj = {
+                username: "cjackson998",
+                password: "d3vL1ber1@2020",
+
+            }
+
+            let post = JSON.stringify(postObj)
+
+            const url = "https://cors-anywhere.herokuapp.com/http://demo.agrotraderlatex.online/api/getLogin/posts"
+            let xhr = new XMLHttpRequest()
+
+            xhr.open('POST', url, true)
+            xhr.setRequestHeader('Content-type', 'application/json; charset=UTF-8')
+            xhr.send(post);
+
+            xhr.onload = function() {
+                if (xhr.status === 201) {
+                    console.log("Post successfully created!")
+                }
+            }
+
+
+            $.ajax({
+                url: "https://cors-anywhere.herokuapp.com/http://demo.agrotraderlatex.online/api/collection/get_list_of_weighed_bags",
+                type: "GET",
+                success: function(result) {
+                    console.log(result);
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            })
+
+
+        }
+    </script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+
+</body>
+
+</html>

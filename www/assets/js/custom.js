@@ -342,7 +342,8 @@ function showCamera(toast) {
     Android.showCamera(toast);
 }
 
-document.getElementById("camera-btn").addEventListener("click", cameraTakePicture);
+document.getElementById("gross-buy-tab").addEventListener("click", cameraTakePicture);
+document.getElementById("tare-buy-tab").addEventListener("click", cameraTakePicture);
 
 function cameraTakePicture() {
     navigator.camera.getPicture(onSuccess, onFail, {

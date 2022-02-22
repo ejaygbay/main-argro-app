@@ -11,11 +11,7 @@ let grossValidationElement = '#grossValidationElement';
 
 let weighTareValidationElement = '#tareValidationElement';
 
-
-
 let weighNetValidationElement = '#netValidationElement';
-
-
 
 let weighStorageValidationElement = '#storageValidationElement';
 
@@ -38,6 +34,13 @@ let current_collect_tab_head = "#tab-head-collect-cuplumps";
 let current_collect_section = "#tab-content-collect-cuplumps";
 
 
+function chkInternetStatus() {
+    if (navigator.onLine) {
+        document.getElementById("wifi-icon").style.color = "white";
+    } else {
+        console.log("Oops! You're offline. Please check your network connection...");
+    }
+}
 document.querySelector('.sidebar-toggler').addEventListener('click', () => {
     showElement("#sidebar-cover");
     showElement("#sidebar");
@@ -355,6 +358,22 @@ function cameraTakePicture() {
     function onSuccess(imageData) {
         var image = document.getElementById('my-image');
         image.src = "data:image/jpeg;base64," + imageData;
+
+        textocr.recText(0, /*3,*/ imageData, onSuccess, onFail); // removed returnType (here 3) from version 2.0.0
+        // for sourceType Use 0,1,2,3 or 4
+        // for returnType Use 0,1,2 or 3 // 3 returns duplicates[see table]
+        function onSuccess(recognizedText) {
+            //var element = document.getElementById('pp');
+            //element.innerHTML=recognizedText;
+            //Use above two lines to show recognizedText in html
+            document.getElementById("ocr_data").innerHTML = recognizedText;
+
+            alert(recognizedText);
+        }
+
+        function onFail(message) {
+            alert('Failed because: ' + message);
+        }
     }
 
     function onFail(message) {
@@ -686,4 +705,7 @@ function shipmentSubmitWeighBrigeData() {
         // showElement(weighBridgeFarmerValidationElement);
         hideElement("#shipmentStorageValidation");
     }
+} // showElement(weighBridgeFarmerValidationElement);
+hideElement("#shipmentStorageValidation");
+}
 }

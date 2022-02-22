@@ -716,7 +716,7 @@
 
                                         <div class="form-floating mb-2 d-grid">
                                             <button class="btn btn-default-secondary btn-lg weigh-buy-tab-img-btn" type="button" id="gross-buy-tab">
-                                                <span>Gross (KG)</span>
+                                                <span id="ocr_data">Gross (KG)</span>
                                                 <i class="fas card-icon">&#xf030;</i>
                                             </button>
                                             <p id="grossValidationElement"><span style="color:red;">&#9888;</span> please fill in form field</p>
@@ -1131,8 +1131,6 @@
                                     </div>
                                     <button type="button" class="btn btn-primary submit-btn" style="margin-left: 0">Save</button>
                                 </section>
-
-
                             </div>
 
                             <!-- Password -->
@@ -1272,7 +1270,14 @@
 
         </div>
     </div>
-
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            chkInternetStatus();
+        });
+        setInterval(function() {
+            chkInternetStatus();
+        }, 1000);
+    </script>
     <!-- plugins:js -->
     <script src="assets/vendors/js/vendor.bundle.base.js"></script>
     <!-- endinject -->
@@ -1303,5 +1308,7 @@
     <script src="cordova.js"></script>
     <script src="js/index.js"></script>
 </body>
+
+</html>
 
 </html>

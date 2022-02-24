@@ -1,5 +1,5 @@
 let current_section = '#home-section';
-
+var count = 0;
 let weighBridgevalidationElement = '#validationElement';
 let weighBridgevehicleValidationElement = '#vehicleValidationElement';
 
@@ -113,6 +113,7 @@ document.querySelector("#collect-card").addEventListener('click', () => {
 document.querySelector("#weigh-card").addEventListener('click', () => {
 
     hideElement(weighBridgevalidationElement);
+
     hideElement(weighBridgevehicleValidationElement);
     hideElement(weighBridgeFarmerValidationElement);
     hideElement(weighTareValidationElement)
@@ -424,17 +425,18 @@ function buySubmitWeighBrigeData() {
 
     }
 
-    if (gross == "") {
+    if (gross == "Gross (KG)") {
         showElement(grossValidationElement);
         document.getElementById("weigh-section").scrollIntoView();
         return false;
     } else {
+        e.log()
         hideElement(grossValidationElement);
         document.getElementById("weigh-section").scrollIntoView();
 
     }
 
-    if (tare == "") {
+    if (tare == "Tare (KG)") {
         showElement(weighTareValidationElement);
         document.getElementById("gross-buy").scrollIntoView();
         return false;
@@ -705,7 +707,115 @@ function shipmentSubmitWeighBrigeData() {
         // showElement(weighBridgeFarmerValidationElement);
         hideElement("#shipmentStorageValidation");
     }
-} // showElement(weighBridgeFarmerValidationElement);
-hideElement("#shipmentStorageValidation");
 }
+
+// Data from input element weigh bridge
+
+function saveAsPending() {
+
+    // validation if input field is empty
+    // Buy section
+    var buydateInput = document.forms["weighBridgeBuy"]["date"].value;
+    var buyFarmerInput = document.forms["weighBridgeBuy"]["farmer"].value;
+    var vehicalPlate = document.forms["weighBridgeBuy"]["vehicalPlate"].value;
+    var gross = document.forms["weighBridgeBuy"]["gross"].value;
+    var tare = document.forms["weighBridgeBuy"]["tare"].value;
+    var net = document.forms["weighBridgeBuy"]["net"].value;
+    var storage = document.forms["weighBridgeBuy"]["storage"].value;
+
+    if (buydateInput == "") {
+        showElement(weighBridgevalidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+        // Getting input fields data
+    } else {
+        hideElement(weighBridgevalidationElement);
+    }
+
+    if (buyFarmerInput == "Select a Farmer") {
+        showElement(weighBridgeFarmerValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+
+    } else {
+        // showElement(weighBridgeFarmerValidationElement);
+        hideElement(weighBridgeFarmerValidationElement);
+
+    }
+
+    if (vehicalPlate == "") {
+        showElement(weighBridgevehicleValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+    } else {
+        hideElement(weighBridgevehicleValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+    if (gross == "Gross (KG)") {
+        showElement(grossValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+        return false;
+    } else {
+
+        hideElement(grossValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+    if (tare == "Tare (KG)") {
+        showElement(weighTareValidationElement);
+        document.getElementById("gross-buy").scrollIntoView();
+        return false;
+    } else {
+        hideElement(weighTareValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+    if (net == "") {
+        showElement(weighNetValidationElement);
+        document.getElementById("gross-buy").scrollIntoView();
+        return false;
+    } else {
+        hideElement(weighNetValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+
+    }
+
+    if (storage == "Select a storage") {
+        showElement(weighStorageValidationElement);
+        document.getElementById("gross-buy").scrollIntoView();
+        return false;
+    } else {
+        hideElement(weighStorageValidationElement);
+        document.getElementById("weigh-section").scrollIntoView();
+
+
+
+        function increment() {
+
+            count++;
+            return count;
+        }
+        var table = document.getElementById("pendingTable");
+        var row = table.insertRow(-1);
+        var cell1 = row.insertCell(-1);
+        var cell2 = row.insertCell(-1);
+        var cell3 = row.insertCell(-1);
+        var cell4 = row.insertCell(-1);
+        increment();
+        cell1.innerHTML = count;
+
+        cell2.innerHTML = document.forms["weighBridgeBuy"]["farmer"].value;
+        cell3.innerHTML = document.forms["weighBridgeBuy"]["vehicalPlate"].value;
+        cell4.innerHTML = document.forms["weighBridgeBuy"]["date"].value;
+        $("#myModal").show();
+
+        setTimeout(function() {$("#myModal").hide();}, 1500);
+
+       
+    }
+
 }

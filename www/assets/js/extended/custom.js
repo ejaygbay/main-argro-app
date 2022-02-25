@@ -41,3 +41,23 @@ function chkInternetStatus() {
         console.log("Oops! You're offline. Please check your network connection...");
     }
 }
+
+
+/**
+ * General Functions
+ */
+const hideElement = (ele) => {
+    document.querySelector(ele).style = "display: none";
+}
+
+const showElement = (ele) => {
+    document.querySelector(ele).style = "display: block";
+}
+
+const setAsActive = (ele) => {
+    document.querySelector(ele).style = "background: #bcb27b; color: #000;";
+}
+
+const setAsInactive = (ele) => {
+    document.querySelector(ele).style = "background: #675C2F; color: #fff;";
+}

@@ -72,45 +72,7 @@ document.querySelectorAll(".pending-and-submitted-entries").forEach(ele => {
     })
 })
 
-document.querySelector("#weigh-card").addEventListener('click', () => {
 
-    hideElement(weighBridgevalidationElement);
-
-    hideElement(weighBridgevehicleValidationElement);
-    hideElement(weighBridgeFarmerValidationElement);
-    hideElement(weighTareValidationElement)
-    hideElement(weighNetValidationElement)
-    hideElement(weighStorageValidationElement)
-
-    hideElement(grossValidationElement)
-    hideElement(dateValidation)
-    hideElement("#selectEstateValidation")
-
-    hideElement("#selectEmployeeValidation")
-    hideElement("#collectionValidation")
-    hideElement("#grossEstateValidation")
-    hideElement("#tareEstateValidation");
-    hideElement("#netEstateValidation")
-    hideElement("#storageEstateValidation")
-    hideElement("#shipmentDateValidation")
-    hideElement("#shipmentVehiclePlateValidation")
-    hideElement("#shipmentNumberValidation")
-
-    hideElement("#driverValidation")
-
-    hideElement("#containerNumberValidation")
-    hideElement("#nriSealValidation")
-    hideElement("#lotValidation")
-    hideElement("#dapartureTimeValidation")
-    hideElement("#grossShipmentValidation")
-    hideElement("#tareShipmentValidation")
-    hideElement("#crateValidation")
-    hideElement("#shipmentStorageValidation")
-
-    hideElement(current_section);
-    current_section = "#weigh-section";
-    showElement(current_section);
-})
 
 
 function showCamera(toast) {

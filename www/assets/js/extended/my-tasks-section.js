@@ -18,25 +18,3 @@ document.querySelector("#tab-head-completed").addEventListener('click', () => {
     showElement(current_my_tasks_section);
     setAsActive(current_my_tasks_tab_head);
 })
-
-document.querySelector("#my-tasks-card").addEventListener('click', () => {
-    hideElement(current_section);
-    current_section = "#my-tasks-section";
-    showElement(current_section);
-})
-
-const hideElement = (ele) => {
-    document.querySelector(ele).style = "display: none";
-}
-
-const showElement = (ele) => {
-    document.querySelector(ele).style = "display: block";
-}
-
-const setAsActive = (ele) => {
-    document.querySelector(ele).style = "background: #bcb27b; color: #000;";
-}
-
-const setAsInactive = (ele) => {
-    document.querySelector(ele).style = "background: #675C2F; color: #fff;";
-}

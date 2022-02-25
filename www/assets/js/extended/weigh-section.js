@@ -1,5 +1,5 @@
 /**
- * Weigh section tab event listener
+ * Weigh section tab eventlistener
  */
 document.querySelector("#tab-head-buy").addEventListener('click', (e) => {
     hideElement(current_weigh_section);

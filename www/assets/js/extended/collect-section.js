@@ -1,5 +1,5 @@
 /**
- * Collect section tab event listener
+ * Collect section tab eventlistener
  */
 document.querySelector("#tab-head-collect-cuplumps").addEventListener('click', (e) => {
     hideElement(current_collect_section);

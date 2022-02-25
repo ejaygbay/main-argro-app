@@ -1,5 +1,5 @@
 /**
- * Buy section tab event listener
+ * Buy section tab eventlistener
  */
 document.querySelector("#tab-head-cuplumps").addEventListener('click', (e) => {
     hideElement(current_buy_section);
@@ -18,19 +18,3 @@ document.querySelector("#tab-head-buy-raw-latex").addEventListener('click', () =
     showElement(current_buy_section);
     setAsActive(current_buy_tab_head);
 })
-
-const hideElement = (ele) => {
-    document.querySelector(ele).style = "display: none";
-}
-
-const showElement = (ele) => {
-    document.querySelector(ele).style = "display: block";
-}
-
-const setAsActive = (ele) => {
-    document.querySelector(ele).style = "background: #bcb27b; color: #000;";
-}
-
-const setAsInactive = (ele) => {
-    document.querySelector(ele).style = "background: #675C2F; color: #fff;";
-}

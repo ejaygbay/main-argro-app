@@ -1,5 +1,5 @@
 /**
- * My Tasks section tab event listener
+ * My Tasks section tab eventlistener
  */
 document.querySelector("#tab-head-task-list").addEventListener('click', (e) => {
     hideElement(current_my_tasks_section);

@@ -8,6 +8,8 @@ document.querySelector("#tab-head-buy").addEventListener('click', (e) => {
     current_weigh_tab_head = "#tab-head-buy";
     showElement(current_weigh_section);
     setAsActive(current_weigh_tab_head);
+    hideElement('#gross-ocr-data');
+    hideElement('#tare-ocr-data');
 })
 
 document.querySelector("#tab-head-estate").addEventListener('click', () => {
@@ -72,6 +74,12 @@ document.querySelectorAll(".pending-and-submitted-entries").forEach(ele => {
     })
 })
 
+/**
+ * Camera buttons eventlisteners
+ */
+document.getElementById("gross-buy-tab-camera-btn").addEventListener("click", () => { cameraTakePicture('gross-ocr-data') });
+
+document.getElementById("tare-buy-tab-camera-btn").addEventListener("click", () => { cameraTakePicture('tare-ocr-data') });
 
 
 
@@ -79,8 +87,7 @@ function showCamera(toast) {
     Android.showCamera(toast);
 }
 
-document.getElementById("gross-buy-tab-camera-btn").addEventListener("click", cameraTakePicture('gross-ocr-data'));
-document.getElementById("tare-buy-tab-camera-btn").addEventListener("click", cameraTakePicture('tare-ocr-data'));
+
 
 const cameraTakePicture = async(ele_id) => {
     navigator.camera.getPicture(onSuccess, onFail, {
@@ -88,7 +95,7 @@ const cameraTakePicture = async(ele_id) => {
         correctOrientation: true
     });
 
-    const onSuccess = (image_data) => {
+    const onSuccess = async(image_data) => {
         let element = document.getElementById(`${ele_id}`);
         showElement(ele_id);
         element.value = await readDataFromImage(image_data);
@@ -544,25 +551,4 @@ function saveAsPending() {
 
     }
 
-}
-
-
-
-
-
-
-const hideElement = (ele) => {
-    document.querySelector(ele).style = "display: none";
-}
-
-const showElement = (ele) => {
-    document.querySelector(ele).style = "display: block";
-}
-
-const setAsActive = (ele) => {
-    document.querySelector(ele).style = "background: #bcb27b; color: #000;";
-}
-
-const setAsInactive = (ele) => {
-    document.querySelector(ele).style = "background: #675C2F; color: #fff;";
 }

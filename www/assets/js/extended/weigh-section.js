@@ -125,20 +125,6 @@ function cameraTakePicture() {
     }
 }
 
-const readDataFromImage = (image, callback) => {
-    let text_doc = "";
-    textocr.recText(0, image, onSuccess, onFail);
-
-    const onSuccess = (recognizedText) => {
-        let text_from_image = recognizedText.blocks.blocktext;
-        text_from_image.forEach(ele => text_doc = `${text_doc} ${ele}`);
-    }
-
-    const onFail = (message) => alert('Failed because: ' + message);
-
-    return callback(text_doc);
-}
-
 function buySubmitWeighBrigeData() {
 
     // validation if input field is empty

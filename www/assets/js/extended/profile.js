@@ -34,19 +34,3 @@ document.querySelector("#tab-head-password").addEventListener('click', () => {
     showElement(current_profile_section);
     setAsActive(current_profile_tab_head);
 })
-
-const hideElement = (ele) => {
-    document.querySelector(ele).style = "display: none";
-}
-
-const showElement = (ele) => {
-    document.querySelector(ele).style = "display: block";
-}
-
-const setAsActive = (ele) => {
-    document.querySelector(ele).style = "background: #bcb27b; color: #000;";
-}
-
-const setAsInactive = (ele) => {
-    document.querySelector(ele).style = "background: #675C2F; color: #fff;";
-}

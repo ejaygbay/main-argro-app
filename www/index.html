@@ -107,7 +107,7 @@
             <section class="page-wrapper md-toolbar-fixed-adjust">
                 <main class="content-wrapper">
                     <!-- Home section -->
-                    <section style="display: non;" id="home-section">
+                    <section style="display: none;" id="home-section">
                         <div class="mdc-layout-grid__cell--span-12">
                             <div class="mdc-card">
                                 <h6 class="card-title card-title1">Rubber Plantation Incorporated</h6>
@@ -379,6 +379,7 @@
                             </div>
                         </div>
                     </section>
+
                     <!-- Collect section -->
                     <section id="collect-section" style="display: bloc;">
                         <nav id="collect-section-tab">
@@ -681,7 +682,7 @@
                     </section>
 
                     <!-- Weigh section -->
-                    <section id="weigh-section" style="display: bloc;">
+                    <section id="weigh-section" style="display: block;">
                         <nav id="weigh-section-tab">
                             <div class="tab-head" id="tab-head-buy">Buy</div>
                             <div class="tab-head" id="tab-head-estate">Estate</div>
@@ -722,6 +723,7 @@
                                                 <span id="ocr_data" name="gross">Gross (KG)</span>
                                                 <i class="fas card-icon">&#xf030;</i>
                                             </button>
+                                            <input style="width:100%; padding-left: 8px" class="mt-2" type="text" id="gross-ocr-data" value="Camera Data" disabled>
                                             <p id="grossValidationElement"><span style="color:red;">&#9888;</span> please fill in form field</p>
                                         </div>
 
@@ -730,6 +732,7 @@
                                                 <span value="">Tare (KG)</span>
                                                 <i class="fas card-icon">&#xf030;</i>
                                             </button>
+                                            <input style="width:100%; padding-left: 8px" class="mt-2" type="text" id="tare-ocr-data" value="Camera Data" disabled>
                                             <p id="tareValidationElement">
                                                 <span style="color:red;">&#9888;</span> please fill in form field</p>
                                         </div>
@@ -939,6 +942,7 @@
                             </div>
                         </div>
                     </section>
+
                     <!-- Data save modal -->
                     <!-- Modal HTML -->
                     <div id="myModal" class="modal">
@@ -958,6 +962,7 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- Weigh statistics section -->
                     <section id="weigh-statistics-section" style="display: bloc;">
                         <nav id="weigh-statistics-section-tab">

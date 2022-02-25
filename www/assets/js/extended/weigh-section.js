@@ -1,203 +1,3 @@
-let current_section = '#home-section';
-var count = 0;
-let weighBridgevalidationElement = '#validationElement';
-let weighBridgevehicleValidationElement = '#vehicleValidationElement';
-
-
-
-let weighBridgeFarmerValidationElement = '#farmerValidationElement';
-
-let grossValidationElement = '#grossValidationElement';
-
-let weighTareValidationElement = '#tareValidationElement';
-
-let weighNetValidationElement = '#netValidationElement';
-
-let weighStorageValidationElement = '#storageValidationElement';
-
-// Estate section
-let dateValidation = '#dateValidation';
-
-let current_profile_tab_head = "#tab-head-view";
-let current_profile_section = "#tab-content-view";
-
-let current_weigh_tab_head = "#tab-head-buy";
-let current_weigh_section = "#tab-content-buy";
-let current_weigh_statistics_tab_head = "#tab-head-pending";
-let current_weigh_statistics_section = "#tab-content-pending";
-let current_my_tasks_section = "#tab-content-task-list";
-let current_my_tasks_tab_head = "#tab-head-task-list";
-let current_statistics = "";
-let current_buy_tab_head = "#tab-head-cuplumps";
-let current_buy_section = "#tab-content-cuplumps";
-let current_collect_tab_head = "#tab-head-collect-cuplumps";
-let current_collect_section = "#tab-content-collect-cuplumps";
-
-
-function chkInternetStatus() {
-    if (navigator.onLine) {
-        document.getElementById("wifi-icon").style.color = "white";
-    } else {
-        console.log("Oops! You're offline. Please check your network connection...");
-    }
-}
-document.querySelector('.sidebar-toggler').addEventListener('click', () => {
-    showElement("#sidebar-cover");
-    showElement("#sidebar");
-
-    document.querySelector('#sidebar').style = "transition: width 5s;width: 76%; display: block;"
-});
-
-document.querySelector("#sidebar-cover").addEventListener('click', () => {
-    hideElement("#sidebar");
-    hideElement("#sidebar-cover");
-})
-
-/**
- * Home cards eventlisteners
- */
-document.querySelector("#buy-card").addEventListener('click', () => {
-    hideElement(current_section);
-    current_section = "#buy-section";
-    showElement(current_section);
-})
-
-// onload of the my profile section
-
-function showProfileSection() {
-    hideElement(current_section);
-    current_section = "#profile-section";
-    hideElement("#sidebar");
-    hideElement("#sidebar-cover");
-    current_weigh_tab_head = "#tab-head-view";
-    setAsActive(current_weigh_tab_head);
-    showElement(current_section);
-}
-
-document.querySelector("#tab-head-view").addEventListener('click', (e) => {
-    hideElement(current_profile_section);
-    setAsInactive(current_profile_tab_head);
-    current_profile_section = "#tab-content-view";
-    current_profile_tab_head = "#tab-head-view";
-    showElement(current_profile_section);
-    setAsActive(current_profile_tab_head);
-})
-
-document.querySelector("#tab-head-edit").addEventListener('click', () => {
-    hideElement(current_profile_section);
-    setAsInactive(current_profile_tab_head);
-    current_profile_section = "#tab-content-edit";
-    current_profile_tab_head = "#tab-head-edit";
-    showElement(current_profile_section);
-    setAsActive(current_profile_tab_head);
-})
-
-document.querySelector("#tab-head-password").addEventListener('click', () => {
-    hideElement(current_profile_section);
-    setAsInactive(current_profile_tab_head);
-    current_profile_section = "#tab-content-password";
-    current_profile_tab_head = "#tab-head-password";
-    showElement(current_profile_section);
-    setAsActive(current_profile_tab_head);
-})
-
-
-// Profile ends here
-
-document.querySelector("#collect-card").addEventListener('click', () => {
-    hideElement(current_section);
-    current_section = "#collect-section";
-    showElement(current_section);
-})
-
-document.querySelector("#weigh-card").addEventListener('click', () => {
-
-    hideElement(weighBridgevalidationElement);
-
-    hideElement(weighBridgevehicleValidationElement);
-    hideElement(weighBridgeFarmerValidationElement);
-    hideElement(weighTareValidationElement)
-    hideElement(weighNetValidationElement)
-    hideElement(weighStorageValidationElement)
-
-    hideElement(grossValidationElement)
-    hideElement(dateValidation)
-    hideElement("#selectEstateValidation")
-
-    hideElement("#selectEmployeeValidation")
-    hideElement("#collectionValidation")
-    hideElement("#grossEstateValidation")
-    hideElement("#tareEstateValidation");
-    hideElement("#netEstateValidation")
-    hideElement("#storageEstateValidation")
-    hideElement("#shipmentDateValidation")
-    hideElement("#shipmentVehiclePlateValidation")
-    hideElement("#shipmentNumberValidation")
-
-    hideElement("#driverValidation")
-
-    hideElement("#containerNumberValidation")
-    hideElement("#nriSealValidation")
-    hideElement("#lotValidation")
-    hideElement("#dapartureTimeValidation")
-    hideElement("#grossShipmentValidation")
-    hideElement("#tareShipmentValidation")
-    hideElement("#crateValidation")
-    hideElement("#shipmentStorageValidation")
-
-    hideElement(current_section);
-    current_section = "#weigh-section";
-    showElement(current_section);
-})
-
-document.querySelector("#my-tasks-card").addEventListener('click', () => {
-    hideElement(current_section);
-    current_section = "#my-tasks-section";
-    showElement(current_section);
-})
-
-/**
- * Bottom tab eventlisteners
- */
-document.querySelector("#home-icon").addEventListener('click', () => {
-    hideElement(current_section);
-    current_section = "#home-section";
-    showElement(current_section);
-})
-
-document.querySelector("#sync-icon").addEventListener('click', () => {
-    hideElement(current_section);
-    current_section = "#sync-section";
-    showElement(current_section);
-})
-
-document.querySelector("#announcement-icon").addEventListener('click', () => {
-    hideElement(current_section);
-    current_section = "#announcement-section";
-    showElement(current_section);
-})
-
-/**
- * Buy section tab event listener
- */
-document.querySelector("#tab-head-cuplumps").addEventListener('click', (e) => {
-    hideElement(current_buy_section);
-    setAsInactive(current_buy_tab_head);
-    current_buy_section = "#tab-content-cuplumps";
-    current_buy_tab_head = "#tab-head-cuplumps";
-    showElement(current_buy_section);
-    setAsActive(current_buy_tab_head);
-})
-
-document.querySelector("#tab-head-buy-raw-latex").addEventListener('click', () => {
-    hideElement(current_buy_section);
-    setAsInactive(current_buy_tab_head);
-    current_buy_section = "#tab-content-buy-raw-latex";
-    current_buy_tab_head = "#tab-head-buy-raw-latex";
-    showElement(current_buy_section);
-    setAsActive(current_buy_tab_head);
-})
-
 /**
  * Weigh section tab event listener
  */
@@ -272,75 +72,46 @@ document.querySelectorAll(".pending-and-submitted-entries").forEach(ele => {
     })
 })
 
-/**
- * Collect section tab event listener
- */
-document.querySelector("#tab-head-collect-cuplumps").addEventListener('click', (e) => {
-    hideElement(current_collect_section);
-    setAsInactive(current_collect_tab_head);
-    current_collect_section = "#tab-content-collect-cuplumps";
-    current_collect_tab_head = "#tab-head-collect-cuplumps";
-    showElement(current_collect_section);
-    setAsActive(current_collect_tab_head);
+document.querySelector("#weigh-card").addEventListener('click', () => {
+
+    hideElement(weighBridgevalidationElement);
+
+    hideElement(weighBridgevehicleValidationElement);
+    hideElement(weighBridgeFarmerValidationElement);
+    hideElement(weighTareValidationElement)
+    hideElement(weighNetValidationElement)
+    hideElement(weighStorageValidationElement)
+
+    hideElement(grossValidationElement)
+    hideElement(dateValidation)
+    hideElement("#selectEstateValidation")
+
+    hideElement("#selectEmployeeValidation")
+    hideElement("#collectionValidation")
+    hideElement("#grossEstateValidation")
+    hideElement("#tareEstateValidation");
+    hideElement("#netEstateValidation")
+    hideElement("#storageEstateValidation")
+    hideElement("#shipmentDateValidation")
+    hideElement("#shipmentVehiclePlateValidation")
+    hideElement("#shipmentNumberValidation")
+
+    hideElement("#driverValidation")
+
+    hideElement("#containerNumberValidation")
+    hideElement("#nriSealValidation")
+    hideElement("#lotValidation")
+    hideElement("#dapartureTimeValidation")
+    hideElement("#grossShipmentValidation")
+    hideElement("#tareShipmentValidation")
+    hideElement("#crateValidation")
+    hideElement("#shipmentStorageValidation")
+
+    hideElement(current_section);
+    current_section = "#weigh-section";
+    showElement(current_section);
 })
 
-document.querySelector("#tab-head-collect-raw-latex").addEventListener('click', () => {
-    hideElement(current_collect_section);
-    setAsInactive(current_collect_tab_head);
-    current_collect_section = "#tab-content-collect-raw-latex";
-    current_collect_tab_head = "#tab-head-collect-raw-latex";
-    showElement(current_collect_section);
-    setAsActive(current_collect_tab_head);
-})
-
-/**
- * My Tasks section tab event listener
- */
-document.querySelector("#tab-head-task-list").addEventListener('click', (e) => {
-    hideElement(current_my_tasks_section);
-    setAsInactive(current_my_tasks_tab_head);
-    current_my_tasks_section = "#tab-content-task-list";
-    current_my_tasks_tab_head = "#tab-head-task-list";
-    showElement(current_my_tasks_section);
-    setAsActive(current_my_tasks_tab_head);
-})
-
-document.querySelector("#tab-head-completed").addEventListener('click', () => {
-    hideElement(current_my_tasks_section);
-    setAsInactive(current_my_tasks_tab_head);
-    current_my_tasks_section = "#tab-content-completed";
-    current_my_tasks_tab_head = "#tab-head-completed";
-    showElement(current_my_tasks_section);
-    setAsActive(current_my_tasks_tab_head);
-})
-
-const hideElement = (ele) => {
-    document.querySelector(ele).style = "display: none";
-}
-
-const showElement = (ele) => {
-    document.querySelector(ele).style = "display: block";
-}
-
-const setAsActive = (ele) => {
-    document.querySelector(ele).style = "background: #bcb27b; color: #000;";
-}
-
-const setAsInactive = (ele) => {
-    document.querySelector(ele).style = "background: #675C2F; color: #fff;";
-}
-
-const clearSections = () => {
-    document.querySelector('.content-wrapper').innerHTML = '';
-}
-
-// document.querySelector("#enterWeightButton").addEventListener('click', () => {
-//     $('#exampleModal').modal('show');
-// })
-
-// document.querySelector("#latex-weightButton").addEventListener('click', () => {
-//     $('#latex-collect-weight').modal('show');
-// })
 
 function showCamera(toast) {
     Android.showCamera(toast);
@@ -348,42 +119,6 @@ function showCamera(toast) {
 
 document.getElementById("gross-buy-tab-camera-btn").addEventListener("click", cameraTakePicture('gross-ocr-data'));
 document.getElementById("tare-buy-tab-camera-btn").addEventListener("click", cameraTakePicture('tare-ocr-data'));
-
-{
-    // function cameraTakePicture() {
-    //     navigator.camera.getPicture(onSuccess, onFail, {
-    //         quality: 100,
-    //         saveToPhotoAlbum: true,
-    //         destinationType: Camera.DestinationType.DATA_URL
-    //     });
-
-    //     function onSuccess(imageData) {
-    //         var image = document.getElementById('my-image');
-    //         image.src = "data:image/jpeg;base64," + imageData;
-
-    //         textocr.recText(0, /*3,*/ imageData, onSuccess, onFail); // removed returnType (here 3) from version 2.0.0
-    //         // for sourceType Use 0,1,2,3 or 4
-    //         // for returnType Use 0,1,2 or 3 // 3 returns duplicates[see table]
-    //         function onSuccess(recognizedText) {
-    //             //var element = document.getElementById('pp');
-    //             //element.innerHTML=recognizedText;
-    //             //Use above two lines to show recognizedText in html
-    //             document.getElementById("ocr_data").innerHTML = recognizedText;
-
-    //             alert(recognizedText);
-    //         }
-
-    //         function onFail(message) {
-    //             alert('Failed because: ' + message);
-    //         }
-    //     }
-
-    //     function onFail(message) {
-    //         alert('Failed because: ' + message);
-    //     }
-    // }
-    //Submiting Weight brige input data
-}
 
 const cameraTakePicture = async(ele_id) => {
     navigator.camera.getPicture(onSuccess, onFail, {
@@ -597,7 +332,6 @@ function estateSubmitWeighBrigeData() {
 }
 
 // SHIPMENT
-
 function shipmentSubmitWeighBrigeData() {
 
     // validation if input field is empty
@@ -741,7 +475,6 @@ function shipmentSubmitWeighBrigeData() {
 }
 
 // Data from input element weigh bridge
-
 function saveAsPending() {
 
     // validation if input field is empty
@@ -849,4 +582,25 @@ function saveAsPending() {
 
     }
 
+}
+
+
+
+
+
+
+const hideElement = (ele) => {
+    document.querySelector(ele).style = "display: none";
+}
+
+const showElement = (ele) => {
+    document.querySelector(ele).style = "display: block";
+}
+
+const setAsActive = (ele) => {
+    document.querySelector(ele).style = "background: #bcb27b; color: #000;";
+}
+
+const setAsInactive = (ele) => {
+    document.querySelector(ele).style = "background: #675C2F; color: #fff;";
 }

@@ -346,42 +346,73 @@ function showCamera(toast) {
     Android.showCamera(toast);
 }
 
-document.getElementById("gross-buy-tab").addEventListener("click", cameraTakePicture);
-document.getElementById("tare-buy-tab").addEventListener("click", cameraTakePicture);
+document.getElementById("gross-buy-tab-camera-btn").addEventListener("click", cameraTakePicture('gross-ocr-data'));
+document.getElementById("tare-buy-tab-camera-btn").addEventListener("click", cameraTakePicture('tare-ocr-data'));
 
-function cameraTakePicture() {
+{
+    // function cameraTakePicture() {
+    //     navigator.camera.getPicture(onSuccess, onFail, {
+    //         quality: 100,
+    //         saveToPhotoAlbum: true,
+    //         destinationType: Camera.DestinationType.DATA_URL
+    //     });
+
+    //     function onSuccess(imageData) {
+    //         var image = document.getElementById('my-image');
+    //         image.src = "data:image/jpeg;base64," + imageData;
+
+    //         textocr.recText(0, /*3,*/ imageData, onSuccess, onFail); // removed returnType (here 3) from version 2.0.0
+    //         // for sourceType Use 0,1,2,3 or 4
+    //         // for returnType Use 0,1,2 or 3 // 3 returns duplicates[see table]
+    //         function onSuccess(recognizedText) {
+    //             //var element = document.getElementById('pp');
+    //             //element.innerHTML=recognizedText;
+    //             //Use above two lines to show recognizedText in html
+    //             document.getElementById("ocr_data").innerHTML = recognizedText;
+
+    //             alert(recognizedText);
+    //         }
+
+    //         function onFail(message) {
+    //             alert('Failed because: ' + message);
+    //         }
+    //     }
+
+    //     function onFail(message) {
+    //         alert('Failed because: ' + message);
+    //     }
+    // }
+    //Submiting Weight brige input data
+}
+
+const cameraTakePicture = async(ele_id) => {
     navigator.camera.getPicture(onSuccess, onFail, {
         quality: 100,
-        saveToPhotoAlbum: true,
-        destinationType: Camera.DestinationType.DATA_URL
+        correctOrientation: true
     });
 
-    function onSuccess(imageData) {
-        var image = document.getElementById('my-image');
-        image.src = "data:image/jpeg;base64," + imageData;
-
-        textocr.recText(0, /*3,*/ imageData, onSuccess, onFail); // removed returnType (here 3) from version 2.0.0
-        // for sourceType Use 0,1,2,3 or 4
-        // for returnType Use 0,1,2 or 3 // 3 returns duplicates[see table]
-        function onSuccess(recognizedText) {
-            //var element = document.getElementById('pp');
-            //element.innerHTML=recognizedText;
-            //Use above two lines to show recognizedText in html
-            document.getElementById("ocr_data").innerHTML = recognizedText;
-
-            alert(recognizedText);
-        }
-
-        function onFail(message) {
-            alert('Failed because: ' + message);
-        }
+    const onSuccess = (image_data) => {
+        let element = document.getElementById(`${ele_id}`);
+        showElement(ele_id);
+        element.value = await readDataFromImage(image_data);
     }
 
-    function onFail(message) {
-        alert('Failed because: ' + message);
-    }
+    const onFail = (message) => alert('Failed because: ' + message)
 }
-//Submiting Weight brige input data
+
+const readDataFromImage = async(image) => {
+    textocr.recText(0, image, onSuccess, onFail);
+
+    const onSuccess = (recognizedText) => {
+        let text_from_image = recognizedText.blocks.blocktext;
+        let text_doc = "";
+
+        text_from_image.forEach(ele => text_doc = `${text_doc} ${ele}`);
+        return text_doc;
+    }
+
+    const onFail = (message) => alert('Failed because: ' + message);
+}
 
 function buySubmitWeighBrigeData() {
 
@@ -813,9 +844,9 @@ function saveAsPending() {
         cell4.innerHTML = document.forms["weighBridgeBuy"]["date"].value;
         $("#myModal").show();
 
-        setTimeout(function() {$("#myModal").hide();}, 1500);
+        setTimeout(function() { $("#myModal").hide(); }, 1500);
 
-       
+
     }
 
 }

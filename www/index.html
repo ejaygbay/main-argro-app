@@ -107,7 +107,7 @@
             <section class="page-wrapper md-toolbar-fixed-adjust">
                 <main class="content-wrapper">
                     <!-- Home section -->
-                    <section style="display: none;" id="home-section">
+                    <section style="display: non;" id="home-section">
                         <div class="mdc-layout-grid__cell--span-12">
                             <div class="mdc-card">
                                 <h6 class="card-title card-title1">Rubber Plantation Incorporated</h6>
@@ -682,7 +682,7 @@
                     </section>
 
                     <!-- Weigh section -->
-                    <section id="weigh-section" style="display: block;">
+                    <section id="weigh-section" style="display: bloc;">
                         <nav id="weigh-section-tab">
                             <div class="tab-head" id="tab-head-buy">Buy</div>
                             <div class="tab-head" id="tab-head-estate">Estate</div>
@@ -719,20 +719,20 @@
                                         <p style="text-align: center;">---------- Enter Weigh Details ----------</p>
 
                                         <div class="form-floating mb-2 d-grid">
-                                            <button name="gross" class="btn btn-default-secondary btn-lg weigh-buy-tab-img-btn" type="button" id="gross-buy-tab">
+                                            <button name="gross" class="btn btn-default-secondary btn-lg weigh-buy-tab-img-btn" type="button" id="gross-buy-tab-camera-btn">
                                                 <span id="ocr_data" name="gross">Gross (KG)</span>
                                                 <i class="fas card-icon">&#xf030;</i>
                                             </button>
-                                            <input style="width:100%; padding-left: 8px" class="mt-2" type="text" id="gross-ocr-data" value="Camera Data" disabled>
+                                            <input class="mt-2" type="text" id="gross-ocr-data" value="No data read" disabled>
                                             <p id="grossValidationElement"><span style="color:red;">&#9888;</span> please fill in form field</p>
                                         </div>
 
                                         <div class="form-floating mb-2 d-grid">
-                                            <button name="tare" class="btn btn-default-secondary btn-lg weigh-buy-tab-img-btn" type="button" id="tare-buy-tab">
+                                            <button name="tare" class="btn btn-default-secondary btn-lg weigh-buy-tab-img-btn" type="button" id="tare-buy-tab-camera-btn">
                                                 <span value="">Tare (KG)</span>
                                                 <i class="fas card-icon">&#xf030;</i>
                                             </button>
-                                            <input style="width:100%; padding-left: 8px" class="mt-2" type="text" id="tare-ocr-data" value="Camera Data" disabled>
+                                            <input class="mt-2" type="text" id="tare-ocr-data" value="Camera Data" disabled>
                                             <p id="tareValidationElement">
                                                 <span style="color:red;">&#9888;</span> please fill in form field</p>
                                         </div>
@@ -1281,12 +1281,12 @@
         </div>
     </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function(event) {
-            chkInternetStatus();
-        });
-        setInterval(function() {
-            chkInternetStatus();
-        }, 1000);
+        // document.addEventListener("DOMContentLoaded", function(event) {
+        //     chkInternetStatus();
+        // });
+        // setInterval(function() {
+        //     chkInternetStatus();
+        // }, 1000);
     </script>
     <!-- plugins:js -->
     <script src="assets/vendors/js/vendor.bundle.base.js"></script>

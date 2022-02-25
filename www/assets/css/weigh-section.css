@@ -51,7 +51,9 @@
 }
 
 #tab-content-estate,
-#tab-content-shipment {
+#tab-content-shipment,
+#gross-ocr-data,
+#tare-ocr-data {
     display: none;
 }
 
@@ -107,4 +109,10 @@
     float: right;
     margin-top: 5px;
     margin-right: -16px;
+}
+
+#gross-ocr-data,
+#tare-ocr-data {
+    width: 100%;
+    padding-left: 8px;
 }

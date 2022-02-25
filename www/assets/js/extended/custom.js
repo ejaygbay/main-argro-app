@@ -42,6 +42,17 @@ function chkInternetStatus() {
     }
 }
 
+// Showing gangs and Tapper section
+function showDownloadSection() {
+    hideElement(current_section);
+    current_section = "#download-section";
+    hideElement("#sidebar");
+    hideElement("#sidebar-cover");
+
+
+    showElement(current_section);
+}
+
 
 /**
  * General Functions

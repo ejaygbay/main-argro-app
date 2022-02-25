@@ -77,10 +77,18 @@ document.querySelectorAll(".pending-and-submitted-entries").forEach(ele => {
 /**
  * Camera buttons eventlisteners
  */
-document.getElementById("gross-buy-tab-camera-btn").addEventListener("click", () => { cameraTakePicture('gross-ocr-data') });
+let camera_btn_id = "";
+document.getElementById("gross-buy-tab-camera-btn").addEventListener("click", cameraTakePicture);
 
-document.getElementById("tare-buy-tab-camera-btn").addEventListener("click", () => { cameraTakePicture('tare-ocr-data') });
+document.getElementById("gross-buy-tab-camera-btn").addEventListener("click", () => {
+    camera_btn_id = '#gross-ocr-data';
+})
 
+document.getElementById("tare-buy-tab-camera-btn").addEventListener("click", cameraTakePicture);
+
+document.getElementById("tare-buy-tab-camera-btn").addEventListener("click", () => {
+    camera_btn_id = '#tare-ocr-data';
+})
 
 
 function showCamera(toast) {
@@ -89,33 +97,46 @@ function showCamera(toast) {
 
 
 
-const cameraTakePicture = async(ele_id) => {
+function cameraTakePicture() {
     navigator.camera.getPicture(onSuccess, onFail, {
         quality: 100,
         correctOrientation: true
     });
 
-    const onSuccess = async(image_data) => {
-        let element = document.getElementById(`${ele_id}`);
-        showElement(ele_id);
-        element.value = await readDataFromImage(image_data);
+    function onSuccess(image_data) {
+        let element = document.querySelector(`${camera_btn_id}`);
+        showElement(camera_btn_id);
+        textocr.recText(0, image_data, onSuccess, onFail);
+
+        function onSuccess(recognizedText) {
+            let text_doc = "";
+            let text_from_image = recognizedText.blocks.blocktext;
+            text_from_image.forEach(ele => text_doc = `${text_doc} ${ele}`);
+            element.value = text_doc;
+        }
+
+        function onFail(message) {
+            alert('Failed because: ' + message);
+        }
     }
 
-    const onFail = (message) => alert('Failed because: ' + message)
+    function onFail(message) {
+        alert('Failed because: ' + message)
+    }
 }
 
-const readDataFromImage = async(image) => {
+const readDataFromImage = (image, callback) => {
+    let text_doc = "";
     textocr.recText(0, image, onSuccess, onFail);
 
     const onSuccess = (recognizedText) => {
         let text_from_image = recognizedText.blocks.blocktext;
-        let text_doc = "";
-
         text_from_image.forEach(ele => text_doc = `${text_doc} ${ele}`);
-        return text_doc;
     }
 
     const onFail = (message) => alert('Failed because: ' + message);
+
+    return callback(text_doc);
 }
 
 function buySubmitWeighBrigeData() {

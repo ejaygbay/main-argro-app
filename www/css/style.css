@@ -11199,3 +11199,8 @@ h5,
     margin-right: auto;
     width: 60%;
 }
+
+.center-text {
+    display: block;
+    margin-left: 12%;
+}

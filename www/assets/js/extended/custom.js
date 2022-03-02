@@ -72,3 +72,5 @@ const setAsActive = (ele) => {
 const setAsInactive = (ele) => {
     document.querySelector(ele).style = "background: #675C2F; color: #fff;";
 }
+
+hideElement('#userCredential');

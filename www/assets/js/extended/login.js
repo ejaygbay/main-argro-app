@@ -10,7 +10,7 @@ document.getElementById('login-btn').addEventListener('click', e => {
             if (data.code === 200) {
                 redirectUser(true);
             } else {
-                console.log("Req not made")
+                console.log("Req not made", data)
             }
         })
         .catch(err => { console.log(err) })

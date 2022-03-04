@@ -5,9 +5,14 @@ document.getElementById('login-btn').addEventListener('click', e => {
     let username = document.getElementById('username');
     let password = document.getElementById('password');
 
+    showLoader("#loader-cover");
+    showLoader(".loader");
+
     makeAPICall(`${URL}/api/v1/login`, { username: username.value, password: password.value })
         .then(data => {
             if (data.code === 200) {
+                hideLoader("#loader-cover");
+                hideLoader(".loader");
                 redirectUser(true);
             } else {
                 console.log("Req not made", data)

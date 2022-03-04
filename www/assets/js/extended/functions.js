@@ -13,3 +13,11 @@ const redirectUser = (status) => {
         window.location.href = "index.html";
     }
 }
+
+const hideLoader = (ele) => {
+    document.querySelector(ele).style = "display: none";
+}
+
+const showLoader = (ele) => {
+    document.querySelector(ele).style = "display: block";
+}

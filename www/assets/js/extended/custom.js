@@ -41,16 +41,61 @@ function chkInternetStatus() {
         console.log("Oops! You're offline. Please check your network connection...");
     }
 }
+const makeAPICalls = async(url) => {
+    return await fetch(url, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            }
+
+        })
+        .then(response => response.json())
+        .then(data => data)
+        .catch(err => err.message)
+}
 
 // Showing gangs and Tapper section
 function showDownloadSection() {
-    hideElement(current_section);
-    current_section = "#download-section";
-    hideElement("#sidebar");
-    hideElement("#sidebar-cover");
+    
+   
+    const URL = "https://agri-api-middleware.herokuapp.com";
+    makeAPICalls(`${URL}/gangsAndTappers`)
+        .then(data => {
+            if (data.code === 200) {
+                console.log("data gotten");
+                document.getElementById("gangAndTappers").textContent += "Total Gangs Records: " + data.message;
+            } else {
+                console.log(data.message);
+                document.getElementById("gangAndTappers").textContent += "Total Gangs Records: " + data.message;
+                // Getting Roles
+                makeAPICalls(`${URL}/roles`)
+                    .then(data2 => {
+                        if (data2.code === 200) {
+                            document.getElementById("roleDownload").textContent += data2.message;
+                            hideElement(current_section);
+                            current_section = "#download-section";
+                            hideElement("#sidebar");
+                            hideElement("#sidebar-cover");
+                            showElement(current_section);
+                        } else {
+                            console.log(data.message);
+                            document.getElementById("roleDownload").textContent += data2.message;
+                            hideElement(current_section);
+                            current_section = "#download-section";
+                            hideElement("#sidebar");
+                            hideElement("#sidebar-cover");
+                            showElement(current_section);
+                     
+
+                        }
+                    })
+
+            }
+        })
 
 
-    showElement(current_section);
+
+    .catch(err => { console.log(err) })
 }
 
 

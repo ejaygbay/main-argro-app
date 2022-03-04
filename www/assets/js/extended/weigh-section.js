@@ -11,6 +11,54 @@ document.querySelector("#tab-head-buy").addEventListener('click', (e) => {
     hideElement('#tare-ocr-data');
 })
 
+
+
+// Get farmers and insert them into the select element
+function getFarmers() {
+
+    const makeCallAPI = async(url) => {
+            return await fetch(url, {
+                    method: 'GET',
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+
+                })
+                .then(response => response.json())
+                .then(data => data)
+                .catch(err => err.message)
+        }
+        // API to call
+    const farmerURL = "https://agri-api-middleware.herokuapp.com";
+    makeCallAPI(`${farmerURL}/farmers`)
+        .then(data => {
+            if (data.code === 200) {
+                // console.log(data);
+                var storage = window.localStorage;
+                for (let i = 0; i < data.data.length; i++) {
+
+                    var famerName = data.data[i].first_name + " " + data.data[i].last_name
+                    var farmerID = data.data[i].farmer_id
+                    storage.setItem(famerName, farmerID)
+                    var x = document.getElementById("select-farmer-buy-tab");
+                    var option = document.createElement("option");
+                    option.text = famerName;
+                    x.add(option);
+
+                    // console.log(data.data[i].first_name + " " + data.data[i].last_name)
+                    // console.log(data.data[i].farmer_id)
+
+                }
+                // location.replace("index.html")
+                // redirectUser(true);
+
+            } else {
+                console.log("Req not made", data)
+            }
+        })
+
+    .catch(err => { console.log(err) })
+}
 document.querySelector("#tab-head-estate").addEventListener('click', () => {
     hideElement(current_weigh_section);
     setAsInactive(current_weigh_tab_head);
@@ -133,7 +181,9 @@ function buySubmitWeighBrigeData() {
     var vehicalPlate = document.forms["weighBridgeBuy"]["vehicalPlate"].value;
     var gross = document.forms["weighBridgeBuy"]["gross"].value;
     var tare = document.forms["weighBridgeBuy"]["tare"].value;
-    var net = document.forms["weighBridgeBuy"]["net"].value;
+    var net = gross - tare;
+    var netTonage = gross - tare / 1000;
+    console.log(netTonage)
     var storage = document.forms["weighBridgeBuy"]["storage"].value;
 
     if (buydateInput == "") {
@@ -151,7 +201,12 @@ function buySubmitWeighBrigeData() {
         return false;
 
     } else {
+
         // showElement(weighBridgeFarmerValidationElement);
+        // get famer name and id from select Element
+
+        // make api call to get farmers data
+
         hideElement(weighBridgeFarmerValidationElement);
 
     }
@@ -166,36 +221,36 @@ function buySubmitWeighBrigeData() {
 
     }
 
-    if (gross == "No data read") {
-        showElement(grossValidationElement);
-        document.getElementById("weigh-section").scrollIntoView();
-        return false;
-    } else {
+    // if (gross == "No data read") {
+    //     showElement(grossValidationElement);
+    //     document.getElementById("weigh-section").scrollIntoView();
+    //     return false;
+    // } else {
 
-        hideElement(grossValidationElement);
-        document.getElementById("weigh-section").scrollIntoView();
+    //     hideElement(grossValidationElement);
+    //     document.getElementById("weigh-section").scrollIntoView();
 
-    }
+    // }
 
-    if (tare == "Camera Data") {
-        showElement(weighTareValidationElement);
-        document.getElementById("gross-buy").scrollIntoView();
-        return false;
-    } else {
-        hideElement(weighTareValidationElement);
-        document.getElementById("weigh-section").scrollIntoView();
+    // if (tare == "Camera Data") {
+    //     showElement(weighTareValidationElement);
+    //     document.getElementById("gross-buy").scrollIntoView();
+    //     return false;
+    // } else {
+    //     hideElement(weighTareValidationElement);
+    //     document.getElementById("weigh-section").scrollIntoView();
 
-    }
+    // }
 
-    if (net == "") {
-        showElement(weighNetValidationElement);
-        document.getElementById("gross-buy").scrollIntoView();
-        return false;
-    } else {
-        hideElement(weighNetValidationElement);
-        document.getElementById("weigh-section").scrollIntoView();
+    // if (net == "") {
+    //     showElement(weighNetValidationElement);
+    //     document.getElementById("gross-buy").scrollIntoView();
+    //     return false;
+    // } else {
+    //     hideElement(weighNetValidationElement);
+    //     document.getElementById("weigh-section").scrollIntoView();
 
-    }
+    // }
 
     if (storage == "Select a storage") {
         showElement(weighStorageValidationElement);
@@ -204,6 +259,43 @@ function buySubmitWeighBrigeData() {
     } else {
         hideElement(weighStorageValidationElement);
         document.getElementById("weigh-section").scrollIntoView();
+
+        const makeAPICall = async(url, data_to_send) => {
+                return await fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            "Content-Type": "application/json"
+                        },
+                        body: JSON.stringify(data_to_send)
+                    })
+                    .then(response => response.json())
+                    .then(data => data)
+                    .catch(err => err.message)
+            }
+            // get the current time
+
+
+        var today = new Date();
+        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        var purchaseNumber = buydateInput + " " +
+            today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+        console.log(purchaseNumber);
+
+        const URL = "https://agri-api-middleware.herokuapp.com";
+        var storage = window.localStorage;
+        console.log(storage.getItem(buyFarmerInput))
+        makeAPICall(`${URL}/weighBridgeBuy`, { farmerId: storage.getItem(buyFarmerInput), vehicalPlates: vehicalPlate, date: buydateInput, grosses: gross, grossTime: time, tares: tare, tareTime: time, nets: net, netTonnage: netTonage, storages: storage, formInitiazationTime: time, purchaseNumbers: purchaseNumber })
+            .then(data => {
+                if (data.code === 200) {
+                    console.log(data);
+                } else {
+                    console.log("Req not made", data)
+                }
+            })
+
+        .catch(err => { console.log(err) })
+
+
 
     }
 }
@@ -699,8 +791,6 @@ function saveAsPending3() {
         $("#myModal").show();
 
         setTimeout(function() { $("#myModal").hide(); }, 1500);
-
-
 
     }
 

@@ -284,10 +284,12 @@ function buySubmitWeighBrigeData() {
         const URL = "https://agri-api-middleware.herokuapp.com";
         var storage = window.localStorage;
         console.log(storage.getItem(buyFarmerInput))
+        showLoader(".loader");
         makeAPICall(`${URL}/weighBridgeBuy`, { farmerId: storage.getItem(buyFarmerInput), vehicalPlates: vehicalPlate, date: buydateInput, grosses: gross, grossTime: time, tares: tare, tareTime: time, nets: net, netTonnage: netTonage, storages: storage, formInitiazationTime: time, purchaseNumbers: purchaseNumber })
             .then(data => {
                 if (data.code === 200) {
                     console.log(data);
+                    hideLoader(".loader");
                 } else {
                     console.log("Req not made", data)
                 }

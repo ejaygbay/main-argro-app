@@ -129,20 +129,20 @@ document.getElementById("gross-buy-tab-camera-btn").addEventListener("click", ca
 
 document.getElementById("gross-buy-tab-camera-btn").addEventListener("click", () => {
     camera_btn_id = '#gross-ocr-data';
+    findNetValue();
 })
 
 document.getElementById("tare-buy-tab-camera-btn").addEventListener("click", cameraTakePicture);
 
 document.getElementById("tare-buy-tab-camera-btn").addEventListener("click", () => {
     camera_btn_id = '#tare-ocr-data';
+    findNetValue();
 })
 
 
 function showCamera(toast) {
     Android.showCamera(toast);
 }
-
-
 
 function cameraTakePicture() {
     navigator.camera.getPicture(onSuccess, onFail, {
@@ -163,8 +163,6 @@ function cameraTakePicture() {
             extractNumberFromText(text_doc, data => {
                 element.value = data;
             });
-
-            // document.getElementById('net-buy-tab').value = 
         }
 
         function onFail(message) {
@@ -216,9 +214,14 @@ const extractNumberFromText = (text, callback) => {
     }
 }
 
-// extractNumberFromText('the total 213 is 456', (data) => {
-//     console.log(data)
-// })
+const findNetValue = () => {
+    let gross_weight_value = document.getElementById('#gross-ocr-data').value;
+    let tare_weight_value = document.getElementById('#tare-ocr-data').value;
+
+    if (gross_weight_value && tare_weight_value) {
+        document.getElementById('net-buy-tab').value = gross_weight_value - tare_weight_value;
+    }
+}
 
 
 function buySubmitWeighBrigeData() {

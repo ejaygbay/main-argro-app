@@ -159,7 +159,9 @@ function cameraTakePicture() {
             let text_doc = "";
             let text_from_image = recognizedText.blocks.blocktext;
             text_from_image.forEach(ele => text_doc = `${text_doc} ${ele}`);
-            element.value = text_doc;
+            element.value = extractNumberFromText(text_doc);
+
+            // document.getElementById('net-buy-tab').value = 
         }
 
         function onFail(message) {
@@ -184,13 +186,129 @@ function buySubmitWeighBrigeData() {
     let storage = document.forms["weighBridgeBuy"]["storage"].value;
 
     if (validateInput(buy_date_input) || validateInput(buy_farmer_input) || validateInput(vehicle_plate) || validateInput(gross) || validateInput(tare) || validateInput(net) || validateInput(storage)) {
-        console.log("Empty ele")
+        console.log("Empty ele");
+
+        {
+            // if (buydateInput === "") {
+            //     showElement(weighBridgevalidationElement);
+            //     document.getElementById("weigh-section").scrollIntoView();
+            //     return false;
+            //     // Getting input fields data
+            // } else {
+            //     hideElement(weighBridgevalidationElement);
+            // }
+
+            // if (buyFarmerInput === "Select a Farmer") {
+            //     showElement(weighBridgeFarmerValidationElement);
+            //     document.getElementById("weigh-section").scrollIntoView();
+            //     return false;
+
+            // } else {
+
+            //     // showElement(weighBridgeFarmerValidationElement);
+            //     // get famer name and id from select Element
+
+            //     // make api call to get farmers data
+
+            //     hideElement(weighBridgeFarmerValidationElement);
+
+            // }
+
+            // if (vehicalPlate === "") {
+            //     showElement(weighBridgevehicleValidationElement);
+            //     document.getElementById("weigh-section").scrollIntoView();
+            //     return false;
+            // } else {
+            //     hideElement(weighBridgevehicleValidationElement);
+            //     document.getElementById("weigh-section").scrollIntoView();
+
+            // }
+
+            // if (gross == "No data read") {
+            //     showElement(grossValidationElement);
+            //     document.getElementById("weigh-section").scrollIntoView();
+            //     return false;
+            // } else {
+
+            //     hideElement(grossValidationElement);
+            //     document.getElementById("weigh-section").scrollIntoView();
+
+            // }
+
+            // if (tare == "Camera Data") {
+            //     showElement(weighTareValidationElement);
+            //     document.getElementById("gross-buy").scrollIntoView();
+            //     return false;
+            // } else {
+            //     hideElement(weighTareValidationElement);
+            //     document.getElementById("weigh-section").scrollIntoView();
+
+            // }
+
+            // if (net == "") {
+            //     showElement(weighNetValidationElement);
+            //     document.getElementById("gross-buy").scrollIntoView();
+            //     return false;
+            // } else {
+            //     hideElement(weighNetValidationElement);
+            //     document.getElementById("weigh-section").scrollIntoView();
+
+            // }
+
+            // if (storage === "Select a storage") {
+            //     showElement(weighStorageValidationElement);
+            //     document.getElementById("gross-buy").scrollIntoView();
+            //     return false;
+            // } else {
+            //     hideElement(weighStorageValidationElement);
+            //     document.getElementById("weigh-section").scrollIntoView();
+
+            //     const makeAPICall = async(url, data_to_send) => {
+            //             return await fetch(url, {
+            //                     method: 'POST',
+            //                     headers: {
+            //                         "Content-Type": "application/json"
+            //                     },
+            //                     body: JSON.stringify(data_to_send)
+            //                 })
+            //                 .then(response => response.json())
+            //                 .then(data => data)
+            //                 .catch(err => err.message)
+            //         }
+            //         // get the current time
+
+
+            //     let today = new Date();
+            //     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            //     let purchaseNumber = buydateInput + " " +
+            //         today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+            //     console.log(purchaseNumber);
+
+            //     const URL = "https://agri-api-middleware.herokuapp.com";
+            //     let storage = window.localStorage;
+            //     console.log(storage.getItem(buyFarmerInput))
+            //     showLoader(".loader");
+            //     makeAPICall(`${URL}/weighBridgeBuy`, { farmerId: storage.getItem(buyFarmerInput), vehicalPlates: vehicalPlate, date: buydateInput, grosses: gross, grossTime: time, tares: tare, tareTime: time, nets: net, netTonnage: netTonage, storages: storage, formInitiazationTime: time, purchaseNumbers: purchaseNumber })
+            //         .then(data => {
+            //             if (data.code === 200) {
+            //                 console.log(data);
+            //                 hideLoader(".loader");
+            //             } else {
+            //                 console.log("Req not made", data)
+            //             }
+            //         })
+
+            //     .catch(err => { console.log(err) })
+
+
+
+            // }
+        }
     } else {
         let today = new Date();
         let time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
         let purchase_number = `${buy_date_input} ${today.getHours()} ${today.getMinutes()} ${today.getSeconds()}`;
 
-        console.log("Make request")
         let data_to_send = {
             farmer_id: local_storage.getItem(buy_farmer_input),
             vehicle_plate: vehicle_plate,
@@ -214,121 +332,6 @@ function buySubmitWeighBrigeData() {
             })
             .catch(err => console.log(err))
     }
-
-    // if (buydateInput === "") {
-    //     showElement(weighBridgevalidationElement);
-    //     document.getElementById("weigh-section").scrollIntoView();
-    //     return false;
-    //     // Getting input fields data
-    // } else {
-    //     hideElement(weighBridgevalidationElement);
-    // }
-
-    // if (buyFarmerInput === "Select a Farmer") {
-    //     showElement(weighBridgeFarmerValidationElement);
-    //     document.getElementById("weigh-section").scrollIntoView();
-    //     return false;
-
-    // } else {
-
-    //     // showElement(weighBridgeFarmerValidationElement);
-    //     // get famer name and id from select Element
-
-    //     // make api call to get farmers data
-
-    //     hideElement(weighBridgeFarmerValidationElement);
-
-    // }
-
-    // if (vehicalPlate === "") {
-    //     showElement(weighBridgevehicleValidationElement);
-    //     document.getElementById("weigh-section").scrollIntoView();
-    //     return false;
-    // } else {
-    //     hideElement(weighBridgevehicleValidationElement);
-    //     document.getElementById("weigh-section").scrollIntoView();
-
-    // }
-
-    // if (gross == "No data read") {
-    //     showElement(grossValidationElement);
-    //     document.getElementById("weigh-section").scrollIntoView();
-    //     return false;
-    // } else {
-
-    //     hideElement(grossValidationElement);
-    //     document.getElementById("weigh-section").scrollIntoView();
-
-    // }
-
-    // if (tare == "Camera Data") {
-    //     showElement(weighTareValidationElement);
-    //     document.getElementById("gross-buy").scrollIntoView();
-    //     return false;
-    // } else {
-    //     hideElement(weighTareValidationElement);
-    //     document.getElementById("weigh-section").scrollIntoView();
-
-    // }
-
-    // if (net == "") {
-    //     showElement(weighNetValidationElement);
-    //     document.getElementById("gross-buy").scrollIntoView();
-    //     return false;
-    // } else {
-    //     hideElement(weighNetValidationElement);
-    //     document.getElementById("weigh-section").scrollIntoView();
-
-    // }
-
-    // if (storage === "Select a storage") {
-    //     showElement(weighStorageValidationElement);
-    //     document.getElementById("gross-buy").scrollIntoView();
-    //     return false;
-    // } else {
-    //     hideElement(weighStorageValidationElement);
-    //     document.getElementById("weigh-section").scrollIntoView();
-
-    //     const makeAPICall = async(url, data_to_send) => {
-    //             return await fetch(url, {
-    //                     method: 'POST',
-    //                     headers: {
-    //                         "Content-Type": "application/json"
-    //                     },
-    //                     body: JSON.stringify(data_to_send)
-    //                 })
-    //                 .then(response => response.json())
-    //                 .then(data => data)
-    //                 .catch(err => err.message)
-    //         }
-    //         // get the current time
-
-
-    //     let today = new Date();
-    //     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    //     let purchaseNumber = buydateInput + " " +
-    //         today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    //     console.log(purchaseNumber);
-
-    //     const URL = "https://agri-api-middleware.herokuapp.com";
-    //     let storage = window.localStorage;
-    //     console.log(storage.getItem(buyFarmerInput))
-    //     showLoader(".loader");
-    //     makeAPICall(`${URL}/weighBridgeBuy`, { farmerId: storage.getItem(buyFarmerInput), vehicalPlates: vehicalPlate, date: buydateInput, grosses: gross, grossTime: time, tares: tare, tareTime: time, nets: net, netTonnage: netTonage, storages: storage, formInitiazationTime: time, purchaseNumbers: purchaseNumber })
-    //         .then(data => {
-    //             if (data.code === 200) {
-    //                 console.log(data);
-    //                 hideLoader(".loader");
-    //             } else {
-    //                 console.log("Req not made", data)
-    //             }
-    //         })
-
-    //     .catch(err => { console.log(err) })
-
-
-
-    // }
 }
 
 // Ends here
@@ -829,3 +832,30 @@ function saveAsPending3() {
 }
 
 const validateInput = (data) => data.length < 1 ? true : false;
+
+const extractNumberFromText = (text) => {
+    text = text.split('.');
+    let first_txt = text[0];
+    let second_txt = text[1];
+
+    if (first_txt.lenght > 0) {
+        for (char of first_txt) {
+            if (!isNaN(char)) {
+                first_txt += Number(char);
+            }
+        }
+
+        if (second_txt.lenght < 1) {
+            return first_txt;
+        }
+    }
+
+    if (second_txt.lenght > 0) {
+        for (char of second_txt) {
+            if (!isNaN(char)) {
+                second_txt += Number(char);
+            }
+        }
+        return `${first_txt}.${second_txt}`;
+    }
+}

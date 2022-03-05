@@ -215,14 +215,14 @@ const extractNumberFromText = (text, callback) => {
 }
 
 const findNetValue = () => {
-    let gross_weight_value = document.getElementById('#gross-ocr-data').value;
-    let tare_weight_value = document.getElementById('#tare-ocr-data').value;
+    let gross_weight_value = document.getElementById('gross-ocr-data').value;
+    let tare_weight_value = document.getElementById('tare-ocr-data').value;
+    console.log(gross_weight_value, tare_weight_value);
 
     if (gross_weight_value && tare_weight_value) {
         document.getElementById('net-buy-tab').value = gross_weight_value - tare_weight_value;
     }
 }
-
 
 function buySubmitWeighBrigeData() {
     let local_storage = window.localStorage;

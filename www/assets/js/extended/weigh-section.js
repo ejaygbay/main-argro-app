@@ -159,7 +159,10 @@ function cameraTakePicture() {
             let text_doc = "";
             let text_from_image = recognizedText.blocks.blocktext;
             text_from_image.forEach(ele => text_doc = `${text_doc} ${ele}`);
-            element.value = extractNumberFromText(text_doc);
+
+            extractNumberFromText(text_doc, data => {
+                element.value = data;
+            });
 
             // document.getElementById('net-buy-tab').value = 
         }
@@ -173,6 +176,50 @@ function cameraTakePicture() {
         alert('Failed because: ' + message)
     }
 }
+
+const extractNumberFromText = (text, callback) => {
+    if (text.includes('.')) {
+        text = text.split('.');
+        let first_txt = text[0];
+        let second_txt = text[1];
+        let first_txt_num = '';
+        let second_txt_num = '';
+
+        if (first_txt.length > 0) {
+            for (char of first_txt) {
+                if (!isNaN(char)) {
+                    first_txt_num += char;
+                }
+            }
+
+            if (second_txt.length < 1) {
+                return callback(first_txt_num);
+            }
+        }
+
+        if (second_txt.length > 0) {
+            for (char of second_txt) {
+                if (!isNaN(char)) {
+                    second_txt_num += char;
+                }
+            }
+            return callback(`${first_txt_num.trim()}.${second_txt_num.trim()}`);
+        }
+    } else {
+        let number = '';
+        for (char of text) {
+            if (!isNaN(char)) {
+                number += char;
+            }
+        }
+        return callback(number.trim());
+    }
+}
+
+// extractNumberFromText('the total 213 is 456', (data) => {
+//     console.log(data)
+// })
+
 
 function buySubmitWeighBrigeData() {
     let local_storage = window.localStorage;
@@ -832,30 +879,3 @@ function saveAsPending3() {
 }
 
 const validateInput = (data) => data.length < 1 ? true : false;
-
-const extractNumberFromText = (text) => {
-    text = text.split('.');
-    let first_txt = text[0];
-    let second_txt = text[1];
-
-    if (first_txt.lenght > 0) {
-        for (char of first_txt) {
-            if (!isNaN(char)) {
-                first_txt += Number(char);
-            }
-        }
-
-        if (second_txt.lenght < 1) {
-            return first_txt;
-        }
-    }
-
-    if (second_txt.lenght > 0) {
-        for (char of second_txt) {
-            if (!isNaN(char)) {
-                second_txt += Number(char);
-            }
-        }
-        return `${first_txt}.${second_txt}`;
-    }
-}

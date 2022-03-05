@@ -21,3 +21,16 @@ const hideLoader = (ele) => {
 const showLoader = (ele) => {
     document.querySelector(ele).style = "display: block";
 }
+
+const makeAPIPostRequest = async(url, data_to_send) => {
+    return await fetch(url, {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(data_to_send)
+        })
+        .then(response => response.json())
+        .then(data => data)
+        .catch(err => err.message)
+}

@@ -1,5 +1,5 @@
-var Estatecount = 0;
-var shipmentCount = 0;
+let Estatecount = 0;
+let shipmentCount = 0;
 document.querySelector("#tab-head-buy").addEventListener('click', (e) => {
     hideElement(current_weigh_section);
     setAsInactive(current_weigh_tab_head);
@@ -34,14 +34,14 @@ function getFarmers() {
         .then(data => {
             if (data.code === 200) {
                 // console.log(data);
-                var storage = window.localStorage;
+                let storage = window.localStorage;
                 for (let i = 0; i < data.data.length; i++) {
 
-                    var famerName = data.data[i].first_name + " " + data.data[i].last_name
-                    var farmerID = data.data[i].farmer_id
+                    let famerName = data.data[i].first_name + " " + data.data[i].last_name
+                    let farmerID = data.data[i].farmer_id
                     storage.setItem(famerName, farmerID)
-                    var x = document.getElementById("select-farmer-buy-tab");
-                    var option = document.createElement("option");
+                    let x = document.getElementById("select-farmer-buy-tab");
+                    let option = document.createElement("option");
                     option.text = famerName;
                     x.add(option);
 
@@ -173,53 +173,82 @@ function cameraTakePicture() {
 }
 
 function buySubmitWeighBrigeData() {
+    let local_storage = window.localStorage;
+    let buy_date_input = document.forms["weighBridgeBuy"]["date"].value;
+    let buy_farmer_input = document.forms["weighBridgeBuy"]["farmer"].value;
+    let vehicle_plate = document.forms["weighBridgeBuy"]["vehicalPlate"].value;
+    let gross = document.forms["weighBridgeBuy"]["gross"].value;
+    let tare = document.forms["weighBridgeBuy"]["tare"].value;
+    let net = gross - tare;
+    let net_tonage = gross - tare / 1000;
+    let storage = document.forms["weighBridgeBuy"]["storage"].value;
 
-    // validation if input field is empty
-    // Buy section
-    var buydateInput = document.forms["weighBridgeBuy"]["date"].value;
-    var buyFarmerInput = document.forms["weighBridgeBuy"]["farmer"].value;
-    var vehicalPlate = document.forms["weighBridgeBuy"]["vehicalPlate"].value;
-    var gross = document.forms["weighBridgeBuy"]["gross"].value;
-    var tare = document.forms["weighBridgeBuy"]["tare"].value;
-    var net = gross - tare;
-    var netTonage = gross - tare / 1000;
-    console.log(netTonage)
-    var storage = document.forms["weighBridgeBuy"]["storage"].value;
-
-    if (buydateInput == "") {
-        showElement(weighBridgevalidationElement);
-        document.getElementById("weigh-section").scrollIntoView();
-        return false;
-        // Getting input fields data
+    if (validateInput(buy_date_input) || validateInput(buy_farmer_input) || validateInput(vehicle_plate) || validateInput(gross) || validateInput(tare) || validateInput(net) || validateInput(storage)) {
+        console.log("Empty ele")
     } else {
-        hideElement(weighBridgevalidationElement);
+        let today = new Date();
+        let time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+        let purchase_number = `${buy_date_input} ${today.getHours()} ${today.getMinutes()} ${today.getSeconds()}`;
+
+        console.log("Make request")
+        let data_to_send = {
+            farmer_id: local_storage.getItem(buy_farmer_input),
+            vehicle_plate: vehicle_plate,
+            date: buy_date_input,
+            gross_weight: gross,
+            gross_time: time,
+            tare_weight: tare,
+            tare_time: time,
+            net_weight: net,
+            net_tonage: net_tonage,
+            storage: storage
+        }
+
+        showLoader("#loader-cover2");
+        showLoader(".loader2");
+        makeAPIPostRequest(`${URL}/weighBridgeBuy`, data_to_send)
+            .then(response => {
+                hideLoader("#loader-cover2");
+                hideLoader(".loader2");
+                console.log("Res=====", response)
+            })
+            .catch(err => console.log(err))
     }
 
-    if (buyFarmerInput == "Select a Farmer") {
-        showElement(weighBridgeFarmerValidationElement);
-        document.getElementById("weigh-section").scrollIntoView();
-        return false;
+    // if (buydateInput === "") {
+    //     showElement(weighBridgevalidationElement);
+    //     document.getElementById("weigh-section").scrollIntoView();
+    //     return false;
+    //     // Getting input fields data
+    // } else {
+    //     hideElement(weighBridgevalidationElement);
+    // }
 
-    } else {
+    // if (buyFarmerInput === "Select a Farmer") {
+    //     showElement(weighBridgeFarmerValidationElement);
+    //     document.getElementById("weigh-section").scrollIntoView();
+    //     return false;
 
-        // showElement(weighBridgeFarmerValidationElement);
-        // get famer name and id from select Element
+    // } else {
 
-        // make api call to get farmers data
+    //     // showElement(weighBridgeFarmerValidationElement);
+    //     // get famer name and id from select Element
 
-        hideElement(weighBridgeFarmerValidationElement);
+    //     // make api call to get farmers data
 
-    }
+    //     hideElement(weighBridgeFarmerValidationElement);
 
-    if (vehicalPlate == "") {
-        showElement(weighBridgevehicleValidationElement);
-        document.getElementById("weigh-section").scrollIntoView();
-        return false;
-    } else {
-        hideElement(weighBridgevehicleValidationElement);
-        document.getElementById("weigh-section").scrollIntoView();
+    // }
 
-    }
+    // if (vehicalPlate === "") {
+    //     showElement(weighBridgevehicleValidationElement);
+    //     document.getElementById("weigh-section").scrollIntoView();
+    //     return false;
+    // } else {
+    //     hideElement(weighBridgevehicleValidationElement);
+    //     document.getElementById("weigh-section").scrollIntoView();
+
+    // }
 
     // if (gross == "No data read") {
     //     showElement(grossValidationElement);
@@ -252,54 +281,54 @@ function buySubmitWeighBrigeData() {
 
     // }
 
-    if (storage == "Select a storage") {
-        showElement(weighStorageValidationElement);
-        document.getElementById("gross-buy").scrollIntoView();
-        return false;
-    } else {
-        hideElement(weighStorageValidationElement);
-        document.getElementById("weigh-section").scrollIntoView();
+    // if (storage === "Select a storage") {
+    //     showElement(weighStorageValidationElement);
+    //     document.getElementById("gross-buy").scrollIntoView();
+    //     return false;
+    // } else {
+    //     hideElement(weighStorageValidationElement);
+    //     document.getElementById("weigh-section").scrollIntoView();
 
-        const makeAPICall = async(url, data_to_send) => {
-                return await fetch(url, {
-                        method: 'POST',
-                        headers: {
-                            "Content-Type": "application/json"
-                        },
-                        body: JSON.stringify(data_to_send)
-                    })
-                    .then(response => response.json())
-                    .then(data => data)
-                    .catch(err => err.message)
-            }
-            // get the current time
-
-
-        var today = new Date();
-        var time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        var purchaseNumber = buydateInput + " " +
-            today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-        console.log(purchaseNumber);
-
-        const URL = "https://agri-api-middleware.herokuapp.com";
-        var storage = window.localStorage;
-        console.log(storage.getItem(buyFarmerInput))
-        showLoader(".loader");
-        makeAPICall(`${URL}/weighBridgeBuy`, { farmerId: storage.getItem(buyFarmerInput), vehicalPlates: vehicalPlate, date: buydateInput, grosses: gross, grossTime: time, tares: tare, tareTime: time, nets: net, netTonnage: netTonage, storages: storage, formInitiazationTime: time, purchaseNumbers: purchaseNumber })
-            .then(data => {
-                if (data.code === 200) {
-                    console.log(data);
-                    hideLoader(".loader");
-                } else {
-                    console.log("Req not made", data)
-                }
-            })
-
-        .catch(err => { console.log(err) })
+    //     const makeAPICall = async(url, data_to_send) => {
+    //             return await fetch(url, {
+    //                     method: 'POST',
+    //                     headers: {
+    //                         "Content-Type": "application/json"
+    //                     },
+    //                     body: JSON.stringify(data_to_send)
+    //                 })
+    //                 .then(response => response.json())
+    //                 .then(data => data)
+    //                 .catch(err => err.message)
+    //         }
+    //         // get the current time
 
 
+    //     let today = new Date();
+    //     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    //     let purchaseNumber = buydateInput + " " +
+    //         today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+    //     console.log(purchaseNumber);
 
-    }
+    //     const URL = "https://agri-api-middleware.herokuapp.com";
+    //     let storage = window.localStorage;
+    //     console.log(storage.getItem(buyFarmerInput))
+    //     showLoader(".loader");
+    //     makeAPICall(`${URL}/weighBridgeBuy`, { farmerId: storage.getItem(buyFarmerInput), vehicalPlates: vehicalPlate, date: buydateInput, grosses: gross, grossTime: time, tares: tare, tareTime: time, nets: net, netTonnage: netTonage, storages: storage, formInitiazationTime: time, purchaseNumbers: purchaseNumber })
+    //         .then(data => {
+    //             if (data.code === 200) {
+    //                 console.log(data);
+    //                 hideLoader(".loader");
+    //             } else {
+    //                 console.log("Req not made", data)
+    //             }
+    //         })
+
+    //     .catch(err => { console.log(err) })
+
+
+
+    // }
 }
 
 // Ends here
@@ -309,14 +338,14 @@ function estateSubmitWeighBrigeData() {
 
     // validation if input field is empty
     // Buy section
-    var esateDate = document.forms["weighBridgeEstate"]["esateDate"].value;
-    var selectEstate = document.forms["weighBridgeEstate"]["selectEstate"].value;
-    var selectEmployee = document.forms["weighBridgeEstate"]["selectEmployee"].value;
-    var collection = document.forms["weighBridgeEstate"]["collection"].value;
-    var grossEstate = document.forms["weighBridgeEstate"]["grossEstate"].value;
-    var tareEstate = document.forms["weighBridgeEstate"]["tareEstate"].value;
-    var netEstate = document.forms["weighBridgeEstate"]["netEstate"].value;
-    var storageEstate = document.forms["weighBridgeEstate"]["storageEstate"].value;
+    let esateDate = document.forms["weighBridgeEstate"]["esateDate"].value;
+    let selectEstate = document.forms["weighBridgeEstate"]["selectEstate"].value;
+    let selectEmployee = document.forms["weighBridgeEstate"]["selectEmployee"].value;
+    let collection = document.forms["weighBridgeEstate"]["collection"].value;
+    let grossEstate = document.forms["weighBridgeEstate"]["grossEstate"].value;
+    let tareEstate = document.forms["weighBridgeEstate"]["tareEstate"].value;
+    let netEstate = document.forms["weighBridgeEstate"]["netEstate"].value;
+    let storageEstate = document.forms["weighBridgeEstate"]["storageEstate"].value;
 
     if (esateDate == "") {
         showElement(dateValidation);
@@ -405,18 +434,18 @@ function shipmentSubmitWeighBrigeData() {
 
     // validation if input field is empty
     // Buy section
-    var shipmentDate = document.forms["weighBridgeShipment"]["shipmentDate"].value;
-    var shipmentNumber = document.forms["weighBridgeShipment"]["shipmentNumber"].value;
-    var shipmentVehiclePlate = document.forms["weighBridgeShipment"]["shipmentVehiclePlate"].value;
-    var driver = document.forms["weighBridgeShipment"]["driver"].value;
-    var containerNumber = document.forms["weighBridgeShipment"]["containerNumber"].value;
-    var nriSeal = document.forms["weighBridgeShipment"]["nriSeal"].value;
-    var lot = document.forms["weighBridgeShipment"]["lot"].value;
-    var dapartureTime = document.forms["weighBridgeShipment"]["dapartureTime"].value;
-    var grossShipment = document.forms["weighBridgeShipment"]["grossShipment"].value;
-    var tareShipment = document.forms["weighBridgeShipment"]["tareShipment"].value;
-    var crate = document.forms["weighBridgeShipment"]["crate"].value;
-    var shipmentStorage = document.forms["weighBridgeShipment"]["shipmentStorage"].value;
+    let shipmentDate = document.forms["weighBridgeShipment"]["shipmentDate"].value;
+    let shipmentNumber = document.forms["weighBridgeShipment"]["shipmentNumber"].value;
+    let shipmentVehiclePlate = document.forms["weighBridgeShipment"]["shipmentVehiclePlate"].value;
+    let driver = document.forms["weighBridgeShipment"]["driver"].value;
+    let containerNumber = document.forms["weighBridgeShipment"]["containerNumber"].value;
+    let nriSeal = document.forms["weighBridgeShipment"]["nriSeal"].value;
+    let lot = document.forms["weighBridgeShipment"]["lot"].value;
+    let dapartureTime = document.forms["weighBridgeShipment"]["dapartureTime"].value;
+    let grossShipment = document.forms["weighBridgeShipment"]["grossShipment"].value;
+    let tareShipment = document.forms["weighBridgeShipment"]["tareShipment"].value;
+    let crate = document.forms["weighBridgeShipment"]["crate"].value;
+    let shipmentStorage = document.forms["weighBridgeShipment"]["shipmentStorage"].value;
 
     if (shipmentDate == "") {
         showElement("#shipmentDateValidation");
@@ -548,13 +577,13 @@ function saveAsPending() {
 
     // validation if input field is empty
     // Buy section
-    var buydateInput = document.forms["weighBridgeBuy"]["date"].value;
-    var buyFarmerInput = document.forms["weighBridgeBuy"]["farmer"].value;
-    var vehicalPlate = document.forms["weighBridgeBuy"]["vehicalPlate"].value;
-    var gross = document.forms["weighBridgeBuy"]["gross"].value;
-    var tare = document.forms["weighBridgeBuy"]["tare"].value;
-    var net = document.forms["weighBridgeBuy"]["net"].value;
-    var storage = document.forms["weighBridgeBuy"]["storage"].value;
+    let buydateInput = document.forms["weighBridgeBuy"]["date"].value;
+    let buyFarmerInput = document.forms["weighBridgeBuy"]["farmer"].value;
+    let vehicalPlate = document.forms["weighBridgeBuy"]["vehicalPlate"].value;
+    let gross = document.forms["weighBridgeBuy"]["gross"].value;
+    let tare = document.forms["weighBridgeBuy"]["tare"].value;
+    let net = document.forms["weighBridgeBuy"]["net"].value;
+    let storage = document.forms["weighBridgeBuy"]["storage"].value;
 
     if (buydateInput == "") {
         showElement(weighBridgevalidationElement);
@@ -591,12 +620,12 @@ function saveAsPending() {
             count++;
             return count;
         }
-        var table = document.getElementById("pendingTable");
-        var row = table.insertRow(-1);
-        var cell1 = row.insertCell(-1);
-        var cell2 = row.insertCell(-1);
-        var cell3 = row.insertCell(-1);
-        var cell4 = row.insertCell(-1);
+        let table = document.getElementById("pendingTable");
+        let row = table.insertRow(-1);
+        let cell1 = row.insertCell(-1);
+        let cell2 = row.insertCell(-1);
+        let cell3 = row.insertCell(-1);
+        let cell4 = row.insertCell(-1);
         increment();
         cell1.innerHTML = count;
 
@@ -659,14 +688,14 @@ function saveAsPending2() {
 
     // validation if input field is empty
     // Buy section
-    var esateDate = document.forms["weighBridgeEstate"]["esateDate"].value;
-    var selectEstate = document.forms["weighBridgeEstate"]["selectEstate"].value;
-    var selectEmployee = document.forms["weighBridgeEstate"]["selectEmployee"].value;
-    var collection = document.forms["weighBridgeEstate"]["collection"].value;
-    var grossEstate = document.forms["weighBridgeEstate"]["grossEstate"].value;
-    var tareEstate = document.forms["weighBridgeEstate"]["tareEstate"].value;
-    var netEstate = document.forms["weighBridgeEstate"]["netEstate"].value;
-    var storageEstate = document.forms["weighBridgeEstate"]["storageEstate"].value;
+    let esateDate = document.forms["weighBridgeEstate"]["esateDate"].value;
+    let selectEstate = document.forms["weighBridgeEstate"]["selectEstate"].value;
+    let selectEmployee = document.forms["weighBridgeEstate"]["selectEmployee"].value;
+    let collection = document.forms["weighBridgeEstate"]["collection"].value;
+    let grossEstate = document.forms["weighBridgeEstate"]["grossEstate"].value;
+    let tareEstate = document.forms["weighBridgeEstate"]["tareEstate"].value;
+    let netEstate = document.forms["weighBridgeEstate"]["netEstate"].value;
+    let storageEstate = document.forms["weighBridgeEstate"]["storageEstate"].value;
 
     if (esateDate == "") {
         showElement(dateValidation);
@@ -702,12 +731,12 @@ function saveAsPending2() {
             Estatecount++;
             return Estatecount;
         }
-        var table = document.getElementById("EstatependingTable");
-        var row = table.insertRow(-1);
-        var cell1 = row.insertCell(-1);
-        var cell2 = row.insertCell(-1);
-        var cell3 = row.insertCell(-1);
-        var cell4 = row.insertCell(-1);
+        let table = document.getElementById("EstatependingTable");
+        let row = table.insertRow(-1);
+        let cell1 = row.insertCell(-1);
+        let cell2 = row.insertCell(-1);
+        let cell3 = row.insertCell(-1);
+        let cell4 = row.insertCell(-1);
         EstateIncrement();
         cell1.innerHTML = Estatecount;
 
@@ -729,18 +758,18 @@ function saveAsPending3() {
 
     // validation if input field is empty
     // Buy section
-    var shipmentDate = document.forms["weighBridgeShipment"]["shipmentDate"].value;
-    var shipmentNumber = document.forms["weighBridgeShipment"]["shipmentNumber"].value;
-    var shipmentVehiclePlate = document.forms["weighBridgeShipment"]["shipmentVehiclePlate"].value;
-    var driver = document.forms["weighBridgeShipment"]["driver"].value;
-    var containerNumber = document.forms["weighBridgeShipment"]["containerNumber"].value;
-    var nriSeal = document.forms["weighBridgeShipment"]["nriSeal"].value;
-    var lot = document.forms["weighBridgeShipment"]["lot"].value;
-    var dapartureTime = document.forms["weighBridgeShipment"]["dapartureTime"].value;
-    var grossShipment = document.forms["weighBridgeShipment"]["grossShipment"].value;
-    var tareShipment = document.forms["weighBridgeShipment"]["tareShipment"].value;
-    var crate = document.forms["weighBridgeShipment"]["crate"].value;
-    var shipmentStorage = document.forms["weighBridgeShipment"]["shipmentStorage"].value;
+    let shipmentDate = document.forms["weighBridgeShipment"]["shipmentDate"].value;
+    let shipmentNumber = document.forms["weighBridgeShipment"]["shipmentNumber"].value;
+    let shipmentVehiclePlate = document.forms["weighBridgeShipment"]["shipmentVehiclePlate"].value;
+    let driver = document.forms["weighBridgeShipment"]["driver"].value;
+    let containerNumber = document.forms["weighBridgeShipment"]["containerNumber"].value;
+    let nriSeal = document.forms["weighBridgeShipment"]["nriSeal"].value;
+    let lot = document.forms["weighBridgeShipment"]["lot"].value;
+    let dapartureTime = document.forms["weighBridgeShipment"]["dapartureTime"].value;
+    let grossShipment = document.forms["weighBridgeShipment"]["grossShipment"].value;
+    let tareShipment = document.forms["weighBridgeShipment"]["tareShipment"].value;
+    let crate = document.forms["weighBridgeShipment"]["crate"].value;
+    let shipmentStorage = document.forms["weighBridgeShipment"]["shipmentStorage"].value;
 
     if (shipmentDate == "") {
         showElement("#shipmentDateValidation");
@@ -777,12 +806,12 @@ function saveAsPending3() {
             shipmentCount++;
             return shipmentCount;
         }
-        var table = document.getElementById("shipmentpendingTable");
-        var row = table.insertRow(-1);
-        var cell1 = row.insertCell(-1);
-        var cell2 = row.insertCell(-1);
-        var cell3 = row.insertCell(-1);
-        var cell4 = row.insertCell(-1);
+        let table = document.getElementById("shipmentpendingTable");
+        let row = table.insertRow(-1);
+        let cell1 = row.insertCell(-1);
+        let cell2 = row.insertCell(-1);
+        let cell3 = row.insertCell(-1);
+        let cell4 = row.insertCell(-1);
         shipmentIncrement();
         cell1.innerHTML = shipmentCount;
 
@@ -798,3 +827,5 @@ function saveAsPending3() {
 
 
 }
+
+const validateInput = (data) => data.length < 1 ? true : false;

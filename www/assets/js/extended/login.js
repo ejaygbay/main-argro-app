@@ -10,7 +10,7 @@ document.getElementById('login-btn').addEventListener('click', e => {
     showLoader("#loader-cover");
     showLoader(".loader");
 
-    makeAPICall(`${URL}/api/v1/login`, { username: username.value, password: password.value })
+    makeAPIPostRequest(`${URL}/api/v1/login`, { username: username.value, password: password.value })
         .then(data => {
             if (data.code === 200) {
                 // Local storage
@@ -101,17 +101,4 @@ function getData() {
     const loginPassword = document.getElementById('password').value;
 
     login(loginUsername, loginPassword);
-}
-
-const makeAPICall = async(url, data_to_send) => {
-    return await fetch(url, {
-            method: 'POST',
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(data_to_send)
-        })
-        .then(response => response.json())
-        .then(data => data)
-        .catch(err => err.message)
 }

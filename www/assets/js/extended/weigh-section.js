@@ -403,9 +403,29 @@ function buySubmitWeighBrigeData() {
             .then(response => {
                 hideLoader("#loader-cover2");
                 hideLoader(".loader2");
-                console.log("Res=====", response)
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Your work has been saved',
+                    showConfirmButton: false,
+                    timer: 2000
+                })
             })
-            .catch(err => console.log(err))
+            .catch(err => {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops!',
+                    text: 'Something went wrong!',
+                    showCancelButton: true,
+                    cancelButtonColor: 'red',
+                    confirmButtonText: "Retry",
+                    cancelButtonText: "Cancel",
+                }).then(result => {
+                    if (result.isConfirmed) {
+                        buySubmitWeighBrigeData();
+                    }
+                })
+            })
     }
 }
 

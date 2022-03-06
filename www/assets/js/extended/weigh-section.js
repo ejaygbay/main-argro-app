@@ -129,14 +129,12 @@ document.getElementById("gross-buy-tab-camera-btn").addEventListener("click", ca
 
 document.getElementById("gross-buy-tab-camera-btn").addEventListener("click", () => {
     camera_btn_id = '#gross-ocr-data';
-    findNetValue();
 })
 
 document.getElementById("tare-buy-tab-camera-btn").addEventListener("click", cameraTakePicture);
 
 document.getElementById("tare-buy-tab-camera-btn").addEventListener("click", () => {
     camera_btn_id = '#tare-ocr-data';
-    findNetValue();
 })
 
 
@@ -148,11 +146,10 @@ function cameraTakePicture() {
     navigator.camera.getPicture(onSuccess, onFail, {
         quality: 100,
         correctOrientation: true
-    });
+    })
 
     function onSuccess(image_data) {
         let element = document.querySelector(`${camera_btn_id}`);
-        showElement(camera_btn_id);
         textocr.recText(0, image_data, onSuccess, onFail);
 
         function onSuccess(recognizedText) {
@@ -160,33 +157,25 @@ function cameraTakePicture() {
             let text_from_image = recognizedText.blocks.blocktext;
             text_from_image.forEach(ele => text_doc = `${text_doc} ${ele}`);
 
-            extractNumberFromText(text_doc, data => {
-                if (!isNaN(data)) {
-                    element.value = data;
-                } else {
-                    Swal.fire({
-                        title: '<strong>Wrong Image Captured</strong>',
-                        icon: 'info',
-                        html: 'You can <b>retake</b> or <b>close</b> the camera',
-                        showCancelButton: true,
-                        focusConfirm: false,
-                        cancelButtonText: '<i class="fas card-icon" style="color: #fff">Close | &#xf00d;</i>',
-                        cancelButtonColor: 'red',
-                        confirmButtonText: '<i class="fas card-icon" style="color: #fff">Retake | &#xf030;</i>',
-                        confirmButtonColor: 'blue'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            cameraTakePicture();
-                        }
-                    })
-                }
-            });
+            if (text_doc.trim().length > 0) {
+                extractNumberFromText(text_doc, data => {
+                    if (!isNaN(data)) {
+                        showElement(camera_btn_id);
+                        element.value = data;
+                        findNetValue();
+                    } else {
+                        reopenCamera();
+                    }
+                })
+            } else {
+                reopenCamera();
+            }
         }
 
         function onFail(message) {
             Swal.fire({
                 icon: 'error',
-                title: 'Oops!!! You closed the camera',
+                title: 'Oops!!! Failed to read image',
                 confirmButtonText: "Close"
             })
         }
@@ -270,13 +259,15 @@ const findNetValue = () => {
 
 const reopenCamera = () => {
     Swal.fire({
-        icon: 'error',
+        icon: 'info',
         title: 'Oops!',
         text: 'No number was found in the image!',
         showCancelButton: true,
+        cancelButtonText: '<i class="fas card-icon" style="color: #fff">Close | &#xf00d;</i>',
         cancelButtonColor: 'red',
-        confirmButtonText: "Retry",
-        cancelButtonText: "Cancel",
+        confirmButtonText: '<i class="fas card-icon" style="color: #fff">Retake | &#xf030;</i>',
+        confirmButtonColor: 'blue',
+        focusConfirm: false
     }).then(result => {
         if (result.isConfirmed) {
             cameraTakePicture();
@@ -415,6 +406,7 @@ function buySubmitWeighBrigeData() {
             // }
         }
     } else {
+        console.log("fhjkrhkj>>>>>>>>>>>")
         let today = new Date();
         let time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
         let purchase_number = `${buy_date_input} ${today.getHours()} ${today.getMinutes()} ${today.getSeconds()}`;

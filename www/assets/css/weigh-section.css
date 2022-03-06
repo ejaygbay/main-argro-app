@@ -116,3 +116,11 @@
     width: 100%;
     padding-left: 8px;
 }
+
+.validation-msg-icon {
+    color: red;
+}
+
+.validation-msg {
+    display: none;
+}

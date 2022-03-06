@@ -705,25 +705,38 @@
                                 <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
                                     <form name="weighBridgeBuy">
                                         <div class="form-floating mb-2">
-                                            <input type="date" class="form-control" name="date" id="date" placeholder="Date">
-                                            <p id="validationElement"><span style="color:red;">&#9888;</span> please fill in Data</p>
+                                            <input type="date" class="form-control" name="date" id="date" placeholder="Date" required>
+
                                             <label for="business-date-buy">Date</label>
+
+                                            <p id="date-validation" class="validation-msg">
+                                                <span class="validation-msg-icon">&#9888;</span>
+                                                <span>please fill in this field</span>
+                                            </p>
                                         </div>
 
                                         <div class="form-floating mb-3">
-                                            <select class="form-select" name="farmer" id="select-farmer-buy-tab">
-                                            <option selected>Select a Farmer</option>
-                                
-                    
+                                            <select class="form-select" name="farmer" id="select-farmer-buy-tab" required>
+                                                <option>Select a Farmer</option>
                                             </select>
-                                            <p id="farmerValidationElement"><span style="color:red;">&#9888;</span> please select a Farmer </p>
+
                                             <label for="select-farmer-buy-tab">Select Farmer</label>
+
+                                            <p id="select-farmer-buy-tab-validation" class="validation-msg">
+                                                <span class="validation-msg-icon">&#9888;</span>
+                                                <span>please select an item</span>
+                                            </p>
                                         </div>
 
                                         <div class="form-floating mb-2">
-                                            <input type="text" class="form-control" name="vehicalPlate" id="vehicle-plate-buy-tab" placeholder="Vehicle Plate">
-                                            <p id="vehicleValidationElement"><span style="color:red;">&#9888;</span> please fill in Data</p>
+                                            <input type="text" class="form-control" name="vehicalPlate" id="vehicle-plate-buy-tab" placeholder="Vehicle Plate" required>
+
                                             <label for="vehicle-plate-buy-tab">Vehicle Plate</label>
+
+                                            <p id="vehicle-plate-buy-tab-validation" class="validation-msg">
+                                                <span class="validation-msg-icon">&#9888;</span>
+                                                <span>please fill in this field</span>
+                                            </p>
                                         </div>
 
                                         <p style="text-align: center;">---------- Enter Weigh Details ----------</p>
@@ -733,8 +746,13 @@
                                                 <span id="ocr_data" name="gross">Gross (KG)</span>
                                                 <i class="fas card-icon">&#xf030;</i>
                                             </button>
-                                            <input class="mt-2" name="gross" type="text" id="gross-ocr-data" value="" disabled>
-                                            <p id="grossValidationElement"><span style="color:red;">&#9888;</span> please fill in form field</p>
+
+                                            <p id="gross-buy-tab-camera-btn-validation" class="validation-msg">
+                                                <span class="validation-msg-icon">&#9888;</span>
+                                                <span>please take a photo</span>
+                                            </p>
+
+                                            <input class="mt-2" name="gross" type="text" id="gross-ocr-data" value="" disabled required>
                                         </div>
 
                                         <div class="form-floating mb-2 d-grid">
@@ -742,26 +760,35 @@
                                                 <span value="">Tare (KG)</span>
                                                 <i class="fas card-icon">&#xf030;</i>
                                             </button>
-                                            <input class="mt-2" name="tare" type="text" id="tare-ocr-data" value="" disabled>
-                                            <p id="tareValidationElement">
-                                                <span style="color:red;">&#9888;</span> please fill in form field</p>
+
+                                            <p id="tare-buy-tab-camera-btn-validation" class="validation-msg">
+                                                <span class="validation-msg-icon">&#9888;</span>
+                                                <span>please take a photo</span>
+                                            </p>
+
+                                            <input class="mt-2" name="tare" type="text" id="tare-ocr-data" value="" disabled required>
                                         </div>
 
                                         <div class="form-floating mb-2">
                                             <input type="text" class="form-control" id="net-buy-tab" name="net" value="" disabled>
-                                            <p id="netValidationElement"><span style="color:red;">&#9888;</span> please fill in form field</p>
+
                                             <label for="net-buy-tab">Net (KG)</label>
                                         </div>
 
                                         <div class="form-floating mb-3">
-                                            <select class="form-select" name="storage" id="storage-area-buy-tab">
-                                            <option selected>Select a storage</option>
-                                            <option value="1">Storage One</option>
-                                            <option value="2">Storage Two</option>
-                                            <option value="3">Storage Three</option>
-                                        </select>
-                                            <p id="storageValidationElement"><span style="color:red;">&#9888;</span> Please select a storage</p>
+                                            <select class="form-select" name="storage" id="storage-area-buy-tab" required>
+                                                <option selected disabled>Select a storage</option>
+                                                <option value="1">Storage One</option>
+                                                <option value="2">Storage Two</option>
+                                                <option value="3">Storage Three</option>
+                                            </select>
+
                                             <label for="storage-area-buy-tab">Storage Area</label>
+
+                                            <p id="storage-area-buy-tab-validation" class="validation-msg">
+                                                <span class="validation-msg-icon">&#9888;</span>
+                                                <span>please select an item</span>
+                                            </p>
                                         </div>
 
                                         <div id="btn-group">

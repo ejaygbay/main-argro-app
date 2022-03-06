@@ -15,16 +15,17 @@ document.querySelector("#collect-card").addEventListener('click', () => {
 
 document.querySelector("#weigh-card").addEventListener('click', () => {
 
-    hideElement(weighBridgevalidationElement);
+    // hideElement(weighBridgevalidationElement);
 
-    hideElement(weighBridgevehicleValidationElement);
-    hideElement(weighBridgeFarmerValidationElement);
-    hideElement(weighTareValidationElement)
-    hideElement(weighNetValidationElement)
-    hideElement(weighStorageValidationElement)
+    // hideElement(weighBridgevehicleValidationElement);
+    // hideElement(weighBridgeFarmerValidationElement);
+    // hideElement(weighTareValidationElement)
+    // hideElement(weighNetValidationElement)
+    // hideElement(weighStorageValidationElement)
 
-    hideElement(grossValidationElement)
-    hideElement(dateValidation)
+    // hideElement(grossValidationElement)
+    // hideElement(dateValidation)
+
     hideElement("#selectEstateValidation")
 
     hideElement("#selectEmployeeValidation")

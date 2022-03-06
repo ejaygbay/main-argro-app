@@ -209,25 +209,29 @@ const extractNumberFromText = (text, callback) => {
         let first_txt_num = '';
         let second_txt_num = '';
 
-        if (first_txt.length > 0) {
+        if (first_txt.trim().length > 0) {
             for (char of first_txt) {
                 if (!isNaN(char)) {
                     first_txt_num += char.trim();
                 }
             }
 
-            if (second_txt.length < 1) {
+            if (second_txt.trim().length < 1) {
                 return callback(first_txt_num);
             }
+        } else {
+            reopenCamera();
         }
 
-        if (second_txt.length > 0) {
+        if (second_txt.trim().length > 0) {
             for (char of second_txt) {
                 if (!isNaN(char)) {
                     second_txt_num += char.trim();
                 }
             }
             return callback(`${first_txt_num.trim()}.${second_txt_num.trim()}`);
+        } else {
+            reopenCamera();
         }
     } else {
         let number = '';
@@ -236,17 +240,48 @@ const extractNumberFromText = (text, callback) => {
                 number += char.trim();
             }
         }
-        return callback(number.trim());
+
+        if (number.trim().length > 0) {
+            return callback(number.trim());
+        } else {
+            reopenCamera();
+        }
     }
 }
 
 const findNetValue = () => {
-    let gross_weight_value = document.getElementById('gross-ocr-data').value;
-    let tare_weight_value = document.getElementById('tare-ocr-data').value;
+    let gross_weight_value = document.getElementById('gross-ocr-data');
+    let tare_weight_value = document.getElementById('tare-ocr-data');
 
-    if (gross_weight_value.length > 0 && tare_weight_value.length > 0) {
-        document.getElementById('net-buy-tab').value = gross_weight_value - tare_weight_value;
+    if (gross_weight_value) {
+        gross_weight_value = gross_weight_value.value.trim();
     }
+
+    if (tare_weight_value) {
+        tare_weight_value = tare_weight_value.value.trim();
+    }
+
+    if (gross_weight_value && tare_weight_value) {
+        if (gross_weight_value.length > 0 && tare_weight_value.length > 0) {
+            document.getElementById('net-buy-tab').value = gross_weight_value - tare_weight_value;
+        }
+    }
+}
+
+const reopenCamera = () => {
+    Swal.fire({
+        icon: 'error',
+        title: 'Oops!',
+        text: 'No number was found in the image!',
+        showCancelButton: true,
+        cancelButtonColor: 'red',
+        confirmButtonText: "Retry",
+        cancelButtonText: "Cancel",
+    }).then(result => {
+        if (result.isConfirmed) {
+            cameraTakePicture();
+        }
+    })
 }
 
 function buySubmitWeighBrigeData() {

@@ -161,17 +161,43 @@ function cameraTakePicture() {
             text_from_image.forEach(ele => text_doc = `${text_doc} ${ele}`);
 
             extractNumberFromText(text_doc, data => {
-                element.value = data;
+                if (!isNaN(data)) {
+                    element.value = data;
+                } else {
+                    Swal.fire({
+                        title: '<strong>Wrong Image Captured</strong>',
+                        icon: 'info',
+                        html: 'You can <b>retake</b> or <b>close</b> the camera',
+                        showCancelButton: true,
+                        focusConfirm: false,
+                        cancelButtonText: '<i class="fas card-icon" style="color: #fff">Close | &#xf00d;</i>',
+                        cancelButtonColor: 'red',
+                        confirmButtonText: '<i class="fas card-icon" style="color: #fff">Retake | &#xf030;</i>',
+                        confirmButtonColor: 'blue'
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            cameraTakePicture();
+                        }
+                    })
+                }
             });
         }
 
         function onFail(message) {
-            alert('Failed because: ' + message);
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops!!! You closed the camera',
+                confirmButtonText: "Close"
+            })
         }
     }
 
     function onFail(message) {
-        alert('Failed because: ' + message)
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops!!! You closed the camera',
+            confirmButtonText: "Close"
+        })
     }
 }
 
@@ -186,7 +212,7 @@ const extractNumberFromText = (text, callback) => {
         if (first_txt.length > 0) {
             for (char of first_txt) {
                 if (!isNaN(char)) {
-                    first_txt_num += char;
+                    first_txt_num += char.trim();
                 }
             }
 
@@ -198,7 +224,7 @@ const extractNumberFromText = (text, callback) => {
         if (second_txt.length > 0) {
             for (char of second_txt) {
                 if (!isNaN(char)) {
-                    second_txt_num += char;
+                    second_txt_num += char.trim();
                 }
             }
             return callback(`${first_txt_num.trim()}.${second_txt_num.trim()}`);
@@ -207,7 +233,7 @@ const extractNumberFromText = (text, callback) => {
         let number = '';
         for (char of text) {
             if (!isNaN(char)) {
-                number += char;
+                number += char.trim();
             }
         }
         return callback(number.trim());
@@ -217,9 +243,8 @@ const extractNumberFromText = (text, callback) => {
 const findNetValue = () => {
     let gross_weight_value = document.getElementById('gross-ocr-data').value;
     let tare_weight_value = document.getElementById('tare-ocr-data').value;
-    console.log(gross_weight_value, tare_weight_value);
 
-    if (gross_weight_value && tare_weight_value) {
+    if (gross_weight_value.length > 0 && tare_weight_value.length > 0) {
         document.getElementById('net-buy-tab').value = gross_weight_value - tare_weight_value;
     }
 }

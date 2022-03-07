@@ -251,8 +251,12 @@ const findNetValue = () => {
     }
 
     if (gross_weight_value && tare_weight_value) {
+        let net_ele = document.getElementById('net-buy-tab');
         if (gross_weight_value.length > 0 && tare_weight_value.length > 0) {
-            document.getElementById('net-buy-tab').value = gross_weight_value - tare_weight_value;
+            net_ele.value = gross_weight_value - tare_weight_value;
+            showElement('#net-buy-tab');
+        } else {
+            hideElement('#net-buy-tab');
         }
     }
 }
@@ -277,136 +281,32 @@ const reopenCamera = () => {
 
 function buySubmitWeighBrigeData() {
     let local_storage = window.localStorage;
-    let buy_date_input = document.forms["weighBridgeBuy"]["date"].value;
-    let buy_farmer_input = document.forms["weighBridgeBuy"]["farmer"].value;
-    let vehicle_plate = document.forms["weighBridgeBuy"]["vehicalPlate"].value;
-    let gross = document.forms["weighBridgeBuy"]["gross"].value;
-    let tare = document.forms["weighBridgeBuy"]["tare"].value;
-    let net = gross - tare;
-    let net_tonage = gross - tare / 1000;
-    let storage = document.forms["weighBridgeBuy"]["storage"].value;
+    let ele_ids = ['date', 'select-farmer-buy-tab', 'vehicle-plate-buy-tab', 'storage-area-buy-tab', 'gross-ocr-data', 'tare-ocr-data'];
 
-    if (validateInput(buy_date_input) || validateInput(buy_farmer_input) || validateInput(vehicle_plate) || validateInput(gross) || validateInput(tare) || validateInput(net) || validateInput(storage)) {
-        console.log("Empty ele");
+    let empty_element_found = ele_ids.length;
 
-        {
-            // if (buydateInput === "") {
-            //     showElement(weighBridgevalidationElement);
-            //     document.getElementById("weigh-section").scrollIntoView();
-            //     return false;
-            //     // Getting input fields data
-            // } else {
-            //     hideElement(weighBridgevalidationElement);
-            // }
+    ele_ids.forEach(ele => {
+        let input_value = document.getElementById(ele).value;
 
-            // if (buyFarmerInput === "Select a Farmer") {
-            //     showElement(weighBridgeFarmerValidationElement);
-            //     document.getElementById("weigh-section").scrollIntoView();
-            //     return false;
-
-            // } else {
-
-            //     // showElement(weighBridgeFarmerValidationElement);
-            //     // get famer name and id from select Element
-
-            //     // make api call to get farmers data
-
-            //     hideElement(weighBridgeFarmerValidationElement);
-
-            // }
-
-            // if (vehicalPlate === "") {
-            //     showElement(weighBridgevehicleValidationElement);
-            //     document.getElementById("weigh-section").scrollIntoView();
-            //     return false;
-            // } else {
-            //     hideElement(weighBridgevehicleValidationElement);
-            //     document.getElementById("weigh-section").scrollIntoView();
-
-            // }
-
-            // if (gross == "No data read") {
-            //     showElement(grossValidationElement);
-            //     document.getElementById("weigh-section").scrollIntoView();
-            //     return false;
-            // } else {
-
-            //     hideElement(grossValidationElement);
-            //     document.getElementById("weigh-section").scrollIntoView();
-
-            // }
-
-            // if (tare == "Camera Data") {
-            //     showElement(weighTareValidationElement);
-            //     document.getElementById("gross-buy").scrollIntoView();
-            //     return false;
-            // } else {
-            //     hideElement(weighTareValidationElement);
-            //     document.getElementById("weigh-section").scrollIntoView();
-
-            // }
-
-            // if (net == "") {
-            //     showElement(weighNetValidationElement);
-            //     document.getElementById("gross-buy").scrollIntoView();
-            //     return false;
-            // } else {
-            //     hideElement(weighNetValidationElement);
-            //     document.getElementById("weigh-section").scrollIntoView();
-
-            // }
-
-            // if (storage === "Select a storage") {
-            //     showElement(weighStorageValidationElement);
-            //     document.getElementById("gross-buy").scrollIntoView();
-            //     return false;
-            // } else {
-            //     hideElement(weighStorageValidationElement);
-            //     document.getElementById("weigh-section").scrollIntoView();
-
-            //     const makeAPICall = async(url, data_to_send) => {
-            //             return await fetch(url, {
-            //                     method: 'POST',
-            //                     headers: {
-            //                         "Content-Type": "application/json"
-            //                     },
-            //                     body: JSON.stringify(data_to_send)
-            //                 })
-            //                 .then(response => response.json())
-            //                 .then(data => data)
-            //                 .catch(err => err.message)
-            //         }
-            //         // get the current time
-
-
-            //     let today = new Date();
-            //     let time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            //     let purchaseNumber = buydateInput + " " +
-            //         today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-            //     console.log(purchaseNumber);
-
-            //     const URL = "https://agri-api-middleware.herokuapp.com";
-            //     let storage = window.localStorage;
-            //     console.log(storage.getItem(buyFarmerInput))
-            //     showLoader(".loader");
-            //     makeAPICall(`${URL}/weighBridgeBuy`, { farmerId: storage.getItem(buyFarmerInput), vehicalPlates: vehicalPlate, date: buydateInput, grosses: gross, grossTime: time, tares: tare, tareTime: time, nets: net, netTonnage: netTonage, storages: storage, formInitiazationTime: time, purchaseNumbers: purchaseNumber })
-            //         .then(data => {
-            //             if (data.code === 200) {
-            //                 console.log(data);
-            //                 hideLoader(".loader");
-            //             } else {
-            //                 console.log("Req not made", data)
-            //             }
-            //         })
-
-            //     .catch(err => { console.log(err) })
-
-
-
-            // }
+        if (validateInput(input_value)) {
+            empty_element_found += 1;
+            showElement(`#${ele}-validation`);
+        } else {
+            empty_element_found -= 1;
+            hideElement(`#${ele}-validation`);
         }
-    } else {
-        console.log("fhjkrhkj>>>>>>>>>>>")
+    })
+
+    if (empty_element_found === 0) {
+        let buy_date_input = document.forms["weighBridgeBuy"]["date"].value;
+        let buy_farmer_input = document.forms["weighBridgeBuy"]["farmer"].value;
+        let vehicle_plate = document.forms["weighBridgeBuy"]["vehicalPlate"].value;
+        let gross = document.forms["weighBridgeBuy"]["gross"].value;
+        let tare = document.forms["weighBridgeBuy"]["tare"].value;
+        let net = gross - tare;
+        let net_tonage = gross - tare / 1000;
+        let storage = document.forms["weighBridgeBuy"]["storage"].value;
+
         let today = new Date();
         let time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
         let purchase_number = `${buy_date_input} ${today.getHours()} ${today.getMinutes()} ${today.getSeconds()}`;

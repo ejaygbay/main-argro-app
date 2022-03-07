@@ -121,6 +121,7 @@
     color: red;
 }
 
-.validation-msg {
+.validation-msg,
+#net-buy-tab {
     display: none;
 }

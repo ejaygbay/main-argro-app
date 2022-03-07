@@ -705,7 +705,7 @@
                                 <section style="background: whitesmoke; border: solid 1px gray; padding: 16px 10px 16px 10px; border-radius: 5px; margin-top: 16px">
                                     <form name="weighBridgeBuy">
                                         <div class="form-floating mb-2">
-                                            <input type="date" class="form-control" name="date" id="date" placeholder="Date" required>
+                                            <input type="date" class="form-control" name="date" id="date" placeholder="Date">
 
                                             <label for="business-date-buy">Date</label>
 
@@ -716,8 +716,8 @@
                                         </div>
 
                                         <div class="form-floating mb-3">
-                                            <select class="form-select" name="farmer" id="select-farmer-buy-tab" required>
-                                                <option>Select a Farmer</option>
+                                            <select class="form-select" name="farmer" id="select-farmer-buy-tab">
+                                                <option value="" selected disabled>Select a Farmer</option>
                                             </select>
 
                                             <label for="select-farmer-buy-tab">Select Farmer</label>
@@ -729,7 +729,7 @@
                                         </div>
 
                                         <div class="form-floating mb-2">
-                                            <input type="text" class="form-control" name="vehicalPlate" id="vehicle-plate-buy-tab" placeholder="Vehicle Plate" required>
+                                            <input type="text" class="form-control" name="vehicalPlate" id="vehicle-plate-buy-tab" placeholder="Vehicle Plate">
 
                                             <label for="vehicle-plate-buy-tab">Vehicle Plate</label>
 
@@ -747,12 +747,12 @@
                                                 <i class="fas card-icon">&#xf030;</i>
                                             </button>
 
-                                            <p id="gross-buy-tab-camera-btn-validation" class="validation-msg">
+                                            <p id="gross-ocr-data-validation" class="validation-msg">
                                                 <span class="validation-msg-icon">&#9888;</span>
                                                 <span>please take a photo</span>
                                             </p>
 
-                                            <input class="mt-2" name="gross" type="text" id="gross-ocr-data" value="" disabled required>
+                                            <input class="mt-2" name="gross" type="text" id="gross-ocr-data" value="" disabled>
                                         </div>
 
                                         <div class="form-floating mb-2 d-grid">
@@ -761,12 +761,12 @@
                                                 <i class="fas card-icon">&#xf030;</i>
                                             </button>
 
-                                            <p id="tare-buy-tab-camera-btn-validation" class="validation-msg">
+                                            <p id="tare-ocr-data-validation" class="validation-msg">
                                                 <span class="validation-msg-icon">&#9888;</span>
                                                 <span>please take a photo</span>
                                             </p>
 
-                                            <input class="mt-2" name="tare" type="text" id="tare-ocr-data" value="" disabled required>
+                                            <input class="mt-2" name="tare" type="text" id="tare-ocr-data" value="" disabled>
                                         </div>
 
                                         <div class="form-floating mb-2">
@@ -776,8 +776,8 @@
                                         </div>
 
                                         <div class="form-floating mb-3">
-                                            <select class="form-select" name="storage" id="storage-area-buy-tab" required>
-                                                <option selected disabled>Select a storage</option>
+                                            <select class="form-select" name="storage" id="storage-area-buy-tab">
+                                                <option value="" selected disabled>Select a storage</option>
                                                 <option value="1">Storage One</option>
                                                 <option value="2">Storage Two</option>
                                                 <option value="3">Storage Three</option>

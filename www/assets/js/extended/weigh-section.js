@@ -279,6 +279,8 @@ const reopenCamera = () => {
     })
 }
 
+const clearElement = (selector) => document.querySelector(selector).value = '';
+
 function buySubmitWeighBrigeData() {
     let local_storage = window.localStorage;
     let ele_ids = ['date', 'select-farmer-buy-tab', 'vehicle-plate-buy-tab', 'storage-area-buy-tab', 'gross-ocr-data', 'tare-ocr-data'];
@@ -337,6 +339,8 @@ function buySubmitWeighBrigeData() {
                     showConfirmButton: false,
                     timer: 2000
                 })
+
+                ele_ids.forEach(ele => clearElement(`#${ele}`))
             })
             .catch(err => {
                 Swal.fire({

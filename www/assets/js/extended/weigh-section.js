@@ -340,6 +340,10 @@ function buySubmitWeighBrigeData() {
                     timer: 2000
                 })
 
+                hideElement('#gross-ocr-data');
+                hideElement('#tare-ocr-data');
+                hideElement('#net-buy-tab');
+                clearElement('#net-buy-tab');
                 ele_ids.forEach(ele => clearElement(`#${ele}`))
             })
             .catch(err => {

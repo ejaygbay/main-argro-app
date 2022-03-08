@@ -35,4 +35,18 @@ const makeAPIPostRequest = async(url, data_to_send) => {
         .catch(err => err.message)
 }
 
-// alert(navigator.onLine);
+const changeNetworkStatusIcon = () => {
+    let check_network_interval = setInterval(() => changeNetworkStatusIcon(), 3000);
+
+    if (navigator.onLine) {
+        hideElement('#offline-wifi-icon');
+        showElement('#online-wifi-icon');
+    } else {
+        hideElement('#online-wifi-icon');
+        showElement('#offline-wifi-icon');
+    }
+
+    clearInterval(check_network_interval);
+}
+
+changeNetworkStatusIcon()

@@ -36,8 +36,7 @@
     justify-self: end;
 }
 
-#offline-wifi-icon-home,
-#offline-wifi-icon-profile {
+#offline-wifi-icon {
     display: none;
 }
 

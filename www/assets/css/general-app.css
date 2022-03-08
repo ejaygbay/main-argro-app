@@ -31,9 +31,14 @@
     height: 3em;
 }
 
-#wifi-icon {
+.wifi-icon {
     font-size: 1.4em;
     justify-self: end;
+}
+
+#offline-wifi-icon-home,
+#offline-wifi-icon-profile {
+    display: none;
 }
 
 .mdc-drawer__header {

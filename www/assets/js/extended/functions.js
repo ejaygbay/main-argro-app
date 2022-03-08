@@ -34,3 +34,5 @@ const makeAPIPostRequest = async(url, data_to_send) => {
         .then(data => data)
         .catch(err => err.message)
 }
+
+// alert(navigator.onLine);

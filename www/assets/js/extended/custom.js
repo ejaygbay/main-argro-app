@@ -1,4 +1,5 @@
 let current_section = '#home-section';
+let previous_section = '';
 var count = 0;
 let weighBridgevalidationElement = '#validationElement';
 let weighBridgevehicleValidationElement = '#vehicleValidationElement';
@@ -33,14 +34,6 @@ let current_buy_section = "#tab-content-cuplumps";
 let current_collect_tab_head = "#tab-head-collect-cuplumps";
 let current_collect_section = "#tab-content-collect-cuplumps";
 
-
-function chkInternetStatus() {
-    if (navigator.onLine) {
-        document.getElementById("wifi-icon").style.color = "white";
-    } else {
-        console.log("Oops! You're offline. Please check your network connection...");
-    }
-}
 const makeAPICalls = async(url) => {
     return await fetch(url, {
             method: 'GET',
@@ -56,8 +49,8 @@ const makeAPICalls = async(url) => {
 
 // Showing gangs and Tapper section
 function showDownloadSection() {
-    
-   
+
+
     const URL = "https://agri-api-middleware.herokuapp.com";
     makeAPICalls(`${URL}/gangsAndTappers`)
         .then(data => {
@@ -73,6 +66,7 @@ function showDownloadSection() {
                         if (data2.code === 200) {
                             document.getElementById("roleDownload").textContent += data2.message;
                             hideElement(current_section);
+                            previous_section = current_section;
                             current_section = "#download-section";
                             hideElement("#sidebar");
                             hideElement("#sidebar-cover");
@@ -81,11 +75,12 @@ function showDownloadSection() {
                             console.log(data.message);
                             document.getElementById("roleDownload").textContent += data2.message;
                             hideElement(current_section);
+                            previous_section = current_section;
                             current_section = "#download-section";
                             hideElement("#sidebar");
                             hideElement("#sidebar-cover");
                             showElement(current_section);
-                     
+
 
                         }
                     })
@@ -97,7 +92,6 @@ function showDownloadSection() {
 
     .catch(err => { console.log(err) })
 }
-
 
 /**
  * General Functions

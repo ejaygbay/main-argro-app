@@ -3,12 +3,14 @@
  */
 document.querySelector("#buy-card").addEventListener('click', () => {
     hideElement(current_section);
+    previous_section = current_section;
     current_section = "#buy-section";
     showElement(current_section);
 })
 
 document.querySelector("#collect-card").addEventListener('click', () => {
     hideElement(current_section);
+    previous_section = current_section;
     current_section = "#collect-section";
     showElement(current_section);
 })
@@ -50,12 +52,14 @@ document.querySelector("#weigh-card").addEventListener('click', () => {
     hideElement("#shipmentStorageValidation")
 
     hideElement(current_section);
+    previous_section = current_section;
     current_section = "#weigh-section";
     showElement(current_section);
 })
 
 document.querySelector("#my-tasks-card").addEventListener('click', () => {
     hideElement(current_section);
+    previous_section = current_section;
     current_section = "#my-tasks-section";
     showElement(current_section);
 })

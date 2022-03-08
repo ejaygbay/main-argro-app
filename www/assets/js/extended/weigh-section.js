@@ -101,6 +101,7 @@ document.querySelector("#tab-head-submitted").addEventListener('click', () => {
 document.querySelectorAll(".pending-and-submitted-entries").forEach(ele => {
     ele.addEventListener('click', (e) => {
         hideElement(current_section);
+        previous_section = current_section;
         current_section = "#weigh-statistics-section";
         showElement(current_section);
 

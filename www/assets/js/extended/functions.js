@@ -38,7 +38,7 @@ const makeAPIPostRequest = async(url, data_to_send) => {
 const changeNetworkStatusIcon = () => {
     let check_network_interval = setInterval(() => changeNetworkStatusIcon(), 3000);
 
-    if (navigator.onLine) {
+    if (checkNetworkStatus()) {
         hideElement('#offline-wifi-icon');
         showElement('#online-wifi-icon');
     } else {
@@ -49,4 +49,18 @@ const changeNetworkStatusIcon = () => {
     clearInterval(check_network_interval);
 }
 
-changeNetworkStatusIcon()
+const checkNetworkStatus = () => navigator.onLine ? true : false;
+
+changeNetworkStatusIcon();
+
+document.addEventListener("backbutton", goBack, false);
+
+const goBack = () => {
+    if (previous_section) {
+        hideElement(current_section);
+        showElement(previous_section);
+        previous_section = "";
+    } else {
+        navigator.app.exitApp();
+    }
+}

@@ -1,17 +1,15 @@
 const URL = "https://agri-api-middleware.herokuapp.com";
-console.log(localStorage.getItem('username'))
 
 document.getElementById('login-btn').addEventListener('click', e => {
     e.preventDefault();
     let username = document.getElementById('username');
     let password = document.getElementById('password');
 
-    console.log("Network connection:", checkNetworkStatus())
     if (checkNetworkStatus()) {
-        // Make direct request
         showLoader("#loader-cover");
         showLoader(".loader");
 
+        // Make direct request
         makeAPIPostRequest(`${URL}/api/v1/login`, { username: username.value, password: password.value })
             .then(data => {
                 hideLoader("#loader-cover");
@@ -23,72 +21,61 @@ document.getElementById('login-btn').addEventListener('click', e => {
                         localStorage.setItem('password', password.value);
                     }
 
-                    // // Local storage
-                    // var userName = "userName"
-                    // var LastName = "lastName"
-                    // var MiddleName = "middleName"
-                    // var roles = "role"
-                    // var gangs = "gang"
-                    // var userId = "userId"
-
-                    // // getting user name from data object
-                    // const firstName = data.data.user_data.first_name
-
-                    // const lastName = data.data.user_data.last_name
-                    // const middleName = data.data.user_data.middle_name
-                    // const role = data.data.user_data.role
-                    // const gang = data.data.user_data.gang
-                    // const userIds = data.data.user_data.user_id
-                    // var storage = window.localStorage;
-
-                    // storage.setItem(userName, firstName)
-                    // storage.setItem(LastName, lastName)
-                    // storage.setItem(MiddleName, middleName)
-                    // storage.setItem(roles, role)
-                    // storage.setItem(gangs, gang)
-                    // storage.setItem(userId, userIds)
-
-                    // // document.getElementById("profileName").value = profileName;
-                    // // for (const property in data) {
-                    // //     console.log(`${property}: ${data[property]}`);
-                    // // }
-                    // // console.log(data);
-                    // // console.log(storage.getItem("gang"));
-                    hideLoader("#loader-cover");
-                    hideLoader(".loader");
-                    // redirectUser(true);
-
-                    location.replace("index.html")
-                        // redirectUser(true);
+                    location.replace("index.html");
                 } else {
-                    if (localStorage.getItem('username') && localStorage.getItem('password')) {
-                        // Save data until user gets online
-                        console.log("have already logged in", localStorage)
-                    } else {
-                        Swal.fire({
-                            icon: 'error',
-                            title: 'Please check your internet connection',
-                            confirmButtonText: "Close"
-                        })
-                    }
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Wrong username or password entered',
+                        confirmButtonText: "Close"
+                    })
                 }
             })
 
-        .catch(err => { console.log(err) })
-
-    } else {
-        if (localStorage.getItem('username') && localStorage.getItem('password')) {
-            // Save data until user gets online
-            console.log("have already logged in", localStorage)
-        } else {
+        .catch(err => {
             Swal.fire({
                 icon: 'error',
-                title: 'Please connect to the internet',
+                title: 'An error occurred. Please try again',
+                confirmButtonText: "Close"
+            })
+        })
+
+    } else {
+        showLoader("#loader-cover");
+        showLoader(".loader");
+
+        if (localStorage.getItem('username') && localStorage.getItem('password')) {
+            // Save data until user gets online
+            if (validateOfflineCredentials(username.value, password.value)) {
+                location.replace("index.html");
+            } else {
+                hideLoader("#loader-cover");
+                hideLoader(".loader");
+
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Wrong username or password entered',
+                    confirmButtonText: "Close"
+                })
+            }
+        } else {
+            hideLoader("#loader-cover");
+            hideLoader(".loader");
+
+            Swal.fire({
+                icon: 'error',
+                title: 'Please connect to the internet to setup your account',
                 confirmButtonText: "Close"
             })
         }
     }
 })
+
+const validateOfflineCredentials = (username, password) => {
+    if (username === localStorage.getItem('username') && password === localStorage.getItem('password'))
+        return true;
+    else
+        return false;
+}
 
 
 function getData() {

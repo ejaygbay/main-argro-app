@@ -1,15 +1,12 @@
 let is_loggedin = false;
 
 const redirectUser = (status) => {
+    let file_name = window.location.pathname.split('/');
     is_loggedin = status;
 
-    if (!is_loggedin && window.location.pathname !== "/android_asset/www/login.html") {
+    if (!is_loggedin && !file_name.includes('login.html')) {
         window.location.href = "login.html";
-    } else if (is_loggedin && window.location.pathname === "/android_asset/www/login.html") {
-        window.location.href = "index.html";
-    } else if (!is_loggedin && window.location.pathname !== "/www/login.html") {
-        window.location.href = "login.html";
-    } else if (is_loggedin && window.location.pathname === "/www/login.html") {
+    } else if (is_loggedin && file_name.includes('login.html')) {
         window.location.href = "index.html";
     }
 }
@@ -38,24 +35,29 @@ const makeAPIPostRequest = async(url, data_to_send) => {
 const changeNetworkStatusIcon = () => {
     let check_network_interval = setInterval(() => changeNetworkStatusIcon(), 3000);
 
-    if (checkNetworkStatus()) {
-        hideElement('#offline-wifi-icon');
-        showElement('#online-wifi-icon');
-    } else {
-        hideElement('#online-wifi-icon');
-        showElement('#offline-wifi-icon');
-    }
+    let file_name = window.location.pathname.split('/');
 
-    clearInterval(check_network_interval);
+    if (!file_name.includes('login.html')) {
+        if (checkNetworkStatus()) {
+            hideElement('#offline-wifi-icon');
+            showElement('#online-wifi-icon');
+        } else {
+            hideElement('#online-wifi-icon');
+            showElement('#offline-wifi-icon');
+        }
+        console.log("Checked")
+
+        clearInterval(check_network_interval);
+    }
 }
 
 const checkNetworkStatus = () => navigator.onLine ? true : false;
 
 changeNetworkStatusIcon();
 
-document.addEventListener("backbutton", goBack, false);
-
 const goBack = () => {
+    alert(previous_section);
+
     if (previous_section) {
         hideElement(current_section);
         showElement(previous_section);
@@ -64,3 +66,5 @@ const goBack = () => {
         navigator.app.exitApp();
     }
 }
+
+document.addEventListener("backbutton", goBack, false);

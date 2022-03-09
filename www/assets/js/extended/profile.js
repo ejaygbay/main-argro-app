@@ -2,6 +2,7 @@ var storage = window.localStorage;
 
 function showProfileSection() {
     hideElement(current_section);
+    previous_section = current_section;
     current_section = "#profile-section";
     hideElement("#sidebar");
     hideElement("#sidebar-cover");

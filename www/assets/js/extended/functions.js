@@ -6,6 +6,7 @@ const redirectUser = (status) => {
 
     if (!is_loggedin && !file_name.includes('login.html')) {
         window.location.href = "login.html";
+        localStorage.clear();
     } else if (is_loggedin && file_name.includes('login.html')) {
         window.location.href = "index.html";
     }
@@ -33,7 +34,7 @@ const makeAPIPostRequest = async(url, data_to_send) => {
 }
 
 const changeNetworkStatusIcon = () => {
-    let check_network_interval = setInterval(() => changeNetworkStatusIcon(), 3000);
+    let check_network_interval = setInterval(() => changeNetworkStatusIcon(), 5000);
 
     let file_name = window.location.pathname.split('/');
 
@@ -67,4 +68,4 @@ const goBack = () => {
     }
 }
 
-document.addEventListener("backbutton", goBack, false);
+document.addEventListener("backbutton", goBack(), false);

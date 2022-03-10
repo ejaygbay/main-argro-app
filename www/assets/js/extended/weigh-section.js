@@ -329,39 +329,47 @@ function buySubmitWeighBrigeData() {
 
         showLoader("#loader-cover2");
         showLoader(".loader2");
-        makeAPIPostRequest(`${URL}/weighBridgeBuy`, data_to_send)
-            .then(response => {
-                hideLoader("#loader-cover2");
-                hideLoader(".loader2");
 
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Your work has been saved',
-                    showConfirmButton: false,
-                    timer: 2000
-                })
+        // Check network before making request
+        if (checkNetworkStatus()) {
+            // Send data to API
+            makeAPIPostRequest(`${URL}/weighBridgeBuy`, data_to_send)
+                .then(response => {
+                    hideLoader("#loader-cover2");
+                    hideLoader(".loader2");
 
-                hideElement('#gross-ocr-data');
-                hideElement('#tare-ocr-data');
-                hideElement('#net-buy-tab');
-                clearElement('#net-buy-tab');
-                ele_ids.forEach(ele => clearElement(`#${ele}`))
-            })
-            .catch(err => {
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Oops!',
-                    text: 'Something went wrong!',
-                    showCancelButton: true,
-                    cancelButtonColor: 'red',
-                    confirmButtonText: "Retry",
-                    cancelButtonText: "Cancel",
-                }).then(result => {
-                    if (result.isConfirmed) {
-                        buySubmitWeighBrigeData();
-                    }
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Your work has been saved',
+                        showConfirmButton: false,
+                        timer: 2000
+                    })
+
+                    hideElement('#gross-ocr-data');
+                    hideElement('#tare-ocr-data');
+                    hideElement('#net-buy-tab');
+                    clearElement('#net-buy-tab');
+                    ele_ids.forEach(ele => clearElement(`#${ele}`))
                 })
-            })
+                .catch(err => {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Oops!',
+                        text: 'Something went wrong!',
+                        showCancelButton: true,
+                        cancelButtonColor: 'red',
+                        confirmButtonText: "Retry",
+                        cancelButtonText: "Cancel",
+                    }).then(result => {
+                        if (result.isConfirmed) {
+                            buySubmitWeighBrigeData();
+                        }
+                    })
+                })
+        } else {
+            // Save data in local storage
+            console.log("Save data to localstorage")
+        }
     }
 }
 

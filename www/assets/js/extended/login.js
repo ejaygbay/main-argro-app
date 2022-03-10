@@ -19,6 +19,7 @@ document.getElementById('login-btn').addEventListener('click', e => {
                     if (!localStorage.getItem('username') && !localStorage.getItem('password')) {
                         localStorage.setItem('username', username.value);
                         localStorage.setItem('password', password.value);
+                        localStorage.setItem('data', '[]');
                     }
 
                     location.replace("index.html");

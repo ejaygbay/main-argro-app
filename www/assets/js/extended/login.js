@@ -1,3 +1,6 @@
+let local_storage_username = '';
+let local_storage_password = '';
+
 document.getElementById('login-btn').addEventListener('click', e => {
     e.preventDefault();
     let username = document.getElementById('username');
@@ -15,8 +18,8 @@ document.getElementById('login-btn').addEventListener('click', e => {
 
                 if (data.code === 200) {
                     if (!localStorage.getItem('username') && !localStorage.getItem('password')) {
-                        localStorage.setItem('username', username.value);
-                        localStorage.setItem('password', password.value);
+
+                        localStorage.setItem('auth', JSON.stringify({ 'username': username.value, 'password': password.value }));
                         localStorage.setItem('data', '[]');
                     }
 
@@ -42,7 +45,10 @@ document.getElementById('login-btn').addEventListener('click', e => {
         showLoader("#loader-cover");
         showLoader(".loader");
 
-        if (localStorage.getItem('username') && localStorage.getItem('password')) {
+        local_storage_username = JSON.parse(localStorage.getItem('auth')).username;
+        local_storage_password = JSON.parse(localStorage.getItem('auth')).password;
+
+        if (local_storage_username && local_storage_password) {
             // Save data until user gets online
             if (validateOfflineCredentials(username.value, password.value)) {
                 location.replace("index.html");
@@ -70,7 +76,10 @@ document.getElementById('login-btn').addEventListener('click', e => {
 })
 
 const validateOfflineCredentials = (username, password) => {
-    if (username === localStorage.getItem('username') && password === localStorage.getItem('password'))
+    local_storage_username = JSON.parse(localStorage.getItem('auth')).username;
+    local_storage_password = JSON.parse(localStorage.getItem('auth')).password;
+
+    if (username === local_storage_username && password === local_storage_password)
         return true;
     else
         return false;

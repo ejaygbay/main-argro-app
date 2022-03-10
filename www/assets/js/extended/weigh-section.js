@@ -1,5 +1,7 @@
+// const URL = "https://agri-api-middleware.herokuapp.com";
 let Estatecount = 0;
 let shipmentCount = 0;
+
 document.querySelector("#tab-head-buy").addEventListener('click', (e) => {
     hideElement(current_weigh_section);
     setAsInactive(current_weigh_tab_head);
@@ -11,55 +13,6 @@ document.querySelector("#tab-head-buy").addEventListener('click', (e) => {
     hideElement('#tare-ocr-data');
 })
 
-
-
-// Get farmers and insert them into the select element
-function getFarmers() {
-
-    const makeCallAPI = async(url) => {
-        return await fetch(url, {
-                method: 'GET',
-                headers: {
-                    "Content-Type": "application/json"
-                },
-
-            })
-            .then(response => response.json())
-            .then(data => data)
-            .catch(err => err.message)
-    }
-
-    // API to call
-    const farmerURL = "https://agri-api-middleware.herokuapp.com";
-    makeCallAPI(`${farmerURL}/farmers`)
-        .then(data => {
-            if (data.code === 200) {
-                // console.log(data);
-                let storage = window.localStorage;
-                for (let i = 0; i < data.data.length; i++) {
-
-                    let famerName = data.data[i].first_name + " " + data.data[i].last_name
-                    let farmerID = data.data[i].farmer_id
-                    storage.setItem(famerName, farmerID)
-                    let x = document.getElementById("select-farmer-buy-tab");
-                    let option = document.createElement("option");
-                    option.text = famerName;
-                    x.add(option);
-
-                    // console.log(data.data[i].first_name + " " + data.data[i].last_name)
-                    // console.log(data.data[i].farmer_id)
-
-                }
-                // location.replace("index.html")
-                // redirectUser(true);
-
-            } else {
-                console.log("Req not made", data)
-            }
-        })
-
-    .catch(err => { console.log(err) })
-}
 document.querySelector("#tab-head-estate").addEventListener('click', () => {
     hideElement(current_weigh_section);
     setAsInactive(current_weigh_tab_head);
@@ -282,6 +235,61 @@ const reopenCamera = () => {
 }
 
 const clearElement = (selector) => document.querySelector(selector).value = '';
+
+/**
+ * Make request for Farmers
+ */
+const makeCallAPI = async(url) => {
+    return await fetch(url, {
+            method: 'GET',
+            headers: {
+                "Content-Type": "application/json"
+            },
+
+        })
+        .then(response => response.json())
+        .then(data => data)
+        .catch(err => err.message)
+}
+
+const getFarmers = () => {
+    if (checkNetworkStatus()) {
+        makeCallAPI(`${URL}/farmers`)
+            .then(response => {
+                if (response.code === 200) {
+                    let farmers = [];
+
+                    response.data.forEach(ele => {
+                        let famer_name = `${ele.first_name} ${ele.last_name}`;
+                        let farmer_id = ele.farmer_id;
+
+                        if (ele.middle_name.trim().length > 0) {
+                            famer_name = `${ele.first_name} ${ele.middle_name}. ${ele.last_name}`;
+                        }
+                        farmers.push({ id: farmer_id, name: famer_name });
+                    })
+
+                    localStorage.setItem('farmers', JSON.stringify(farmers));
+                    displayFarmers();
+                } else {
+                    console.log("Req not made", data)
+                }
+            })
+            .catch(err => displayFarmers())
+    } else {
+        displayFarmers();
+    }
+}
+getFarmers();
+
+const displayFarmers = () => {
+    let farmer_ele = document.getElementById('select-farmer-buy-tab');
+
+    JSON.parse(localStorage.getItem('farmers')).forEach(ele => {
+        let html = `<option value="${ele.id}">${ele.name}</option>`;
+        farmer_ele.insertAdjacentHTML('beforeend', html);
+    })
+}
 
 function buySubmitWeighBrigeData() {
     let local_storage = window.localStorage;

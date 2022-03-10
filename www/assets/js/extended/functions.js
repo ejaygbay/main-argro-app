@@ -1,3 +1,4 @@
+const URL = "https://agri-api-middleware.herokuapp.com";
 let is_loggedin = false;
 
 const redirectUser = (status) => {
@@ -67,4 +68,4 @@ const goBack = () => {
     }
 }
 
-document.addEventListener("backbutton", goBack(), false);
+// document.addEventListener("backbutton", goBack(), false);

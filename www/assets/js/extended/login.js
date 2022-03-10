@@ -1,5 +1,3 @@
-const URL = "https://agri-api-middleware.herokuapp.com";
-
 document.getElementById('login-btn').addEventListener('click', e => {
     e.preventDefault();
     let username = document.getElementById('username');

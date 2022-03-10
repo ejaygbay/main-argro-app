@@ -51,7 +51,7 @@ const makeAPICalls = async(url) => {
 function showDownloadSection() {
 
 
-    const URL = "https://agri-api-middleware.herokuapp.com";
+    // const URL = "https://agri-api-middleware.herokuapp.com";
     makeAPICalls(`${URL}/gangsAndTappers`)
         .then(data => {
             if (data.code === 200) {

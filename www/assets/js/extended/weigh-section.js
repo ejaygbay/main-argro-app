@@ -17,18 +17,19 @@ document.querySelector("#tab-head-buy").addEventListener('click', (e) => {
 function getFarmers() {
 
     const makeCallAPI = async(url) => {
-            return await fetch(url, {
-                    method: 'GET',
-                    headers: {
-                        "Content-Type": "application/json"
-                    },
+        return await fetch(url, {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json"
+                },
 
-                })
-                .then(response => response.json())
-                .then(data => data)
-                .catch(err => err.message)
-        }
-        // API to call
+            })
+            .then(response => response.json())
+            .then(data => data)
+            .catch(err => err.message)
+    }
+
+    // API to call
     const farmerURL = "https://agri-api-middleware.herokuapp.com";
     makeCallAPI(`${farmerURL}/farmers`)
         .then(data => {
@@ -284,7 +285,8 @@ const clearElement = (selector) => document.querySelector(selector).value = '';
 
 function buySubmitWeighBrigeData() {
     let local_storage = window.localStorage;
-    let ele_ids = ['date', 'select-farmer-buy-tab', 'vehicle-plate-buy-tab', 'storage-area-buy-tab', 'gross-ocr-data', 'tare-ocr-data'];
+    let ele_ids = ['date', 'select-farmer-buy-tab', 'vehicle-plate-buy-tab', 'storage-area-buy-tab'];
+    // , 'gross-ocr-data', 'tare-ocr-data'
 
     let empty_element_found = ele_ids.length;
 
@@ -340,7 +342,7 @@ function buySubmitWeighBrigeData() {
 
                     Swal.fire({
                         icon: 'success',
-                        title: 'Your work has been saved',
+                        title: 'Your work has been sent',
                         showConfirmButton: false,
                         timer: 2000
                     })
@@ -368,7 +370,25 @@ function buySubmitWeighBrigeData() {
                 })
         } else {
             // Save data in local storage
-            console.log("Save data to localstorage")
+            let local_storage_data = JSON.parse(localStorage.getItem('data'));
+            local_storage_data.push(data_to_send);
+            localStorage.setItem('data', JSON.stringify(local_storage_data));
+
+            hideLoader("#loader-cover2");
+            hideLoader(".loader2");
+
+            Swal.fire({
+                icon: 'success',
+                title: 'Your work has been saved',
+                showConfirmButton: false,
+                timer: 2000
+            })
+
+            hideElement('#gross-ocr-data');
+            hideElement('#tare-ocr-data');
+            hideElement('#net-buy-tab');
+            clearElement('#net-buy-tab');
+            ele_ids.forEach(ele => clearElement(`#${ele}`))
         }
     }
 }

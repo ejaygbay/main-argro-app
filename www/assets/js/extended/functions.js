@@ -6,7 +6,6 @@ const redirectUser = (status) => {
 
     if (!is_loggedin && !file_name.includes('login.html')) {
         window.location.href = "login.html";
-        localStorage.clear();
     } else if (is_loggedin && file_name.includes('login.html')) {
         window.location.href = "index.html";
     }
@@ -54,7 +53,7 @@ const changeNetworkStatusIcon = () => {
 
 const checkNetworkStatus = () => navigator.onLine ? true : false;
 
-changeNetworkStatusIcon();
+// changeNetworkStatusIcon();
 
 const goBack = () => {
     alert(previous_section);

@@ -252,6 +252,15 @@ const makeCallAPI = async(url) => {
         .catch(err => err.message)
 }
 
+const displayFarmers = () => {
+    let farmer_ele = document.getElementById('select-farmer-buy-tab');
+
+    JSON.parse(localStorage.getItem('farmers')).forEach(ele => {
+        let html = `<option value="${ele.id}">${ele.name}</option>`;
+        farmer_ele.insertAdjacentHTML('beforeend', html);
+    })
+}
+
 const getFarmers = () => {
     if (checkNetworkStatus()) {
         makeCallAPI(`${URL}/farmers`)
@@ -282,17 +291,7 @@ const getFarmers = () => {
 }
 getFarmers();
 
-const displayFarmers = () => {
-    let farmer_ele = document.getElementById('select-farmer-buy-tab');
-
-    JSON.parse(localStorage.getItem('farmers')).forEach(ele => {
-        let html = `<option value="${ele.id}">${ele.name}</option>`;
-        farmer_ele.insertAdjacentHTML('beforeend', html);
-    })
-}
-
 function buySubmitWeighBrigeData() {
-    let local_storage = window.localStorage;
     let ele_ids = ['date', 'select-farmer-buy-tab', 'vehicle-plate-buy-tab', 'storage-area-buy-tab'];
     // , 'gross-ocr-data', 'tare-ocr-data'
 
@@ -325,7 +324,7 @@ function buySubmitWeighBrigeData() {
         let purchase_number = `${buy_date_input} ${today.getHours()} ${today.getMinutes()} ${today.getSeconds()}`;
 
         let data_to_send = {
-            farmer_id: local_storage.getItem(buy_farmer_input),
+            farmer_id: buy_farmer_input,
             vehicle_plate: vehicle_plate,
             date: buy_date_input,
             gross_weight: gross,
@@ -378,7 +377,13 @@ function buySubmitWeighBrigeData() {
                 })
         } else {
             // Save data in local storage
-            let local_storage_data = JSON.parse(localStorage.getItem('data'));
+            let local_storage_data = [];
+
+            if (!localStorage.getItem('data')) {
+                localStorage.setItem('data', '[]');
+            }
+
+            local_storage_data = JSON.parse(localStorage.getItem('data'));
             local_storage_data.push(data_to_send);
             localStorage.setItem('data', JSON.stringify(local_storage_data));
 

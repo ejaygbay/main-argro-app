@@ -15,16 +15,22 @@ document.getElementById('login-btn').addEventListener('click', e => {
             .then(data => {
                 hideLoader("#loader-cover");
                 hideLoader(".loader");
-
+                console.log(data);
                 if (data.code === 200) {
                     if (!localStorage.getItem('username') && !localStorage.getItem('password')) {
 
-                        localStorage.setItem('auth', JSON.stringify({ 'username': username.value, 'password': password.value }));
-                        localStorage.setItem('data', '[]');
+                        if (!localStorage.getItem('auth')) {
+                            localStorage.setItem('auth', JSON.stringify({ 'username': username.value, 'password': password.value }));
+                        }
+
+                        if (!localStorage.getItem('data')) {
+                            localStorage.setItem('data', '[]');
+                        }
                     }
 
                     location.replace("index.html");
                 } else {
+                    console.log(localStorage.getItem('auth'))
                     Swal.fire({
                         icon: 'error',
                         title: 'Wrong username or password entered',
@@ -45,8 +51,10 @@ document.getElementById('login-btn').addEventListener('click', e => {
         showLoader("#loader-cover");
         showLoader(".loader");
 
-        local_storage_username = JSON.parse(localStorage.getItem('auth')).username;
-        local_storage_password = JSON.parse(localStorage.getItem('auth')).password;
+        if (localStorage.getItem('auth')) {
+            local_storage_username = JSON.parse(localStorage.getItem('auth')).username;
+            local_storage_password = JSON.parse(localStorage.getItem('auth')).password;
+        }
 
         if (local_storage_username && local_storage_password) {
             // Save data until user gets online
@@ -76,8 +84,10 @@ document.getElementById('login-btn').addEventListener('click', e => {
 })
 
 const validateOfflineCredentials = (username, password) => {
-    local_storage_username = JSON.parse(localStorage.getItem('auth')).username;
-    local_storage_password = JSON.parse(localStorage.getItem('auth')).password;
+    if (localStorage.getItem('auth')) {
+        local_storage_username = JSON.parse(localStorage.getItem('auth')).username;
+        local_storage_password = JSON.parse(localStorage.getItem('auth')).password;
+    }
 
     if (username === local_storage_username && password === local_storage_password)
         return true;

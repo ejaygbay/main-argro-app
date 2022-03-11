@@ -34,7 +34,7 @@ const makeAPIPostRequest = async(url, data_to_send) => {
 }
 
 const changeNetworkStatusIcon = () => {
-    let check_network_interval = setInterval(() => changeNetworkStatusIcon(), 5000);
+    // let check_network_interval = setInterval(() => changeNetworkStatusIcon(), 5000);
 
     let file_name = window.location.pathname.split('/');
 
@@ -48,8 +48,9 @@ const changeNetworkStatusIcon = () => {
         }
         console.log("Checked")
 
-        clearInterval(check_network_interval);
+        // clearInterval(check_network_interval);
     }
+    changeNetworkStatusIcon();
 }
 
 const checkNetworkStatus = () => navigator.onLine ? true : false;
